@@ -29,7 +29,7 @@
   "runtime/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "runtime/vendor/baseline_server.py": "f9a83ca4ba0b4c22c80588755d2c50acc8e919d1b4ef116d3596212b288dbe97",
   "task_mapping.json": "e4a9cbe4670a3887fabcb85bd57e8f2b2b6a6e14c78b0c7a307c99280053793a",
-  "tools/build_release.py": "3ab23782605036ae37b34af7fc95c18003c81ac9a3ed8531c7a55ee934c0121c",
+  "tools/build_release.py": "6317928f2479b9a0e6c6e028ea9f79cf9b65a0eca2cab676df4688a393dcc184",
   "tools/export_artifacts.py": "c780a9660fdae2a8858466b71d67d942a486624130ccf0b898ac6d3704aba412",
   "tools/install_inference.sh": "b3b7adc2f24c56de22a45a8bab9da3bb77625842baa8b41f632a2f4c53799a7a",
   "tools/launch.py": "342ce0b760eaae71160381abb8294e31aa2c9cbcab117849908cef7e3418416b",

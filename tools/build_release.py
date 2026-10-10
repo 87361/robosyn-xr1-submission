@@ -9,6 +9,7 @@ root = Path(__file__).resolve().parents[1]
 selected = sorted(p for p in root.rglob('*') if p.is_file()
                   and not set(p.relative_to(root).parts) & {'dist', '__pycache__', '.git', '.venv'}
                   and p.relative_to(root).parts[0] not in {'models', 'outputs'}
+                  and p.relative_to(root).as_posix() not in {'SOURCE_SHA256.json', 'PUBLICATION_VALIDATION.json'}
                   and (p.suffix in {'.py', '.sh', '.yml', '.json', '.md', '.txt'}
                        or p.name in {'LICENSE', '.gitignore'}))
 dist = root / 'dist'
