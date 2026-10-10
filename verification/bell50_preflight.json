@@ -1,0 +1,1471 @@
+{
+  "passed": true,
+  "challenge_commit": "8818c82df5fa2522809b8105e7018950dcc9a9a8",
+  "live_main_commit": "8818c82df5fa2522809b8105e7018950dcc9a9a8",
+  "release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
+  "verified_official_files": [
+    {
+      "path": "assets/Apple/apple.ply",
+      "git_blob": "22d30652825e8d45cd0cc30afc3a4e02536c0de0"
+    },
+    {
+      "path": "assets/Apple/apple2.ply",
+      "git_blob": "b237422eacc8a16df7ed8a71fedacd9674c616b1"
+    },
+    {
+      "path": "assets/Basket/kago2.mtl",
+      "git_blob": "b04dc5b0e3f2c9f533efe443ca270d5db3f11dd0"
+    },
+    {
+      "path": "assets/Basket/kago2.obj",
+      "git_blob": "3a00d46da72f3a65e7c25b682ae6f017b9486037"
+    },
+    {
+      "path": "assets/Basket/kago2_u1_v1_diffuse.jpg",
+      "git_blob": "47eaa4571b390c57f23dc383ac084e2a67712828"
+    },
+    {
+      "path": "assets/Basket/kago2_u1_v1_normal.jpg",
+      "git_blob": "d1f404faf7eba195b0c63bd9df66a3b40da0abe7"
+    },
+    {
+      "path": "assets/Basket/kago3_deform.obj",
+      "git_blob": "b8a953d8b8526cfc2a2a9fa54dfde576561b0bdd"
+    },
+    {
+      "path": "assets/Beaker/Beaker.usd",
+      "git_blob": "a3f0b783f79fbdddbf89f26f33ba549ce14c1d35"
+    },
+    {
+      "path": "assets/Beaker/beaker.ply",
+      "git_blob": "b9466e0ec6634bf248db48616ff1d01a916688f8"
+    },
+    {
+      "path": "assets/Carrot/carrot_centered.mtl",
+      "git_blob": "1aa91df5f5a3eb8bfd67277ade5fe73f8fb282c1"
+    },
+    {
+      "path": "assets/Carrot/carrot_centered.obj",
+      "git_blob": "c31195e414ac1aaeb9990a0a05294df7fdaf3216"
+    },
+    {
+      "path": "assets/MilkBox/source/Milk_Packaging.glb",
+      "git_blob": "b8142175472a3be480f99e54909e9922ca0b5fa3"
+    },
+    {
+      "path": "assets/MilkBox/textures/gltf_embedded_0.png",
+      "git_blob": "357526b8714aa486e03ce933336c1ab98aa04274"
+    },
+    {
+      "path": "assets/MilkBox/textures/gltf_embedded_1@channels=B.png",
+      "git_blob": "83b91d4c5187c09c4fc95ba55e1f559dfb4ee46a"
+    },
+    {
+      "path": "assets/MilkBox/textures/gltf_embedded_1@channels=G.png",
+      "git_blob": "1d3d8e44bdcf8076fb04b24dc20cf50bd63931d2"
+    },
+    {
+      "path": "assets/MilkBox/textures/gltf_embedded_1@channels=R.png",
+      "git_blob": "0de645f544501040273e94e23f31a65f7da514b8"
+    },
+    {
+      "path": "assets/MilkBox/textures/gltf_embedded_2.png",
+      "git_blob": "d70534d3f31f43549b218c072cfbac36de554b5b"
+    },
+    {
+      "path": "assets/MilkBox/textures/internal_ground_ao_texture.jpeg",
+      "git_blob": "7675af2870f61f1576bc38d6eb2bf0df10054dcd"
+    },
+    {
+      "path": "assets/Pan/Pan.obj",
+      "git_blob": "89b117d387d55657a0d166300c188199b1bcdb47"
+    },
+    {
+      "path": "assets/Pan/lid.ply",
+      "git_blob": "4fa727b3e715a250129d7b63ce3a62d58c92da92"
+    },
+    {
+      "path": "assets/Pan/lid2.ply",
+      "git_blob": "614307f85b48f52433605badae183a4e07a853c6"
+    },
+    {
+      "path": "assets/Pan/lid_remeshed.ply",
+      "git_blob": "1be9e29512976c7f8f8e4090dc51ad27f5d52520"
+    },
+    {
+      "path": "assets/Pan/pot.ply",
+      "git_blob": "0f535b1d116a9831597b22524b860c0a179c311e"
+    },
+    {
+      "path": "assets/Pan/potLid.ply",
+      "git_blob": "189fce3e4ec7e086afd27d4762ee20365f61ba29"
+    },
+    {
+      "path": "assets/PaperCup/blue_cup.ply",
+      "git_blob": "ec83a7ed79b736df3de4c3045aa7972ff15e008e"
+    },
+    {
+      "path": "assets/PaperCup/green_cup.ply",
+      "git_blob": "39f38056fea2b738efef4d2151db8d533ccca47c"
+    },
+    {
+      "path": "assets/PaperCup/red_cup.ply",
+      "git_blob": "e95962c90d3709e2a3bee51b4465a611f0561e15"
+    },
+    {
+      "path": "assets/Pen/a6_cuboid_centered.mtl",
+      "git_blob": "d794e66722d7bde2c8d5a8a476caca149604f0a1"
+    },
+    {
+      "path": "assets/Pen/a6_cuboid_centered.obj",
+      "git_blob": "964c23bc746327f3861e0c6fc59e136d32d469e9"
+    },
+    {
+      "path": "assets/Pen/atomic_pen_centered.mtl",
+      "git_blob": "b38e6fda0dca8876b6f74e19b9c3d0c46b17b600"
+    },
+    {
+      "path": "assets/Pen/atomic_pen_centered.obj",
+      "git_blob": "8543ab85dba51e67ef7aae156b71333237c6f2ff"
+    },
+    {
+      "path": "assets/Pen/fine_point_pen_centered.mtl",
+      "git_blob": "5a149a34859f4d284ea22d47ef9d106cdbf1ece8"
+    },
+    {
+      "path": "assets/Pen/fine_point_pen_centered.obj",
+      "git_blob": "8fc7f0ceb82a50182fcb92e08c28da0c5b29dcd8"
+    },
+    {
+      "path": "assets/Pen/the_pen.mtl",
+      "git_blob": "6d6d2c219e3332097dd7deedf1d3441061031659"
+    },
+    {
+      "path": "assets/Pen/the_pen.obj",
+      "git_blob": "76a91f69dde2b945526aa695735d38e99b3f4b80"
+    },
+    {
+      "path": "assets/PenHolder/pen_holder.mtl",
+      "git_blob": "4dea2239c2f3c1f297f0b0bb4261a2bbf26ee4fd"
+    },
+    {
+      "path": "assets/PenHolder/pen_holder.obj",
+      "git_blob": "5e1e3fd293955e8a24bcfe7e04e234f1c53c968d"
+    },
+    {
+      "path": "assets/background_texture/100/1.png",
+      "git_blob": "962c5d20a9aeff9f7a82505b3b3a2892d0481880"
+    },
+    {
+      "path": "assets/background_texture/100/10.png",
+      "git_blob": "2847334744d842fde4dcdc6338fe05b72ab826c1"
+    },
+    {
+      "path": "assets/background_texture/100/100.png",
+      "git_blob": "64c8cb5b34a16761df367375c05d43ea8fdc8376"
+    },
+    {
+      "path": "assets/background_texture/100/11.png",
+      "git_blob": "e41ad0392bab969e2cbde0c80f253889a13f0ff5"
+    },
+    {
+      "path": "assets/background_texture/100/12.png",
+      "git_blob": "5c63214a03abe2e8e677d2e39a938e4d8cd2c0bb"
+    },
+    {
+      "path": "assets/background_texture/100/13.png",
+      "git_blob": "3e4e7f5f7647eebc05ba8104fabb09268db88fbe"
+    },
+    {
+      "path": "assets/background_texture/100/14.png",
+      "git_blob": "caea62599f18563da31e9a9fd4a08bea3e6b0f05"
+    },
+    {
+      "path": "assets/background_texture/100/15.png",
+      "git_blob": "5be1ca035dc02918cf6b767c22e913a1f393d103"
+    },
+    {
+      "path": "assets/background_texture/100/16.png",
+      "git_blob": "665642f23f69121eeb194f91e9ba369550f75210"
+    },
+    {
+      "path": "assets/background_texture/100/17.png",
+      "git_blob": "16f92ca7eaf1c8ee10b0e23139ad9bd9c3e84553"
+    },
+    {
+      "path": "assets/background_texture/100/18.png",
+      "git_blob": "185e7037de5136150d9d5d7737ed1c91e6cd540f"
+    },
+    {
+      "path": "assets/background_texture/100/19.png",
+      "git_blob": "43b2db225e3e87918266f9bf57df363c5e2466c1"
+    },
+    {
+      "path": "assets/background_texture/100/2.png",
+      "git_blob": "8e4de1032958f4885454801c5696ab2bfd2462c6"
+    },
+    {
+      "path": "assets/background_texture/100/20.png",
+      "git_blob": "b3c9899ce0519304e3a23e37f1899c44562e08a4"
+    },
+    {
+      "path": "assets/background_texture/100/21.png",
+      "git_blob": "426dae4289fd52d0225afb879c1818d94b59cc53"
+    },
+    {
+      "path": "assets/background_texture/100/22.png",
+      "git_blob": "f89cfb968c4edde289972fac73977a04b05c6e46"
+    },
+    {
+      "path": "assets/background_texture/100/23.png",
+      "git_blob": "a1298742c9f696b942de7cf5ac2d56622ef04ffb"
+    },
+    {
+      "path": "assets/background_texture/100/24.png",
+      "git_blob": "0182c72b2868ceb228c85db2ee3f4356323b98bd"
+    },
+    {
+      "path": "assets/background_texture/100/25.png",
+      "git_blob": "0597d3591c22b5abe46e210e80a19c8d0786913e"
+    },
+    {
+      "path": "assets/background_texture/100/26.png",
+      "git_blob": "175b84e372ba103972b509253d4210aa3c45ae71"
+    },
+    {
+      "path": "assets/background_texture/100/27.png",
+      "git_blob": "296ffc2ac0bb90448e1ea47c8f7f756a3ca60231"
+    },
+    {
+      "path": "assets/background_texture/100/28.png",
+      "git_blob": "b422e155f1aa06de05a18c6156c22083e1355433"
+    },
+    {
+      "path": "assets/background_texture/100/29.png",
+      "git_blob": "9f8d22f93eaaf34fad6413314351c9c661766504"
+    },
+    {
+      "path": "assets/background_texture/100/3.png",
+      "git_blob": "ec8e471a64a0cc690caee11329c9f90639a8a2b6"
+    },
+    {
+      "path": "assets/background_texture/100/30.png",
+      "git_blob": "0b41da7739c682bba9e7e5d57b6219c1801282fe"
+    },
+    {
+      "path": "assets/background_texture/100/31.png",
+      "git_blob": "5f9d75078c70e911d0ae21b9b712e64ca43de5aa"
+    },
+    {
+      "path": "assets/background_texture/100/32.png",
+      "git_blob": "3b28e128c75061041dfa9452fc26800fb7c18dc7"
+    },
+    {
+      "path": "assets/background_texture/100/33.png",
+      "git_blob": "3ca07b46ac497bc6adfcc6c2cc3c87da726d1ecc"
+    },
+    {
+      "path": "assets/background_texture/100/34.png",
+      "git_blob": "8a13dd0b29a548c01f0c88f2833b76081426e94d"
+    },
+    {
+      "path": "assets/background_texture/100/35.png",
+      "git_blob": "cc9debf485d5762f134d02606011b128d80691e9"
+    },
+    {
+      "path": "assets/background_texture/100/36.png",
+      "git_blob": "e3c11b69bfdead124121e9c579ee150931867441"
+    },
+    {
+      "path": "assets/background_texture/100/37.png",
+      "git_blob": "6459b14eb5a64dbf7e9f592b7f94c3a497ac8db2"
+    },
+    {
+      "path": "assets/background_texture/100/38.png",
+      "git_blob": "e10fb58d01f7626c5ff774890f940e4e44be9c8b"
+    },
+    {
+      "path": "assets/background_texture/100/39.png",
+      "git_blob": "25c8a1fc442eadcec5a63fc0e966e4e2a65be53c"
+    },
+    {
+      "path": "assets/background_texture/100/4.png",
+      "git_blob": "5264e0cb4b213c4916b2bc1200829cde610f2b21"
+    },
+    {
+      "path": "assets/background_texture/100/40.png",
+      "git_blob": "611446a4bcd49278e43b9398474d2013b170370e"
+    },
+    {
+      "path": "assets/background_texture/100/41.png",
+      "git_blob": "48699f1d977b279f3e9567dcde9754df742631be"
+    },
+    {
+      "path": "assets/background_texture/100/42.png",
+      "git_blob": "0179703f0489a91f2b9e5e7f91d0101cf532db1d"
+    },
+    {
+      "path": "assets/background_texture/100/43.png",
+      "git_blob": "c177fe11d6d620776b8b2424e89b249e0032b3d6"
+    },
+    {
+      "path": "assets/background_texture/100/44.png",
+      "git_blob": "802838662cb2c8c037e6e35e7f29042ce7ac73ec"
+    },
+    {
+      "path": "assets/background_texture/100/45.png",
+      "git_blob": "5bf3f34aa5027b018255bc97e467299509f43279"
+    },
+    {
+      "path": "assets/background_texture/100/46.png",
+      "git_blob": "c295f607767b957d65f514127caa4a97a0eaea6c"
+    },
+    {
+      "path": "assets/background_texture/100/47.png",
+      "git_blob": "0c418951b1c9a03851d84a11799e4ed5dcd0b975"
+    },
+    {
+      "path": "assets/background_texture/100/48.png",
+      "git_blob": "1ecca17dae59fc58e4c640317272d7b8244c1b23"
+    },
+    {
+      "path": "assets/background_texture/100/49.png",
+      "git_blob": "a7912259a52d757935a59ff9fe4d5e7dc862444b"
+    },
+    {
+      "path": "assets/background_texture/100/5.png",
+      "git_blob": "f21e0e65608e5da070aaf2c7b8655e0076d2e3f0"
+    },
+    {
+      "path": "assets/background_texture/100/50.png",
+      "git_blob": "abd90b8132113321eaf0395729b8be6ba3c14fa4"
+    },
+    {
+      "path": "assets/background_texture/100/51.png",
+      "git_blob": "0cd91deb76ee1abedb0c569f3c59841206341a16"
+    },
+    {
+      "path": "assets/background_texture/100/52.png",
+      "git_blob": "d4f72d02fd3ecc3d72e29d8f436a7ab928ba4d59"
+    },
+    {
+      "path": "assets/background_texture/100/53.png",
+      "git_blob": "d78c8f92bc81b103c088bb8037a142e6fc626ca0"
+    },
+    {
+      "path": "assets/background_texture/100/54.png",
+      "git_blob": "5e194ae09e13dc17deea4fb7efdafb5cc2a70ecc"
+    },
+    {
+      "path": "assets/background_texture/100/55.png",
+      "git_blob": "b7f71c6a3b5587008183044f16e50f30497ed4bb"
+    },
+    {
+      "path": "assets/background_texture/100/56.png",
+      "git_blob": "e8f63ec57007893f9db4b09911182fbcd12da7aa"
+    },
+    {
+      "path": "assets/background_texture/100/57.png",
+      "git_blob": "d6dfa947ae351fde49a53d1c702c973f47ca6a7e"
+    },
+    {
+      "path": "assets/background_texture/100/58.png",
+      "git_blob": "7740c412fba400d323bcb9119b4d940b4663e907"
+    },
+    {
+      "path": "assets/background_texture/100/59.png",
+      "git_blob": "fcadc40332e599ed5b3b65d1a6d8396db9c9e0ea"
+    },
+    {
+      "path": "assets/background_texture/100/6.png",
+      "git_blob": "43cc82c1810e0d578df40cc0639fb56665b809ba"
+    },
+    {
+      "path": "assets/background_texture/100/60.png",
+      "git_blob": "e7e02866f1680a15eb5e3b6ccb80767d5bd3e303"
+    },
+    {
+      "path": "assets/background_texture/100/61.png",
+      "git_blob": "5431fea22cfa336a4b115c53afbc1442ecdc4ade"
+    },
+    {
+      "path": "assets/background_texture/100/62.png",
+      "git_blob": "0cab7127889497a5e168f4e6cf40be1e5ef88d75"
+    },
+    {
+      "path": "assets/background_texture/100/63.png",
+      "git_blob": "7ec2d97fe05363bad9eded25f0590fde5a0122b7"
+    },
+    {
+      "path": "assets/background_texture/100/64.png",
+      "git_blob": "f5195e97c236a0365e740923950a84f748859f3e"
+    },
+    {
+      "path": "assets/background_texture/100/65.png",
+      "git_blob": "5bb1693a551da5ccca59c4a93b655f0866378765"
+    },
+    {
+      "path": "assets/background_texture/100/66.png",
+      "git_blob": "24478e347c27e739d47b12a935224e1db5dacaac"
+    },
+    {
+      "path": "assets/background_texture/100/67.png",
+      "git_blob": "b81f33ecac39cf7694b39a57d3f19d3b8a905d54"
+    },
+    {
+      "path": "assets/background_texture/100/68.png",
+      "git_blob": "1608932ecdb800835a15be4b4557ceaf7aad787d"
+    },
+    {
+      "path": "assets/background_texture/100/69.png",
+      "git_blob": "a8e8d6f5ef422b0b3dbba02aa0c722c1d83b9a06"
+    },
+    {
+      "path": "assets/background_texture/100/7.png",
+      "git_blob": "b5ee5ef3a4480bedcf06f2ecf4bb39e4b35382df"
+    },
+    {
+      "path": "assets/background_texture/100/70.png",
+      "git_blob": "1fc8a5199af3c91ec4f6ea03d833095ecf38a5fe"
+    },
+    {
+      "path": "assets/background_texture/100/71.png",
+      "git_blob": "7cd362eee6037f66aa029c173358212ee6c4b9f4"
+    },
+    {
+      "path": "assets/background_texture/100/72.png",
+      "git_blob": "0f79904e7ded9125ef4f239253d9924196ed6b0a"
+    },
+    {
+      "path": "assets/background_texture/100/73.png",
+      "git_blob": "79f14559cdc487b81ebb74c6328d40746ac0037b"
+    },
+    {
+      "path": "assets/background_texture/100/74.png",
+      "git_blob": "db6e94c9fdf6dacd84300a8330197cd4fdf36a55"
+    },
+    {
+      "path": "assets/background_texture/100/75.png",
+      "git_blob": "de9c859a6419992e836d6c56c52d9b660b414ee8"
+    },
+    {
+      "path": "assets/background_texture/100/76.png",
+      "git_blob": "c15200c15a31c9c3643aa91c02f0c3c4da7a55f3"
+    },
+    {
+      "path": "assets/background_texture/100/77.png",
+      "git_blob": "c8326a5e0a28966d0e2e53d00a188ec5f3f42faa"
+    },
+    {
+      "path": "assets/background_texture/100/78.png",
+      "git_blob": "89951928ded74d9cf2b27e1c1bf17dd9d3866c0a"
+    },
+    {
+      "path": "assets/background_texture/100/79.png",
+      "git_blob": "70b2fbfe443aefb47793645117ae0706e56fef43"
+    },
+    {
+      "path": "assets/background_texture/100/8.png",
+      "git_blob": "4be4e08e8df7aa8bec19cbd2e97061f2f2aa339b"
+    },
+    {
+      "path": "assets/background_texture/100/80.png",
+      "git_blob": "743a921854070961d1e4746c79b7ec9510fc6162"
+    },
+    {
+      "path": "assets/background_texture/100/81.png",
+      "git_blob": "e8948e7a753218e05dfdb2b12d5a324f76dfc1f6"
+    },
+    {
+      "path": "assets/background_texture/100/82.png",
+      "git_blob": "c4c230a87f6c4ce692fbcd271db6dd40b4fbeeb2"
+    },
+    {
+      "path": "assets/background_texture/100/83.png",
+      "git_blob": "23ad83d538c2d5abcec5743ae4ce10521cda17ef"
+    },
+    {
+      "path": "assets/background_texture/100/84.png",
+      "git_blob": "9a0bd459b2ac447bb201f0c8672e553c75a50249"
+    },
+    {
+      "path": "assets/background_texture/100/85.png",
+      "git_blob": "adc2fa01d805aadd06153f91e8b90a3149b625fe"
+    },
+    {
+      "path": "assets/background_texture/100/86.png",
+      "git_blob": "3d7312b9a357c69bf0e098f60bfb8b20df7d2199"
+    },
+    {
+      "path": "assets/background_texture/100/87.png",
+      "git_blob": "7eada87da9029225482b042dd20ed8fdb46f88fa"
+    },
+    {
+      "path": "assets/background_texture/100/88.png",
+      "git_blob": "ca2b8e32128f7d3a87de95b32703fbe7a1737d28"
+    },
+    {
+      "path": "assets/background_texture/100/89.png",
+      "git_blob": "1c299532a4d3ea4161326863f877d40a32e6e52b"
+    },
+    {
+      "path": "assets/background_texture/100/9.png",
+      "git_blob": "eba2836cbf4a0cc284706c11d2c1d2c6e2e8751a"
+    },
+    {
+      "path": "assets/background_texture/100/90.png",
+      "git_blob": "85484b6416dafe45ec47c2909fc239ea4a5ff7f5"
+    },
+    {
+      "path": "assets/background_texture/100/91.png",
+      "git_blob": "38f24ffd8f25042c2b5dad297c4aeea6cbfd0724"
+    },
+    {
+      "path": "assets/background_texture/100/92.png",
+      "git_blob": "4e63373bb419c1049aecc9a2a8d98f2df19924a2"
+    },
+    {
+      "path": "assets/background_texture/100/93.png",
+      "git_blob": "f0a86b39deb8408655277339b85d5382670512e4"
+    },
+    {
+      "path": "assets/background_texture/100/94.png",
+      "git_blob": "f5d9c4f83a325863c6e0f5db51aad02abc9f49e3"
+    },
+    {
+      "path": "assets/background_texture/100/95.png",
+      "git_blob": "07c0224311d6058cf8d8bb8888d8c57c2e180747"
+    },
+    {
+      "path": "assets/background_texture/100/96.png",
+      "git_blob": "cfd43377db90dc0e0efe9d1e7e8c16e8529bbb8d"
+    },
+    {
+      "path": "assets/background_texture/100/97.png",
+      "git_blob": "667f6ff835742501479c3a4d158c08cd94aa9ba8"
+    },
+    {
+      "path": "assets/background_texture/100/98.png",
+      "git_blob": "0ea5e4b6e5fda76e27eb4742cbe3d536ca5c8117"
+    },
+    {
+      "path": "assets/background_texture/100/99.png",
+      "git_blob": "7a2164cbb4bc81204dcd16cd4bfb633fa012fa97"
+    },
+    {
+      "path": "assets/beaker_mixer/beaker_mixer.mtl",
+      "git_blob": "ac17643ff56873deb29859c8a57a74ad3b14fe49"
+    },
+    {
+      "path": "assets/beaker_mixer/beaker_mixer.obj",
+      "git_blob": "b996883376f7c0398db0648583deda355e1a90d4"
+    },
+    {
+      "path": "assets/beaker_mixer/image0.png",
+      "git_blob": "7788d0acfb4069dea308f5baf533110e3ebe4db2"
+    },
+    {
+      "path": "assets/beaker_mixer/image1.png",
+      "git_blob": "185bb777cffc5794d7f6a3740189d692a80514f2"
+    },
+    {
+      "path": "assets/bottle/Image_0.png",
+      "git_blob": "a8fa6a0a67384fdebbbdcd6af57668443dd22a7e"
+    },
+    {
+      "path": "assets/bottle/Image_1.png",
+      "git_blob": "691744d3bb13efd38c4963480ca01b98ee848c37"
+    },
+    {
+      "path": "assets/bottle/Image_2.png",
+      "git_blob": "3772841a756ea1d07fc0ac5d2754215b0e9aa1dc"
+    },
+    {
+      "path": "assets/bottle/bottle.mtl",
+      "git_blob": "0c1eccee891ecd1ecf014d393f0aa1ad884e3727"
+    },
+    {
+      "path": "assets/bottle/bottle.obj",
+      "git_blob": "85c365d7c982d7c40356a51fd0c352aa0a7a5d7d"
+    },
+    {
+      "path": "assets/bottle/readme.txt",
+      "git_blob": "dc8c26c69924a6f3d4323f5fc583f8da0cbd884d"
+    },
+    {
+      "path": "assets/button/Collision/button_base.obj",
+      "git_blob": "a91f42703c719a1abc4bd87f5c91b868f89a7de5"
+    },
+    {
+      "path": "assets/button/Collision/button_base.stl",
+      "git_blob": "af291a06cb99d809a9b256333cef30624cf6f8ad"
+    },
+    {
+      "path": "assets/button/Collision/button_cover.obj",
+      "git_blob": "cb966a22f61a202e7786c64e2fbdb30c653d7b32"
+    },
+    {
+      "path": "assets/button/Collision/button_cover.stl",
+      "git_blob": "bfd5dd8a5544e1e87dccb5c3308987bfcb48b64b"
+    },
+    {
+      "path": "assets/button/Visual/button_base.mtl",
+      "git_blob": "856cb992cb6da8e1cb2c4d6e9befbf034a7cafa2"
+    },
+    {
+      "path": "assets/button/Visual/button_base.obj",
+      "git_blob": "fe73bcc85498592333329fdf2957e5feee8f8825"
+    },
+    {
+      "path": "assets/button/Visual/button_cover.mtl",
+      "git_blob": "2297782a3d547ed9c4f0e35bf62279c83a15b6a9"
+    },
+    {
+      "path": "assets/button/Visual/button_cover.obj",
+      "git_blob": "9756c8e76c36be4e82dcecefd846a7e777258603"
+    },
+    {
+      "path": "assets/button/button.urdf",
+      "git_blob": "229256d48ffd16701eef4b80f04b6468187b21cc"
+    },
+    {
+      "path": "assets/guijiao_standard/1guijiao_standard.ply",
+      "git_blob": "3182e35db9a4b3e5a498d66db5acb3146eb8a232"
+    },
+    {
+      "path": "assets/guijiao_standard/2guijiao_standard.ply",
+      "git_blob": "77a24afb7e4ca416b2a7baa18c2cec4c5c1428c7"
+    },
+    {
+      "path": "assets/pipette_good/.thumbs/256x256/111.usda.png",
+      "git_blob": "679e93d8dfcab3460e8935f94afd0a4634777dc4"
+    },
+    {
+      "path": "assets/pipette_good/.thumbs/256x256/Pipette.usd.png",
+      "git_blob": "cc6e9b61ebb9120ce332714c7691f48b892241a9"
+    },
+    {
+      "path": "assets/pipette_good/.thumbs/256x256/pipette_good.usda.png",
+      "git_blob": "06818101e1470ad9f8565bf7eca756b23c884b82"
+    },
+    {
+      "path": "assets/pipette_good/.thumbs/256x256/xmh_bake.usda.png",
+      "git_blob": "7c6fbf5f515ed3436e9565aadbd46aa9b0042521"
+    },
+    {
+      "path": "assets/pipette_good/111.usda",
+      "git_blob": "3ab7dc8e0e7884f13e580181739cbfe7e268b7e9"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0000/image_0000.jpg",
+      "git_blob": "9a0f67d56d82ad2503df480c3e14ece4b2be36fe"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0000/image_0001.jpg",
+      "git_blob": "9ea0f0e15966b76a40dce4f536e9176ff4aeb5c0"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0000/image_0002.jpg",
+      "git_blob": "f77f8641bc645f4104827defc65f50002a117595"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0000/image_0003.jpg",
+      "git_blob": "aeaa8af499762618d9132636ed7ddbdd3f16430d"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0001/image_0004.jpg",
+      "git_blob": "9ea0f0e15966b76a40dce4f536e9176ff4aeb5c0"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0002/image_0005.jpg",
+      "git_blob": "bedf0ab631c7dea517b1d5eb939a126474b4e37b"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0002/image_0006.jpg",
+      "git_blob": "f6d8c3b73d7a0969ed00c8ad0fc34064f0cb3eae"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0002/image_0007.jpg",
+      "git_blob": "77d02f978926752a273d7dc562ff66c05f0ee1a9"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0003/image_0008.jpg",
+      "git_blob": "d92bc67b69f96debcd5cc08c35f09fd856b018ab"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0003/image_0009.jpg",
+      "git_blob": "0d30d021429230788f27653e645e31c452540aac"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0003/image_0010.jpg",
+      "git_blob": "346815bbab0b8956b7e8639da42b375645f1861b"
+    },
+    {
+      "path": "assets/pipette_good/Materials/folder_0003/image_0011.jpg",
+      "git_blob": "16e8c1944fe7ebf7c90344aedebd7fcb08c1343d"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0000.mdl",
+      "git_blob": "035dde436bdab5130f8ea0c95148184d3eea5a6d"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0001.mdl",
+      "git_blob": "6f228df16498933018d3bf26972a7861e42ffaab"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0002.mdl",
+      "git_blob": "8a85846093f31a1b29a2a7c9bba018b86e6c3c51"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0003.mdl",
+      "git_blob": "47586adf9748b05e0ff8997a833439e3b9456460"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0004.mdl",
+      "git_blob": "ea9e3a5d2d092bd5b9b639c7a8682002dcf25f60"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0005.mdl",
+      "git_blob": "68d1151fff734443022f3c97c4041c5b0c7ce6ec"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0006.mdl",
+      "git_blob": "cf10f8646fdd6c6fe50af9686d6802b883b582f3"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0007.mdl",
+      "git_blob": "c1f84e2dd63558ac100f7bc3094ff7816b5bcd15"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0008.mdl",
+      "git_blob": "a79ee7585e02003aa7161d7f12ce264c93b96405"
+    },
+    {
+      "path": "assets/pipette_good/Materials/mdl_0009.mdl",
+      "git_blob": "9c5322d58a4355e29425446a31ad8ceef4275217"
+    },
+    {
+      "path": "assets/pipette_good/baked_textures_cwb0ahcb/mtl-base_color.jpg",
+      "git_blob": "70809fa18867e0d7bca0e862e31359972ba368fd"
+    },
+    {
+      "path": "assets/pipette_good/baked_textures_cwb0ahcb/mtl-clearcoat_normal.jpg",
+      "git_blob": "d5d9fd826bf4d9476acda77f009eb6186f9b9938"
+    },
+    {
+      "path": "assets/pipette_good/baked_textures_cwb0ahcb/mtl-clearcoat_roughness.jpg",
+      "git_blob": "16f117fc7d9d226abf4b4e7ebdf0f483ec16292a"
+    },
+    {
+      "path": "assets/pipette_good/baked_textures_cwb0ahcb/mtl-emission.jpg",
+      "git_blob": "63e1a71a943004a22770f7cf8c208e15627bb1fe"
+    },
+    {
+      "path": "assets/pipette_good/baked_textures_cwb0ahcb/mtl-normal.jpg",
+      "git_blob": "d5d9fd826bf4d9476acda77f009eb6186f9b9938"
+    },
+    {
+      "path": "assets/pipette_good/meshes/pipette_button.mtl",
+      "git_blob": "503a34d8e05563ad1e4f1e0d1ba103eced35d4ac"
+    },
+    {
+      "path": "assets/pipette_good/meshes/pipette_button.obj",
+      "git_blob": "c6070e0a4401798b43e4e54b84507468be1656f4"
+    },
+    {
+      "path": "assets/pipette_good/meshes/pipette_button_acd.obj",
+      "git_blob": "f41c359a1453959f5f5a9349681b0bdceb705421"
+    },
+    {
+      "path": "assets/pipette_good/meshes/pipette_tip.mtl",
+      "git_blob": "503a34d8e05563ad1e4f1e0d1ba103eced35d4ac"
+    },
+    {
+      "path": "assets/pipette_good/meshes/pipette_tip.obj",
+      "git_blob": "06c18b390a1bb8cb75e24053cce94d77cac459a4"
+    },
+    {
+      "path": "assets/pipette_good/meshes/pipette_tip_acd.obj",
+      "git_blob": "1e8625072064551a060bc14e65ceefe840ca54a7"
+    },
+    {
+      "path": "assets/pipette_good/pipette_good.urdf",
+      "git_blob": "f090293008e92d2c5b20fb23e48011d36a30ee9b"
+    },
+    {
+      "path": "assets/pipette_good/pipette_good.usd",
+      "git_blob": "e6b853a21c709e8a80dc322ef00aafdecb779dbe"
+    },
+    {
+      "path": "assets/pipette_good/pipette_good.usda",
+      "git_blob": "780c57ef02453501a4930be1b535f4b829eadc0a"
+    },
+    {
+      "path": "assets/pipette_good/xmh_bake.usda",
+      "git_blob": "ac6d1d692461446edef330047e5c09d7fc4d00f9"
+    },
+    {
+      "path": "assets/test_tube_rack_standard.ply",
+      "git_blob": "1778a4bcaabaffd9875a208681df80e3010f7206"
+    },
+    {
+      "path": "assets/test_tube_standard.ply",
+      "git_blob": "eb2acd2fd623582371fa910a325d0096c020f7b3"
+    },
+    {
+      "path": "assets/tomato/asset.json",
+      "git_blob": "0e940382ce06b9951982b186956ea1fff6b56830"
+    },
+    {
+      "path": "assets/tomato/asset_usd/asset_simready_inst.usdc",
+      "git_blob": "efd633e295955a56165838044d8d69b91a0f0add"
+    },
+    {
+      "path": "assets/tomato/asset_usd/asset_simready_inst.usdz",
+      "git_blob": "e6038bc2177b8e448b9d6f52ed98cceb36df00f5"
+    },
+    {
+      "path": "assets/tomato/asset_usd/asset_simready_inst_base.usda",
+      "git_blob": "e5ec18a2734465de3db9767a3839c104d726b360"
+    },
+    {
+      "path": "assets/tomato/asset_usd/textures/diffuse.png",
+      "git_blob": "2c940ddd0fdadf1545b14a1c473a707dc993556a"
+    },
+    {
+      "path": "assets/tomato/tomato_asset_simready/asset_simready.obj",
+      "git_blob": "44d7e0cdc731190eb14ae04718641142a35830c0"
+    },
+    {
+      "path": "assets/tomato/tomato_asset_simready/material.mtl",
+      "git_blob": "b1276297bf6300bbe2d99a05b68dda23071a3b72"
+    },
+    {
+      "path": "assets/tomato/tomato_asset_simready/material_0.png",
+      "git_blob": "2c940ddd0fdadf1545b14a1c473a707dc993556a"
+    },
+    {
+      "path": "configs/click_bell/action_config.json",
+      "git_blob": "6d4acfbc14a8bbb02f0a3226272147f46ca18783"
+    },
+    {
+      "path": "configs/click_bell/action_config_table_height.json",
+      "git_blob": "a6dbacf15a1a991f8e2aae7bddb7f209ebf8e511"
+    },
+    {
+      "path": "configs/click_bell/clear/gym_config.json",
+      "git_blob": "2faba9ef4f96984ef594c29d451cb81f080d9d64"
+    },
+    {
+      "path": "configs/click_bell/gym_config_align_real.json",
+      "git_blob": "770f0a1d44a32cef890986353f98f17926918557"
+    },
+    {
+      "path": "configs/click_bell/gym_config_random_test.json",
+      "git_blob": "67178cf112e17a2802db42aa1b79f0fe00ccead4"
+    },
+    {
+      "path": "configs/click_bell/gym_config_table_height.json",
+      "git_blob": "2774f809be8d52a2ed74ea4f764899754fa81179"
+    },
+    {
+      "path": "configs/click_bell/random/gym_config.json",
+      "git_blob": "b98b9505fb9152a183ea078fc653029bf2d2c8f4"
+    },
+    {
+      "path": "configs/drawer_open_place/action_config.json",
+      "git_blob": "1b7254139abbbd3e87648530318cab11f16d80a3"
+    },
+    {
+      "path": "configs/drawer_open_place/clear/gym_config.json",
+      "git_blob": "67dbe45f720e8d74158e416e457b0b07c0944e23"
+    },
+    {
+      "path": "configs/drawer_open_place/gym_config_random_test.json",
+      "git_blob": "30e97ff7ec303ebca8531bee7dae115c10c99a8c"
+    },
+    {
+      "path": "configs/drawer_open_place/random/gym_config.json",
+      "git_blob": "4494968572970a260ccc7a4ab081f25cc58d2064"
+    },
+    {
+      "path": "configs/handle_basket/action_config.json",
+      "git_blob": "658e3be0901624bbbf446912defd7be14d2b93ee"
+    },
+    {
+      "path": "configs/handle_basket/clear/gym_config.json",
+      "git_blob": "989cc96807998e4849cf82e6d687eebf0cd0f697"
+    },
+    {
+      "path": "configs/handle_basket/gym_config_random_test.json",
+      "git_blob": "972ee72ef8081fb727ed57f0cf9050ef83f39d80"
+    },
+    {
+      "path": "configs/handle_basket/random/gym_config.json",
+      "git_blob": "54e802371ecc24006e64efcc12e368a1140a1eec"
+    },
+    {
+      "path": "configs/item_assembly/action_config.json",
+      "git_blob": "72c656f50779e416c4f552bb4d0387261b120404"
+    },
+    {
+      "path": "configs/item_assembly/clear/gym_config.json",
+      "git_blob": "ffbba13ea4c3401cff768fd89b44b6e56d725721"
+    },
+    {
+      "path": "configs/item_assembly/random/gym_config.json",
+      "git_blob": "e69a00ed7168249df253d7739a50d54945ba1ac1"
+    },
+    {
+      "path": "configs/items_handover/action_config.json",
+      "git_blob": "8f576204a795c703e7b3cc59c9931bc1a6d0d02c"
+    },
+    {
+      "path": "configs/items_handover/clear/gym_config.json",
+      "git_blob": "538b76fa2373774422bd44be7df04ff3c4cbf1c4"
+    },
+    {
+      "path": "configs/items_handover/gym_config_random_test.json",
+      "git_blob": "05bdccf20b10a503554df282860f762d1cb56067"
+    },
+    {
+      "path": "configs/items_handover/random/gym_config.json",
+      "git_blob": "b3539d7ed0f509e0f5351ba592783bd3404af704"
+    },
+    {
+      "path": "configs/manipulate_pipette/action_config.json",
+      "git_blob": "f8cc7316a1628a220f43c854a73e923f50091311"
+    },
+    {
+      "path": "configs/manipulate_pipette/clear/gym_config.json",
+      "git_blob": "6f0e03f67ab3ef1534fb6335e006d9d732f9604d"
+    },
+    {
+      "path": "configs/manipulate_pipette/gym_config_random_test.json",
+      "git_blob": "37411b778586d8c1a8e7b1bb1dba58e019c626fe"
+    },
+    {
+      "path": "configs/manipulate_pipette/random/gym_config.json",
+      "git_blob": "603a482ed672f784da787b60eefe8b43d81a4592"
+    },
+    {
+      "path": "configs/mixer_operating/action_config.json",
+      "git_blob": "2168fa92149766eb038ff3b0a90843599d9f3cf5"
+    },
+    {
+      "path": "configs/mixer_operating/action_config_before.json",
+      "git_blob": "56c53090079df45e6d2bbeadbd3a5f2e0bf13837"
+    },
+    {
+      "path": "configs/mixer_operating/clear/gym_config.json",
+      "git_blob": "9bbaf243c3bbde54310f043fde1c53c31aaa13dd"
+    },
+    {
+      "path": "configs/mixer_operating/gym_config_before.json",
+      "git_blob": "bb139da815cda23fa08640ebf83f0db6bda194a0"
+    },
+    {
+      "path": "configs/mixer_operating/gym_config_dual_random_test.json",
+      "git_blob": "ee868b9ecfc4a1a0f00445120aa930f7232da3d3"
+    },
+    {
+      "path": "configs/mixer_operating/random/gym_config.json",
+      "git_blob": "9f466d833fe6ef41a63d4234c0ae108d6534aea5"
+    },
+    {
+      "path": "configs/other_tasks/manipulate_pipette_two_beaker/action_config.json",
+      "git_blob": "6f10a7de02ae47739bda1795729ebc9e7ba2b404"
+    },
+    {
+      "path": "configs/other_tasks/manipulate_pipette_two_beaker/clear/gym_config.json",
+      "git_blob": "43379c9a13f70cdbe424d036632e8bed6b212d6f"
+    },
+    {
+      "path": "configs/other_tasks/manipulate_pipette_two_beaker/gym_config_two_beaker_random_test.json",
+      "git_blob": "48f608ef66140a7e1c97a48c2ad9c6ad00a60125"
+    },
+    {
+      "path": "configs/other_tasks/manipulate_pipette_two_beaker/random/gym_config.json",
+      "git_blob": "184d005788f02f9c6f9c884884922a2a9a2aa507"
+    },
+    {
+      "path": "configs/other_tasks/open_pan/action_config.json",
+      "git_blob": "870e998de0550e8f20d52bbad684bd64b7ff5403"
+    },
+    {
+      "path": "configs/other_tasks/open_pan/clear/gym_config.json",
+      "git_blob": "5a95124f340ed2f9e0f635ec05d3feab1b97a9ac"
+    },
+    {
+      "path": "configs/other_tasks/open_pan/gym_config.json",
+      "git_blob": "3a9f3c79e2364607da38277bb299b5d084aacfdd"
+    },
+    {
+      "path": "configs/other_tasks/open_pan/gym_config_random_test.json",
+      "git_blob": "65647105602b5a691da770faffe1322a64ab21fd"
+    },
+    {
+      "path": "configs/other_tasks/open_pan/random/gym_config.json",
+      "git_blob": "40043de86cf1dfb2b6db1a72d67019f541d60b71"
+    },
+    {
+      "path": "configs/other_tasks/pour_water/action_config.json",
+      "git_blob": "5a8a4946f36d56b418c3f156efcb0f2f17fee7d1"
+    },
+    {
+      "path": "configs/other_tasks/pour_water/action_config_dual.json",
+      "git_blob": "6b349643aebbe01f69d45053276c0280cdd664ee"
+    },
+    {
+      "path": "configs/other_tasks/pour_water/gym_config.json",
+      "git_blob": "324b99bc45449624c6193a3dcf0d7412ba81f633"
+    },
+    {
+      "path": "configs/other_tasks/pour_water/gym_config_dual.json",
+      "git_blob": "b0b0811b629aba1e92dab7aadc9deebfbcbf6110"
+    },
+    {
+      "path": "configs/other_tasks/sample_loading/action_config.json",
+      "git_blob": "cb6f7f7ce37192d53bdbd5e9bace4d15aecd09be"
+    },
+    {
+      "path": "configs/other_tasks/sample_loading/gym_config.json",
+      "git_blob": "8c90e2fc8c8d6e480a1162c7a46f031c767498ac"
+    },
+    {
+      "path": "configs/sample_loading/action_config.json",
+      "git_blob": "9edae3036da7802965323d3d346d5dec5285473e"
+    },
+    {
+      "path": "configs/sample_loading/clear/gym_config.json",
+      "git_blob": "d82e6215c94dda85617cfe2c6a91c3cbb419b997"
+    },
+    {
+      "path": "configs/sample_loading/gym_config_random_test.json",
+      "git_blob": "7daae3981f07bedc1157e7ea99440bafc6dc1220"
+    },
+    {
+      "path": "configs/sample_loading/random/gym_config.json",
+      "git_blob": "caa2dc43a645ba4863b1c229e8a7e1cb007851d1"
+    },
+    {
+      "path": "configs/table_rearrangement/action_config.json",
+      "git_blob": "1f1fbaff76d4a330ee3f0b917c2cf4713c95901c"
+    },
+    {
+      "path": "configs/table_rearrangement/clear/gym_config.json",
+      "git_blob": "46c7214949d3bb79a5cafe4c2c686f4d5c22de58"
+    },
+    {
+      "path": "configs/table_rearrangement/gym_config_random_test.json",
+      "git_blob": "4e07d4fbb52f11bc145d6a9ab5e0308a3e7b5da2"
+    },
+    {
+      "path": "configs/table_rearrangement/random/gym_config.json",
+      "git_blob": "7341834bb3d178831dcac31164461eb70bed8fab"
+    },
+    {
+      "path": "configs/water_pouring/action_config.json",
+      "git_blob": "1c4540312c667751da887fbb59d0efff07d07d9e"
+    },
+    {
+      "path": "configs/water_pouring/clear/gym_config.json",
+      "git_blob": "1fb6834aeae7975aebdcf70bd19b10b0e9121263"
+    },
+    {
+      "path": "configs/water_pouring/gym_config_dual_green_clear.json",
+      "git_blob": "025270ae35279057ea7ff75c73d18f2b97a86373"
+    },
+    {
+      "path": "configs/water_pouring/gym_config_dual_random_test.json",
+      "git_blob": "96a822c8ce8e373d8d4c560736aea273a66cc3e4"
+    },
+    {
+      "path": "configs/water_pouring/random/gym_config.json",
+      "git_blob": "0cd50bbeb45409343c12d770cb673c23dba87e81"
+    },
+    {
+      "path": "robosynchallenge/Distractor/ASSET_INDEX.json",
+      "git_blob": "db790d33c5da839234063785aeb7cfcd8d55a47e"
+    },
+    {
+      "path": "robosynchallenge/Distractor/PaperCup/paper_cup.ply",
+      "git_blob": "797f14b5ccc829977f1102e4408175ba52afb20b"
+    },
+    {
+      "path": "robosynchallenge/Distractor/README.md",
+      "git_blob": "43be9b3bd6f330e88589e6155490db328665fab7"
+    },
+    {
+      "path": "robosynchallenge/Distractor/plastic_bin/obj_assets/plastic_bin.glb",
+      "git_blob": "75dd889c10e212a70c682af880bf3bf15b7072a3"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/fork/standard_fork_a_rescale.ply",
+      "git_blob": "6e0a31e8c95be0773dad46737c3e240459b2ce5d"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/fork/standard_fork_b_rescale.ply",
+      "git_blob": "189ed5e6951ee321bf316ba66b6dd9a862443e86"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/fork/standard_fork_scale.ply",
+      "git_blob": "2ccd9c0beb1209a129b20969ee455e07cf91e2ad"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/mouse_pad/e5aa03a5ac98441ebcff7b0270142291.glb",
+      "git_blob": "66e1445003104de3e7643e62710e75be6441eeb7"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spone6_center.ply",
+      "git_blob": "c8c52213c7599114758f35fa555f9afae05f1b71"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spone6_translate.ply",
+      "git_blob": "f6888654740dafd1f808368dafae7639b9d3c54a"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spoon_a_rescale.ply",
+      "git_blob": "c1e9f4a4fafd95473fbfbca7fb78d33eac45ea7c"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spoon_b_rescale.ply",
+      "git_blob": "38cb6865a025f030cf06393b2f889961b7956f0d"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spoon_c_rescale.ply",
+      "git_blob": "360deb98cb9a7d0b90d945f7326145db43c6e930"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spoon_d_rescale.ply",
+      "git_blob": "58a93baecc55fe4b1c7d18e1b7b3a1ead11f71c4"
+    },
+    {
+      "path": "robosynchallenge/Distractor/tableware/spoon/standard_spoon_e_rescale.ply",
+      "git_blob": "63cdfebb069527587fe38a21378a778b52d43588"
+    },
+    {
+      "path": "robosynchallenge/VERSION",
+      "git_blob": "8acdd82b765e8e0b8cd8787f7f18c7fe2ec52493"
+    },
+    {
+      "path": "robosynchallenge/__init__.py",
+      "git_blob": "19caf3012cbf76b7dafa49894612379a2c73898f"
+    },
+    {
+      "path": "robosynchallenge/data/__init__.py",
+      "git_blob": "6ed990aa2089e80be1aaaea1fd2f6fdc890a9c22"
+    },
+    {
+      "path": "robosynchallenge/data/asset_resolver.py",
+      "git_blob": "ce4d22ebf9c5c091216388d1a6b4d7e1820d2058"
+    },
+    {
+      "path": "robosynchallenge/data/constants.py",
+      "git_blob": "9ce98031f4fae9caf076cbe789315a85fb58ffd1"
+    },
+    {
+      "path": "robosynchallenge/managers/__init__.py",
+      "git_blob": "a0fd29475291330f2645d640114fe9ff55e8e814"
+    },
+    {
+      "path": "robosynchallenge/managers/actions.py",
+      "git_blob": "3222353d04e4d101afb5f8fbc431d928772bed65"
+    },
+    {
+      "path": "robosynchallenge/managers/datasets.py",
+      "git_blob": "99d1c5820369959c906fad9febcd0909eaf3b4d2"
+    },
+    {
+      "path": "robosynchallenge/managers/events.py",
+      "git_blob": "16abb46f85a117ee555614b9cf118298da66fc91"
+    },
+    {
+      "path": "robosynchallenge/managers/observations.py",
+      "git_blob": "54e032dc2ea809796fb82ed53ad16e06c4d689d5"
+    },
+    {
+      "path": "robosynchallenge/replay.py",
+      "git_blob": "a071c0de6c1043949538e2c3d2751bb48faf76f6"
+    },
+    {
+      "path": "robosynchallenge/tasks/__init__.py",
+      "git_blob": "d28722b1deaecfef9b4893b174b1171d89306ddb"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/manipulate_pipette_two_beaker/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/manipulate_pipette_two_beaker/action_bank.py",
+      "git_blob": "a65c5583b9e96c55cc6c56bf8cfb7687216a7b4d"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/manipulate_pipette_two_beaker/manipulate_pipette_two_beaker.py",
+      "git_blob": "919158aad5f08bb600e8b858bf0eaaf5f1346f89"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/open_pan/__init__.py",
+      "git_blob": "e405bbc552db80fdaae9edbabcc9e2f72f0e0414"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/open_pan/action_bank.py",
+      "git_blob": "da3eb797fc5ce3014ec29fb8ccb41c693abe0600"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/open_pan/open_pan.py",
+      "git_blob": "797ea974809ddc2e9f20b1434281826560700c51"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/pour_water/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/pour_water/action_bank.py",
+      "git_blob": "1d89f3c3fa9fb3b69725ff1f8b846d44f319dbdf"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/pour_water/pour_water.py",
+      "git_blob": "450b97a440bdaae10bed5cf1887816759a4ee8a4"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/sample_loading/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/sample_loading/action_bank.py",
+      "git_blob": "0a2a6d18769b12b1037b09fcb9e7a3ea268bd4f1"
+    },
+    {
+      "path": "robosynchallenge/tasks/_other_tasks/sample_loading/sample_loading.py",
+      "git_blob": "de09a23a1d3bddab92056a42be71521a66e8b838"
+    },
+    {
+      "path": "robosynchallenge/tasks/click_bell/Beat_Hammer_Block_table_height.py",
+      "git_blob": "f34fcc6fa6d7cebbfd60f5983f9e2f5d87391fa0"
+    },
+    {
+      "path": "robosynchallenge/tasks/click_bell/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/click_bell/action_bank.py",
+      "git_blob": "325b6d417a8b8f60db28f4880c76a320cce56e62"
+    },
+    {
+      "path": "robosynchallenge/tasks/click_bell/click_bell.py",
+      "git_blob": "20ab17ab5c768c2d5e2e5cfac159e48fd5658a25"
+    },
+    {
+      "path": "robosynchallenge/tasks/drawer_open_place/__init__.py",
+      "git_blob": "6026b3467e8a984c6a181347588ca774b544682a"
+    },
+    {
+      "path": "robosynchallenge/tasks/drawer_open_place/action_bank.py",
+      "git_blob": "8c402c5e3bdf8ad6d566ff6af9d8a7f8af170bc0"
+    },
+    {
+      "path": "robosynchallenge/tasks/drawer_open_place/drawer_open_place.py",
+      "git_blob": "b98067a8fdffeea018d89043ba3c6b65d70a102e"
+    },
+    {
+      "path": "robosynchallenge/tasks/handle_basket/__init__.py",
+      "git_blob": "dd650e902f1cfdcb46c1e1c5e3790ca399143be9"
+    },
+    {
+      "path": "robosynchallenge/tasks/handle_basket/action_bank.py",
+      "git_blob": "f4ae4d2f953424d91fb5dcbddf7e704cf4a92f76"
+    },
+    {
+      "path": "robosynchallenge/tasks/handle_basket/handle_basket.py",
+      "git_blob": "b9e85254eb9f841e428446b732e50937fefa0487"
+    },
+    {
+      "path": "robosynchallenge/tasks/item_assembly/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/item_assembly/action_bank.py",
+      "git_blob": "f498cf60f7e7198ebd6a1a4aabae1b6b1896c11f"
+    },
+    {
+      "path": "robosynchallenge/tasks/item_assembly/item_assembly.py",
+      "git_blob": "34cdd3be229290c72232d569c98a9d52a066877a"
+    },
+    {
+      "path": "robosynchallenge/tasks/items_handover/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/items_handover/action_bank.py",
+      "git_blob": "e9892d3ec831efb3cfdfaa66137cc6b893ca0a98"
+    },
+    {
+      "path": "robosynchallenge/tasks/items_handover/items_handover.py",
+      "git_blob": "577733ba9962bc19a9f65ca2dc170a241a5d28bb"
+    },
+    {
+      "path": "robosynchallenge/tasks/manipulate_pipette/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/manipulate_pipette/action_bank.py",
+      "git_blob": "403fbcdd3119e1cafbf51b0789fdf926ffe27caa"
+    },
+    {
+      "path": "robosynchallenge/tasks/manipulate_pipette/manipulate_pipette.py",
+      "git_blob": "cd70b7a822061697b63b787329148ba7d2bd705f"
+    },
+    {
+      "path": "robosynchallenge/tasks/mixer_operating/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/mixer_operating/action_bank.py",
+      "git_blob": "d2517513329f611697df542839d55d74e87628d2"
+    },
+    {
+      "path": "robosynchallenge/tasks/mixer_operating/mixer_operating.py",
+      "git_blob": "b00e58448668f0d237039dc759efbc1e298ff94b"
+    },
+    {
+      "path": "robosynchallenge/tasks/sample_loading/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/sample_loading/action_bank.py",
+      "git_blob": "1b91ba9c864f5858a3b90f32cd18a475117ba387"
+    },
+    {
+      "path": "robosynchallenge/tasks/sample_loading/sample_loading.py",
+      "git_blob": "bf4db7d97c1cb7712ea024896a8214838dca461d"
+    },
+    {
+      "path": "robosynchallenge/tasks/table_rearrangement/__init__.py",
+      "git_blob": "dd650e902f1cfdcb46c1e1c5e3790ca399143be9"
+    },
+    {
+      "path": "robosynchallenge/tasks/table_rearrangement/action_bank.py",
+      "git_blob": "e0c860f40dd8ea1b53f2c823d01c22b9f4e5a007"
+    },
+    {
+      "path": "robosynchallenge/tasks/table_rearrangement/table_rearrangement.py",
+      "git_blob": "39e3171dce67d03499a8b748269be8c9092cfbf4"
+    },
+    {
+      "path": "robosynchallenge/tasks/water_pouring/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "robosynchallenge/tasks/water_pouring/action_bank.py",
+      "git_blob": "153ce0e8ee3566f090440c6ae3b043d9f55cf8ed"
+    },
+    {
+      "path": "robosynchallenge/tasks/water_pouring/water_pouring.py",
+      "git_blob": "c18a131d154aeec16ec80c8e2a154a8717ec6a76"
+    },
+    {
+      "path": "robosynchallenge/utils/__init__.py",
+      "git_blob": "e4655620de60719a19fe7c355584abc2fe8b6b92"
+    },
+    {
+      "path": "scripts/README.md",
+      "git_blob": "dd6d949cab405a5a5fd6bda775eea4e6e5d5ceb7"
+    },
+    {
+      "path": "scripts/_find_latest_datasets.py",
+      "git_blob": "b5a97a983aaccdaad0c641f686cf1fb113bbe788"
+    },
+    {
+      "path": "scripts/add_lerobot_eef_pose.py",
+      "git_blob": "b1736b39e0fa7b92ef48e8b49c0fa813633a315c"
+    },
+    {
+      "path": "scripts/analyze_rigid_spawn_range.py",
+      "git_blob": "f7f8378dcc5cfca8237f59c6abbfdff6bee4a435"
+    },
+    {
+      "path": "scripts/camera_extrinsics_to_lootat.py",
+      "git_blob": "139528a312b4d5eb7cb1ae1bf0c0e2d002d35606"
+    },
+    {
+      "path": "scripts/convert_lerobot3.0_to_2.1.py",
+      "git_blob": "71b0121426d57dc75eb0bc588d4bd60d2c480d72"
+    },
+    {
+      "path": "scripts/eval_openpi0_embodichain.py",
+      "git_blob": "b96f25497c227e62acc1e69235c63d38037e5132"
+    },
+    {
+      "path": "scripts/eval_policy.py",
+      "git_blob": "c5100ddaa09566ceec546af2a2ca63e421c72fdd"
+    },
+    {
+      "path": "scripts/run_env.py",
+      "git_blob": "e5cb845f72db7d14205aa3bbd2e21f28b26ce12d"
+    },
+    {
+      "path": "scripts/visualize_distribution.py",
+      "git_blob": "a2961415d7b40dfef571f0a8c75b3aafbc02e899"
+    }
+  ],
+  "release_files_sha256": {
+    ".gitignore": "565d9fefbdd16584e250e73b0fe05f25c01ab4d88c1cd7a1918fc73b2b8cdcae",
+    "LICENSE": "e1f6807616313312e3520d45f83b64f8587e73eb087d91496ac32a371818d02a",
+    "MODEL_CARD.md": "2f9bbdbfcf6a3e6db88ec4f144a721b55f6ed3435fc8d8d81a80273bc90c69ea",
+    "README.md": "91fa46eccdc15abe0cf8aad2e97552e91ff83b35539cdbf08cde24eabc15c1c8",
+    "SUBMISSION_TEXT.md": "f4c05d4db43c2141c5aafafcb78d50aad4f635a1a3d913efa4f9b190eb51fb4f",
+    "policy/xr1_submission/__init__.py": "3d0819b0a7ed8a2089109045d0c8d525d8af6e6ff97b97e4af61c94a13df9a8c",
+    "policy/xr1_submission/action.py": "1d0f633757121c8615795bf3a96a9df05173f8f1a9ac5c799f036f7a1b3fc06a",
+    "policy/xr1_submission/deploy_policy.py": "95de011805c24a9010a6831e68926743462ced88f818e9fcbf4e054554b9225f",
+    "policy/xr1_submission/deploy_policy.yml": "16f2d744f6bc1173ff54ff4d90f2750f05135a843f7d3219bf4ff3b1ea5b8d1e",
+    "policy/xr1_submission/eval.sh": "6992d299ea1917b91b8016470ecd8986b12f162fa233d0ae7e9a6eae710af802",
+    "policy/xr1_submission/robot_bridge.py": "aadab124c91d8d0b06ea6bed5fae014ff7b10976a84e5f5f2b59185ff9a3646d",
+    "provenance.json": "f508dbc55673091a93a14173949f36ed745e637131cc6984ae4d35c57ab4958c",
+    "requirements-inference.txt": "0831fbb90dbe74cf41f4964c53d6993b84d97311883de3f1f9d0e827a1b8e151",
+    "runtime/mibot/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/models/VLA/XR1.py": "740054a67c6e12df220e0e93ccf956ce6ba43dc50ddcf093fb4cdb598fe2bdc6",
+    "runtime/mibot/models/VLA/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/models/VLM/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/models/VLM/qwen3vl.py": "e440a69c3c79b84e7c3133787786de4d30045e379ace72487fb438928ef41fb5",
+    "runtime/mibot/models/__init__.py": "325f05dcd4a883f5624d66a0f82e599e8934ffab7697703d22f8ab3e3c015830",
+    "runtime/mibot/server/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/server/runtime/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/server/runtime/client.py": "70bfad2788163dc84a02e1ec26da288dfdbbd457d98689983bdf51f81b7269a6",
+    "runtime/mibot/utils/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/utils/io.py": "d425c401cc0632e97f7dd1d7c1db7e6eab91e863622444d23d647a1ee1311042",
+    "runtime/mibot/utils/model_utils.py": "abbbca1df157ad337ce96a92944fe39032e728bac9544a23de948ac5a3a738d3",
+    "runtime/server.py": "9720fb9ed9eeb4fc7152ea6c55948f238990bccffcf27d38df41166d56fc3f3c",
+    "runtime/tools/infer_npz.py": "cd4d21372ae4182bc181907a23277ffe1a7bc5cdd2d1c4d1f02bbe25ffad6fe6",
+    "runtime/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/vendor/baseline_server.py": "f9a83ca4ba0b4c22c80588755d2c50acc8e919d1b4ef116d3596212b288dbe97",
+    "task_mapping.json": "e4a9cbe4670a3887fabcb85bd57e8f2b2b6a6e14c78b0c7a307c99280053793a",
+    "tools/build_release.py": "2c2233348308394b57197e0b1aff9c7091b5714f44933d8814efe5e594824e69",
+    "tools/export_artifacts.py": "c780a9660fdae2a8858466b71d67d942a486624130ccf0b898ac6d3704aba412",
+    "tools/install_inference.sh": "b3b7adc2f24c56de22a45a8bab9da3bb77625842baa8b41f632a2f4c53799a7a",
+    "tools/launch.py": "342ce0b760eaae71160381abb8294e31aa2c9cbcab117849908cef7e3418416b",
+    "tools/sim_runtime.py": "54db52f771cba7c8e65609b98851c3c9712e51282fb7e89eae61d618975c5f69",
+    "tools/verify_acceptance.py": "f0b160724c3592bd19868952ba06d8eca3a456f6e229fbcfa76029e7c48f3269",
+    "verification/CHECKLIST.md": "48b3d654bada06bc6c846bf6b5ca7dc9d36c443dcc3218962587a55952dedf37",
+    "verification/RESULTS.md": "12fdbbe5213201b17f8482114964ef5b06cf60f09d1da8cca1c6c27e2a417a7e",
+    "verification/acceptance.json": "c0b2060d61c8c8f0a737acf26b7320cb973decd156e12a14dc8910559351a106",
+    "verification/artifact_manifest.json": "7b39a2a3f590e3e9d9242c8e5d4b0ff5efad5198608da1a4ce2002dea3c2cf85",
+    "verification/environment_gate.json": "47b304f8d3c7b50bb696b94f2de6a291128a6e507873bba677a5f960df5d8d09",
+    "verification/official_asset_identity.json": "514ae91f3e122ba0f6a3a0b6dbe4a7335860972cd43271428effa1bca31e7a03"
+  },
+  "task": "click_bell",
+  "setting": "random",
+  "episodes": 50,
+  "seed": 0,
+  "expert_check": true,
+  "max_episode_steps": 361,
+  "eval_reset_sync_steps": 0,
+  "release_config_override": "eval_reset_sync_steps 10 -> 0 to match official default",
+  "checkpoint_step": 160000,
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "policy_seed": 20260908,
+  "attention_backend": "sdpa",
+  "boundary": "official public evaluator/configs/assets; not organizer held-out scenes or RTX 5090"
+}

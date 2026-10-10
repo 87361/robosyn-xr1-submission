@@ -1,0 +1,48 @@
+{
+  "selection": "validated shared baseline; replace only after checkpoint-specific validation",
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "tasks": {
+    "click_bell": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "handle_basket": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "water_pouring": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "table_rearrangement": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "items_handover": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "drawer_open_place": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "mixer_operating": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "item_assembly": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "manipulate_pipette": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "sample_loading": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    }
+  }
+}

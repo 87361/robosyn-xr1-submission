@@ -1,0 +1,25 @@
+{
+  "xr1_base_commit": "556cca33963a2b36d835a40374c3b4c8eef68401",
+  "runtime_original_sha256": {
+    "mibot/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "mibot/models/VLA/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "mibot/models/VLA/XR1.py": "9019aa883b7964ccc922c0e9e62d7d0e14457dcfd4068558cf12642d9f039c6e",
+    "mibot/models/VLM/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "mibot/models/VLM/qwen3vl.py": "e440a69c3c79b84e7c3133787786de4d30045e379ace72487fb438928ef41fb5",
+    "mibot/utils/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "mibot/utils/io.py": "d425c401cc0632e97f7dd1d7c1db7e6eab91e863622444d23d647a1ee1311042",
+    "mibot/utils/model_utils.py": "abbbca1df157ad337ce96a92944fe39032e728bac9544a23de948ac5a3a738d3",
+    "mibot/server/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "mibot/server/runtime/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "mibot/server/runtime/client.py": "70bfad2788163dc84a02e1ec26da288dfdbbd457d98689983bdf51f81b7269a6",
+    "tools/infer_npz.py": "e65dce310119067296599d48a847a442092e69c40a828f32a676cdb24f0120bb"
+  },
+  "modifications": [
+    "inference-only registry",
+    "local-only processor/config",
+    "selectable SDPA or FlashAttention2",
+    "bounded episode RNG cache; best-effort logs",
+    "temporary short-path simulator copy with a hash-recorded cache-path-only patch; task/evaluator sources unchanged"
+  ],
+  "policy_contract": "H30 k29 prefix0 joint_absolute; policy seed20260908 per episode"
+}

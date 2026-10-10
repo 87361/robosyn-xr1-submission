@@ -1,0 +1,1629 @@
+{
+  "evaluation_integrity_passed": true,
+  "episodes": 50,
+  "successes": 50,
+  "failures_retained": 0,
+  "summary": {
+    "episode_count": 50,
+    "success_count": 50,
+    "success_rate": 1.0,
+    "average_action_steps": 48.92,
+    "average_action_steps_ratio": 0.13551246537396122,
+    "inference_call_count": 100,
+    "average_inference_calls_per_episode": 2.0,
+    "average_inference_time_seconds": 0.3702773963287473,
+    "average_inference_time_per_episode_seconds": 0.7405547926574946
+  },
+  "episode_results": [
+    {
+      "episode_index": 0,
+      "candidate_index": 0,
+      "episode_attempt_index": 0,
+      "seed": 209652396,
+      "success": true,
+      "action_steps": 47,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 1,
+      "candidate_index": 1,
+      "episode_attempt_index": 0,
+      "seed": 398764591,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 2,
+      "candidate_index": 2,
+      "episode_attempt_index": 0,
+      "seed": 924231285,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 3,
+      "candidate_index": 5,
+      "episode_attempt_index": 2,
+      "seed": 1537364731,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 4,
+      "candidate_index": 7,
+      "episode_attempt_index": 1,
+      "seed": 1491434855,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 5,
+      "candidate_index": 8,
+      "episode_attempt_index": 0,
+      "seed": 1819583497,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 6,
+      "candidate_index": 9,
+      "episode_attempt_index": 0,
+      "seed": 530702035,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 7,
+      "candidate_index": 10,
+      "episode_attempt_index": 0,
+      "seed": 626610453,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 8,
+      "candidate_index": 11,
+      "episode_attempt_index": 0,
+      "seed": 1650906866,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 9,
+      "candidate_index": 13,
+      "episode_attempt_index": 1,
+      "seed": 1277901399,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 10,
+      "candidate_index": 14,
+      "episode_attempt_index": 0,
+      "seed": 1682652230,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 11,
+      "candidate_index": 16,
+      "episode_attempt_index": 1,
+      "seed": 1991416408,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 12,
+      "candidate_index": 18,
+      "episode_attempt_index": 1,
+      "seed": 1646868794,
+      "success": true,
+      "action_steps": 47,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 13,
+      "candidate_index": 19,
+      "episode_attempt_index": 0,
+      "seed": 2051556033,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 14,
+      "candidate_index": 21,
+      "episode_attempt_index": 1,
+      "seed": 1340754471,
+      "success": true,
+      "action_steps": 47,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 15,
+      "candidate_index": 23,
+      "episode_attempt_index": 1,
+      "seed": 2061486254,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 16,
+      "candidate_index": 24,
+      "episode_attempt_index": 0,
+      "seed": 292249176,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 17,
+      "candidate_index": 25,
+      "episode_attempt_index": 0,
+      "seed": 1686997841,
+      "success": true,
+      "action_steps": 47,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 18,
+      "candidate_index": 27,
+      "episode_attempt_index": 1,
+      "seed": 1443447321,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 19,
+      "candidate_index": 29,
+      "episode_attempt_index": 1,
+      "seed": 1449105480,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 20,
+      "candidate_index": 30,
+      "episode_attempt_index": 0,
+      "seed": 374217481,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 21,
+      "candidate_index": 31,
+      "episode_attempt_index": 0,
+      "seed": 636393364,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 22,
+      "candidate_index": 33,
+      "episode_attempt_index": 1,
+      "seed": 1581585360,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 23,
+      "candidate_index": 36,
+      "episode_attempt_index": 2,
+      "seed": 1194674174,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 24,
+      "candidate_index": 37,
+      "episode_attempt_index": 0,
+      "seed": 602801999,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 25,
+      "candidate_index": 38,
+      "episode_attempt_index": 0,
+      "seed": 1589190063,
+      "success": true,
+      "action_steps": 47,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 26,
+      "candidate_index": 39,
+      "episode_attempt_index": 0,
+      "seed": 1589512640,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 27,
+      "candidate_index": 40,
+      "episode_attempt_index": 0,
+      "seed": 2055650130,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 28,
+      "candidate_index": 42,
+      "episode_attempt_index": 1,
+      "seed": 1284876248,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 29,
+      "candidate_index": 43,
+      "episode_attempt_index": 0,
+      "seed": 1292401841,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 30,
+      "candidate_index": 45,
+      "episode_attempt_index": 1,
+      "seed": 87950109,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 31,
+      "candidate_index": 46,
+      "episode_attempt_index": 0,
+      "seed": 1204863635,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 32,
+      "candidate_index": 48,
+      "episode_attempt_index": 1,
+      "seed": 507984782,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 33,
+      "candidate_index": 49,
+      "episode_attempt_index": 0,
+      "seed": 947610023,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 34,
+      "candidate_index": 50,
+      "episode_attempt_index": 0,
+      "seed": 600956192,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 35,
+      "candidate_index": 51,
+      "episode_attempt_index": 0,
+      "seed": 352272321,
+      "success": true,
+      "action_steps": 51,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 36,
+      "candidate_index": 52,
+      "episode_attempt_index": 0,
+      "seed": 615697673,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 37,
+      "candidate_index": 55,
+      "episode_attempt_index": 2,
+      "seed": 1110745632,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 38,
+      "candidate_index": 59,
+      "episode_attempt_index": 3,
+      "seed": 2034098327,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 39,
+      "candidate_index": 60,
+      "episode_attempt_index": 0,
+      "seed": 1136257699,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 40,
+      "candidate_index": 61,
+      "episode_attempt_index": 0,
+      "seed": 800291326,
+      "success": true,
+      "action_steps": 48,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 41,
+      "candidate_index": 62,
+      "episode_attempt_index": 0,
+      "seed": 1177824715,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 42,
+      "candidate_index": 63,
+      "episode_attempt_index": 0,
+      "seed": 1017555826,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 43,
+      "candidate_index": 66,
+      "episode_attempt_index": 2,
+      "seed": 293921570,
+      "success": true,
+      "action_steps": 47,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 44,
+      "candidate_index": 67,
+      "episode_attempt_index": 0,
+      "seed": 580757632,
+      "success": true,
+      "action_steps": 45,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 45,
+      "candidate_index": 68,
+      "episode_attempt_index": 0,
+      "seed": 80701568,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 46,
+      "candidate_index": 72,
+      "episode_attempt_index": 3,
+      "seed": 481447462,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 47,
+      "candidate_index": 73,
+      "episode_attempt_index": 0,
+      "seed": 954863080,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 48,
+      "candidate_index": 74,
+      "episode_attempt_index": 0,
+      "seed": 502227700,
+      "success": true,
+      "action_steps": 49,
+      "expert_plan_steps": 74
+    },
+    {
+      "episode_index": 49,
+      "candidate_index": 75,
+      "episode_attempt_index": 0,
+      "seed": 1659957521,
+      "success": true,
+      "action_steps": 50,
+      "expert_plan_steps": 74
+    }
+  ],
+  "expert_feasibility": {
+    "enabled": true,
+    "max_candidate_seed_attempts_per_episode": 100,
+    "candidate_seed_attempt_count": 76,
+    "accepted_episode_count": 50,
+    "skipped_seed_count": 26,
+    "skipped_seeds": [
+      {
+        "candidate_index": 3,
+        "episode_index": 3,
+        "episode_attempt_index": 0,
+        "seed": 1478610112,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 4,
+        "episode_index": 3,
+        "episode_attempt_index": 1,
+        "seed": 441365315,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 6,
+        "episode_index": 4,
+        "episode_attempt_index": 0,
+        "seed": 192771779,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 12,
+        "episode_index": 9,
+        "episode_attempt_index": 0,
+        "seed": 1879422756,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 15,
+        "episode_index": 11,
+        "episode_attempt_index": 0,
+        "seed": 243580376,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 17,
+        "episode_index": 12,
+        "episode_attempt_index": 0,
+        "seed": 1171049868,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 20,
+        "episode_index": 14,
+        "episode_attempt_index": 0,
+        "seed": 1252949478,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 22,
+        "episode_index": 15,
+        "episode_attempt_index": 0,
+        "seed": 124102743,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 26,
+        "episode_index": 18,
+        "episode_attempt_index": 0,
+        "seed": 1827923621,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 28,
+        "episode_index": 19,
+        "episode_attempt_index": 0,
+        "seed": 305097549,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 32,
+        "episode_index": 22,
+        "episode_attempt_index": 0,
+        "seed": 86837363,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 34,
+        "episode_index": 23,
+        "episode_attempt_index": 0,
+        "seed": 1428591347,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 35,
+        "episode_index": 23,
+        "episode_attempt_index": 1,
+        "seed": 1963466437,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 41,
+        "episode_index": 28,
+        "episode_attempt_index": 0,
+        "seed": 2034131043,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 44,
+        "episode_index": 30,
+        "episode_attempt_index": 0,
+        "seed": 1982038771,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 47,
+        "episode_index": 32,
+        "episode_attempt_index": 0,
+        "seed": 768281747,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 53,
+        "episode_index": 37,
+        "episode_attempt_index": 0,
+        "seed": 160516793,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 54,
+        "episode_index": 37,
+        "episode_attempt_index": 1,
+        "seed": 1909838463,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 56,
+        "episode_index": 38,
+        "episode_attempt_index": 0,
+        "seed": 93837855,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 57,
+        "episode_index": 38,
+        "episode_attempt_index": 1,
+        "seed": 454869706,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 58,
+        "episode_index": 38,
+        "episode_attempt_index": 2,
+        "seed": 1780959476,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 64,
+        "episode_index": 43,
+        "episode_attempt_index": 0,
+        "seed": 1959150775,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 65,
+        "episode_index": 43,
+        "episode_attempt_index": 1,
+        "seed": 930076700,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 69,
+        "episode_index": 46,
+        "episode_attempt_index": 0,
+        "seed": 1392175012,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 70,
+        "episode_index": 46,
+        "episode_attempt_index": 1,
+        "seed": 505240629,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 71,
+        "episode_index": 46,
+        "episode_attempt_index": 2,
+        "seed": 642848645,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      }
+    ]
+  },
+  "policy": {
+    "checkpoint_step": 160000,
+    "horizon": 30,
+    "execute_steps": 29,
+    "prefix_steps": 0,
+    "seed": 20260908,
+    "attention_backend": "sdpa"
+  },
+  "evaluation": {
+    "task": "click_bell",
+    "setting": "random",
+    "seed": 0,
+    "max_episode_steps": 361,
+    "eval_reset_sync_steps": 0,
+    "expert_check": true
+  },
+  "official_commit": "8818c82df5fa2522809b8105e7018950dcc9a9a8",
+  "official_files_verified": 351,
+  "release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
+  "evaluator_sha256": "09e727d416aedec843b481246adc810f528470080f8db3a4efc4937e6c156c45",
+  "metrics_sha256": "33fc673a0d898cfb2eb4f9cf9c0a35559fd7f15f70809e3b005f4fde092aad3e",
+  "platform": {
+    "operating_system": "Linux-5.15.0-72-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8563C",
+    "accelerators": [
+      "NVIDIA L20"
+    ],
+    "cuda_visible_devices": "0",
+    "python_version": "3.11.14",
+    "torch_version": "2.7.1+cu126",
+    "torch_cuda_version": "12.6"
+  },
+  "episode_rng_and_chunks_verified": true,
+  "server_and_runtime_cleaned": true,
+  "videos": [
+    {
+      "episode_index": 0,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_000_seed_209652396_success.mp4",
+      "bytes": 1102632,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "48"
+          }
+        ],
+        "format": {
+          "duration": "4.800000"
+        }
+      }
+    },
+    {
+      "episode_index": 1,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_001_seed_398764591_success.mp4",
+      "bytes": 882079,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 2,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_002_seed_924231285_success.mp4",
+      "bytes": 902844,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 3,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_003_seed_1537364731_success.mp4",
+      "bytes": 1466639,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 4,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_004_seed_1491434855_success.mp4",
+      "bytes": 1336791,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 5,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_005_seed_1819583497_success.mp4",
+      "bytes": 739226,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 6,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_006_seed_530702035_success.mp4",
+      "bytes": 1098983,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 7,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_007_seed_626610453_success.mp4",
+      "bytes": 1369111,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 8,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_008_seed_1650906866_success.mp4",
+      "bytes": 1186657,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 9,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_009_seed_1277901399_success.mp4",
+      "bytes": 1484737,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 10,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_010_seed_1682652230_success.mp4",
+      "bytes": 1238261,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 11,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_011_seed_1991416408_success.mp4",
+      "bytes": 1116936,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 12,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_012_seed_1646868794_success.mp4",
+      "bytes": 676942,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "48"
+          }
+        ],
+        "format": {
+          "duration": "4.800000"
+        }
+      }
+    },
+    {
+      "episode_index": 13,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_013_seed_2051556033_success.mp4",
+      "bytes": 1434963,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 14,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_014_seed_1340754471_success.mp4",
+      "bytes": 1472969,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "48"
+          }
+        ],
+        "format": {
+          "duration": "4.800000"
+        }
+      }
+    },
+    {
+      "episode_index": 15,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_015_seed_2061486254_success.mp4",
+      "bytes": 1261856,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 16,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_016_seed_292249176_success.mp4",
+      "bytes": 1049136,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 17,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_017_seed_1686997841_success.mp4",
+      "bytes": 704094,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "48"
+          }
+        ],
+        "format": {
+          "duration": "4.800000"
+        }
+      }
+    },
+    {
+      "episode_index": 18,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_018_seed_1443447321_success.mp4",
+      "bytes": 691874,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 19,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_019_seed_1449105480_success.mp4",
+      "bytes": 1278006,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 20,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_020_seed_374217481_success.mp4",
+      "bytes": 1194840,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 21,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_021_seed_636393364_success.mp4",
+      "bytes": 1261442,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 22,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_022_seed_1581585360_success.mp4",
+      "bytes": 1329242,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 23,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_023_seed_1194674174_success.mp4",
+      "bytes": 749862,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 24,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_024_seed_602801999_success.mp4",
+      "bytes": 1555291,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 25,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_025_seed_1589190063_success.mp4",
+      "bytes": 1019689,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "48"
+          }
+        ],
+        "format": {
+          "duration": "4.800000"
+        }
+      }
+    },
+    {
+      "episode_index": 26,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_026_seed_1589512640_success.mp4",
+      "bytes": 1303475,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 27,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_027_seed_2055650130_success.mp4",
+      "bytes": 1030834,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 28,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_028_seed_1284876248_success.mp4",
+      "bytes": 1335438,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 29,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_029_seed_1292401841_success.mp4",
+      "bytes": 1239964,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 30,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_030_seed_87950109_success.mp4",
+      "bytes": 1075262,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 31,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_031_seed_1204863635_success.mp4",
+      "bytes": 661718,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 32,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_032_seed_507984782_success.mp4",
+      "bytes": 1678551,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 33,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_033_seed_947610023_success.mp4",
+      "bytes": 1318785,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 34,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_034_seed_600956192_success.mp4",
+      "bytes": 1613327,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 35,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_035_seed_352272321_success.mp4",
+      "bytes": 1577489,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "52"
+          }
+        ],
+        "format": {
+          "duration": "5.200000"
+        }
+      }
+    },
+    {
+      "episode_index": 36,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_036_seed_615697673_success.mp4",
+      "bytes": 1346912,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    },
+    {
+      "episode_index": 37,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_037_seed_1110745632_success.mp4",
+      "bytes": 1522483,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 38,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_038_seed_2034098327_success.mp4",
+      "bytes": 1215836,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 39,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_039_seed_1136257699_success.mp4",
+      "bytes": 1838307,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 40,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_040_seed_800291326_success.mp4",
+      "bytes": 737604,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "49"
+          }
+        ],
+        "format": {
+          "duration": "4.900000"
+        }
+      }
+    },
+    {
+      "episode_index": 41,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_041_seed_1177824715_success.mp4",
+      "bytes": 1143881,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 42,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_042_seed_1017555826_success.mp4",
+      "bytes": 705309,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 43,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_043_seed_293921570_success.mp4",
+      "bytes": 1072712,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "48"
+          }
+        ],
+        "format": {
+          "duration": "4.800000"
+        }
+      }
+    },
+    {
+      "episode_index": 44,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_044_seed_580757632_success.mp4",
+      "bytes": 1144077,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "46"
+          }
+        ],
+        "format": {
+          "duration": "4.600000"
+        }
+      }
+    },
+    {
+      "episode_index": 45,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_045_seed_80701568_success.mp4",
+      "bytes": 827070,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 46,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_046_seed_481447462_success.mp4",
+      "bytes": 1324155,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 47,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_047_seed_954863080_success.mp4",
+      "bytes": 997818,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 48,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_048_seed_502227700_success.mp4",
+      "bytes": 1086963,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      }
+    },
+    {
+      "episode_index": 49,
+      "path": "raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10_160k_h30_k29/2026-10-09_15-34-58/videos/episode_049_seed_1659957521_success.mp4",
+      "bytes": 864029,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 480,
+            "nb_frames": "51"
+          }
+        ],
+        "format": {
+          "duration": "5.100000"
+        }
+      }
+    }
+  ],
+  "boundaries": [
+    "public official evaluator/config/assets, not held-out scenes",
+    "L20, not RTX 5090",
+    "same frozen release with explicit official-default reset override 10 -> 0",
+    "simulator copy changes only the cache path; unchanged task/score/mesh semantics"
+  ]
+}

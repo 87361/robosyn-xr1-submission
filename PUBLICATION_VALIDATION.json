@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "historical_release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
+  "bell50_metrics_sha256": "33fc673a0d898cfb2eb4f9cf9c0a35559fd7f15f70809e3b005f4fde092aad3e",
+  "runtime_and_model_unchanged": true,
+  "effective_config_equivalent": true,
+  "publication_changes": [
+    "reset default 10 -> 0, identical to the audited 50-episode override",
+    "publication documentation and this build-time validation"
+  ]
+}
