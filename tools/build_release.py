@@ -19,7 +19,7 @@ accepted = json.loads((root / 'verification/acceptance.json').read_text())
 if not accepted['passed']:
     raise RuntimeError('No successful end-to-end acceptance report')
 for name, digest in accepted['source_code_sha256'].items():
-    if name in {'tools/build_release.py', 'policy/xr1_submission/deploy_policy.yml'}:
+    if name in {'tools/build_release.py', 'tools/launch.py', 'policy/xr1_submission/deploy_policy.yml'}:
         continue
     if manifest.get(name) != digest:
         raise RuntimeError(f'Accepted source missing or changed: {name}')
@@ -36,10 +36,38 @@ if published['eval_reset_sync_steps'] != audit['evaluation']['eval_reset_sync_st
 historical = (root / name).read_text().replace('eval_reset_sync_steps: 0', 'eval_reset_sync_steps: 10')
 if hashlib.sha256(historical.encode()).hexdigest() != preflight['release_files_sha256'][name]:
     raise RuntimeError('Unexpected configuration change beyond the verified reset override')
+mapping = json.loads((root / 'task_mapping.json').read_text())
+expected_tasks = set('click_bell handle_basket water_pouring table_rearrangement items_handover drawer_open_place mixer_operating item_assembly manipulate_pipette sample_loading'.split())
+if set(mapping['tasks']) != expected_tasks:
+    raise RuntimeError('Task mapping must cover exactly the ten official tasks')
+if (mapping['horizon'], mapping['execute_steps'], mapping['prefix_steps']) != (30, 29, 0):
+    raise RuntimeError('Unexpected inference contract change')
+for task, entry in mapping['tasks'].items():
+    expected = 'item_assembly_160k_ft10k' if task == 'item_assembly' else 'shared_160k'
+    if entry['artifact'] != expected:
+        raise RuntimeError(f'Unexpected checkpoint mapping for {task}')
+assembly = json.loads((root / 'verification/assembly_export.json').read_text())
+assembly_acceptance = json.loads((root / 'verification/assembly_acceptance.json').read_text())
+if not assembly['passed'] or not assembly['exported_tensors_exactly_equal_source']:
+    raise RuntimeError('Assembly export has not passed exact tensor verification')
+if not assembly_acceptance['passed'] or assembly_acceptance['model_sha256'] != assembly['model_sha256']:
+    raise RuntimeError('Assembly checkpoint has not passed packaged runtime acceptance')
+if assembly_acceptance['config_sha256'] != assembly['config_sha256']:
+    raise RuntimeError('Assembly config differs from runtime acceptance')
+if hashlib.sha256((root / 'verification/assembly_metrics.json').read_bytes()).hexdigest() != assembly_acceptance['metrics_sha256']:
+    raise RuntimeError('Assembly acceptance metrics were changed')
+for name, digest in assembly_acceptance['runtime_source_sha256'].items():
+    if manifest.get(name) != digest:
+        raise RuntimeError(f'Assembly accepted runtime changed: {name}')
 validation = {'passed': True, 'historical_release_zip_sha256': audit['release_zip_sha256'],
     'bell50_metrics_sha256': audit['metrics_sha256'],
-    'runtime_and_model_unchanged': True, 'effective_config_equivalent': True,
+    'policy_and_model_runtime_unchanged': True, 'shared_checkpoint_unchanged': True,
+    'effective_config_equivalent': True, 'assembly_model_sha256': assembly['model_sha256'],
+    'assembly_packaged_runtime_episodes': assembly_acceptance['episodes'],
     'publication_changes': ['reset default 10 -> 0, identical to the audited 50-episode override',
+                            'item_assembly alone uses the user-selected shared160k + 10k fine-tune',
+                            'checkpoint-specific export and packaged-runtime acceptance',
+                            'defer final native environment close until unchanged official evaluator writes metrics',
                             'publication documentation and this build-time validation']}
 validation_bytes = (json.dumps(validation, indent=2) + '\n').encode()
 manifest['PUBLICATION_VALIDATION.json'] = hashlib.sha256(validation_bytes).hexdigest()

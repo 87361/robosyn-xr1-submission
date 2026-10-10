@@ -19,7 +19,12 @@
     "local-only processor/config",
     "selectable SDPA or FlashAttention2",
     "bounded episode RNG cache; best-effort logs",
-    "temporary short-path simulator copy with a hash-recorded cache-path-only patch; task/evaluator sources unchanged"
+    "temporary short-path simulator copy with a hash-recorded cache-path-only patch; task/evaluator sources unchanged",
+    "launcher wrapper defers final native env.close until the unchanged official evaluator writes metrics; preserves failure exit codes"
   ],
-  "policy_contract": "H30 k29 prefix0 joint_absolute; policy seed20260908 per episode"
+  "policy_contract": "H30 k29 prefix0 joint_absolute; policy seed20260908 per episode",
+  "checkpoint_selection": {
+    "shared_160k": "nine tasks",
+    "item_assembly_160k_ft10k": "item_assembly only; user-selected on 2026-10-11"
+  }
 }

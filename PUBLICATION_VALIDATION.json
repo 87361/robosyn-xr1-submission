@@ -2,10 +2,16 @@
   "passed": true,
   "historical_release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
   "bell50_metrics_sha256": "33fc673a0d898cfb2eb4f9cf9c0a35559fd7f15f70809e3b005f4fde092aad3e",
-  "runtime_and_model_unchanged": true,
+  "policy_and_model_runtime_unchanged": true,
+  "shared_checkpoint_unchanged": true,
   "effective_config_equivalent": true,
+  "assembly_model_sha256": "d5d84df65184c345a8782a5e5a23c32bfe6ba4f5226947659ac5284f34256d63",
+  "assembly_packaged_runtime_episodes": 1,
   "publication_changes": [
     "reset default 10 -> 0, identical to the audited 50-episode override",
+    "item_assembly alone uses the user-selected shared160k + 10k fine-tune",
+    "checkpoint-specific export and packaged-runtime acceptance",
+    "defer final native environment close until unchanged official evaluator writes metrics",
     "publication documentation and this build-time validation"
   ]
 }

@@ -129,7 +129,7 @@ def main():
         '--config', str(artifact / 'config.yaml'), '--checkpoint', str(artifact / 'model.pt'),
         '--processor', str(models / 'processor'), '--port', str(args.port),
         '--log-root', str(output / 'server'), '--attention-backend', args.attention_backend]
-    eval_command = [args.sim_python, '-u', str(evaluator), '--config',
+    eval_command = [args.sim_python, '-u', str(ROOT / 'tools/run_official_evaluator.py'), str(evaluator), '--config',
         str(source / 'deploy_policy.yml'), '--overrides', '--task_name', args.task,
         '--setting', args.setting, '--seed', str(args.seed), '--max_episodes', str(args.episodes),
         '--xr1_port', str(args.port), '--xr1_trace_root', str(output / 'traces'),
@@ -138,7 +138,9 @@ def main():
     record = {'task': args.task, 'artifact': str(artifact), 'model_manifest': manifest,
         'evaluator_sha256': sha(evaluator), 'server_command': server_command,
         'task_asset_preflight': assets, 'simulator_runtime': runtime_record,
-        'eval_command': eval_command, 'attention_backend': args.attention_backend,
+        'eval_command': eval_command, 'evaluator_lifecycle': 'defer native close until official metrics are written',
+        'evaluator_wrapper_sha256': sha(ROOT / 'tools/run_official_evaluator.py'),
+        'attention_backend': args.attention_backend,
         'horizon': 30, 'execute_steps': 29, 'prefix_steps': 0, 'policy_seed': 20260908}
     (output / 'launch_contract.json').write_text(json.dumps(record, indent=2) + '\n')
     server = evaluator_process = None

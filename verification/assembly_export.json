@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "task": "item_assembly",
+  "artifact": "item_assembly_160k_ft10k",
+  "source_run": "xr1_single_item_assembly_160k_ft10k_20261009",
+  "checkpoint_step": 10000,
+  "base_checkpoint_step": 160000,
+  "source_checkpoint_sha256": "c3240962801c26df5fa1e15d9c61344591d2aeba0cf002641ed51e8099e9abfd",
+  "source_config_sha256": "bafc158e1a0649b7d373dd138000cad1ed2c4c24be9f52e960da733879c7df45",
+  "tensor_count": 1135,
+  "all_tensors_finite": true,
+  "tensor_keys_shapes_dtypes_match_shared": true,
+  "exported_tensors_exactly_equal_source": true,
+  "normalization_equal_to_shared": true,
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "training_data": {
+    "kind": "additional generated expert trajectories",
+    "task": "item_assembly",
+    "episodes": 1000
+  },
+  "model_sha256": "d5d84df65184c345a8782a5e5a23c32bfe6ba4f5226947659ac5284f34256d63",
+  "config_sha256": "153a11aeee29a407f78f6bf11ab42260931d79432e509f2ac349b3fa15a82a96",
+  "runtime_inference_verified": false,
+  "end_to_end_verified": false
+}

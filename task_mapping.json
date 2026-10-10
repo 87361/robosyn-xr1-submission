@@ -1,5 +1,5 @@
 {
-  "selection": "validated shared baseline; replace only after checkpoint-specific validation",
+  "selection": "user-selected item_assembly 160k + 10k checkpoint; other nine tasks retain shared 160k",
   "horizon": 30,
   "execute_steps": 29,
   "prefix_steps": 0,
@@ -33,8 +33,9 @@
       "checkpoint_step": 160000
     },
     "item_assembly": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "item_assembly_160k_ft10k",
+      "checkpoint_step": 10000,
+      "base_checkpoint_step": 160000
     },
     "manipulate_pipette": {
       "artifact": "shared_160k",

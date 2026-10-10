@@ -7,12 +7,13 @@ tags:
 - vision-language-action
 ---
 
-# XR1 RoboSynChallenge Sim10 shared 160k
+# XR1 RoboSynChallenge Sim10: shared 160k + assembly 10k fine-tune
 
-An acceptance-release checkpoint for all ten official RoboSynChallenge simulation
-tasks. The model was fine-tuned from Xiaomi-Robotics-1 on the official Sim release
-(1,000 episodes per task). This model repository contains the shared step-160000
-tensor checkpoint, exact normalization statistics, and offline processor assets.
+The shared step-160000 checkpoint was trained from Xiaomi-Robotics-1 on the
+official Sim release (1,000 episodes per task). Nine tasks retain this checkpoint.
+Assembly uses a separate checkpoint fine-tuned for 10,000 additional steps on
+1,000 generated assembly expert trajectories. Both checkpoints include their
+exact normalization statistics and share the bundled offline processor.
 
 Use the paired code repository `87361/robosyn-xr1-submission` and its pinned commit.
 The code README documents installation and evaluation commands.
@@ -21,12 +22,15 @@ The code README documents installation and evaluation commands.
 
 - `shared_160k/model.pt`: model tensors only; no optimizer states or credentials.
 - `shared_160k/config.yaml`: normalization statistics and model parameters.
+- `item_assembly_160k_ft10k/model.pt`: assembly fine-tune tensors only.
+- `item_assembly_160k_ft10k/config.yaml`: exact assembly training statistics and model parameters.
 - `processor/`: tokenizer, chat template, image processor and Qwen model config.
 - `manifest.json`: file sizes, SHA256 digests, source-checkpoint digest and processor revision.
 
-All ten tasks map to `shared_160k`: click_bell, handle_basket, water_pouring,
+Nine tasks map to `shared_160k`: click_bell, handle_basket, water_pouring,
 table_rearrangement, items_handover, drawer_open_place, mixer_operating,
-item_assembly, manipulate_pipette, sample_loading.
+manipulate_pipette, sample_loading. Only `item_assembly` maps to
+`item_assembly_160k_ft10k`, from run `xr1_single_item_assembly_160k_ft10k_20261009`.
 
 The model takes three RGB images, robot joint/gripper state and task text. It
 predicts 30 absolute joint actions. The submitted adapter executes up to 29 before
@@ -39,6 +43,10 @@ The paired code release's integration acceptance is recorded in its
 `verification/bell50_audit.json`: 50/50 click_bell success on L20, with official
 expert feasibility filtering and reset synchronization set to 0. Neither result is an official held-out competition
 score. This release does not claim real-robot or RTX 5090 validation.
+The bell result is not an evaluation of the assembly fine-tune. Its export
+checks and any component inference checks are documented separately in the code
+repository's `verification/` directory; no new assembly success rate is claimed
+by packaging the checkpoint.
 
 ## Attribution
 

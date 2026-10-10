@@ -1,10 +1,11 @@
 # XR1 RoboSynChallenge submission
 
 This repository contains a standalone RoboSynChallenge policy adapter, an isolated
-inference runtime, and launch/validation tools. All ten official Sim tasks use the
-shared XR1 H30 checkpoint at step 160000 in this acceptance release. This is a
-reproducible baseline package; it does not claim that this checkpoint is the final
-best choice for every task. `task_mapping.json` is the authoritative mapping.
+inference runtime, and launch/validation tools. Nine tasks use the shared XR1 H30
+checkpoint at step 160000. `item_assembly` uses the user-selected checkpoint after
+10,000 further training steps on 1,000 additional generated assembly expert
+trajectories. `task_mapping.json` is the authoritative mapping. Existing bell
+acceptance evidence applies to the unchanged shared checkpoint, not to assembly.
 
 Code: https://github.com/87361/robosyn-xr1-submission
 
@@ -26,6 +27,10 @@ Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
    for [Blackwell support](https://pytorch.org/blog/pytorch-2-7/) and uses SDPA.
    The acceptance report records the actual tested hardware and package versions;
    installation instructions alone do not constitute an RTX 5090 verification.
+   Fresh simulator installation is also pending: EmbodiChain 0.2.4.post1's
+   LeRobot/rerun dependencies require NumPy 2 on Python 3.11. Do not impose the
+   conflicting `numpy<2` instruction from older setup notes. Dependency resolution
+   alone does not verify native-library compatibility or simulator initialization.
 3. Download the complete model repository into a local directory:
 
    ```bash
@@ -39,6 +44,8 @@ Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
      manifest.json
      shared_160k/model.pt
      shared_160k/config.yaml
+     item_assembly_160k_ft10k/model.pt
+     item_assembly_160k_ft10k/config.yaml
      processor/...
    ```
 
@@ -73,6 +80,17 @@ processes on completion or failure. It refuses to overwrite an existing output o
 another policy installation. Run `--preflight-only` for artifact checks without GPU
 startup. An extra `--` forwards organizer overrides to the evaluator.
 
+The official evaluator file runs unchanged through `tools/run_official_evaluator.py`.
+This wrapper defers its final `env.close()` until the evaluator has written and
+closed its metrics file. In assembly acceptance, native teardown otherwise exited
+the process with code 0 before those metrics were written. The wrapper changes
+resource-finalization order only: observations, actions, success predicates,
+episode selection and the official metric calculations are unchanged. It records
+`evaluator_lifecycle.json`, preserves evaluator failures as nonzero exits, and
+then invokes the requested native close. Native process exit during that final
+close can leave the lifecycle marker at `started`; the launcher still requires
+complete official metrics and cleans up the separate inference process.
+
 By default it copies simulator/challenge code into a private short `/tmp/xrs_*`
 runtime, links the original assets, creates a fresh robot assembly directory, and
 redirects the copied EmbodiChain simulator cache. This avoids DexSim's native
@@ -97,7 +115,7 @@ two-episode command above is an integration acceptance run, not an official scor
 | items_handover | shared_160k | 29 |
 | drawer_open_place | shared_160k | 29 |
 | mixer_operating | shared_160k | 29 |
-| item_assembly | shared_160k | 29 |
+| item_assembly | item_assembly_160k_ft10k | 29 |
 | manipulate_pipette | shared_160k | 29 |
 | sample_loading | shared_160k | 29 |
 
@@ -131,8 +149,10 @@ The official evaluator/config/assets were pinned to commit
 `8818c82df5fa2522809b8105e7018950dcc9a9a8`; use that revision for reproduction.
 The run explicitly used `eval_reset_sync_steps=0`. This publication makes **0 the
 adapter default**, replacing the historical two-episode acceptance default of 10.
-Runtime code and weights are unchanged; the build verifies that the published
+Policy/model inference code and the shared bell weights are unchanged; the build verifies that the published
 configuration equals the effective configuration used in the 50-episode run.
+The new teardown-order wrapper was not part of that historical bell run and is
+validated separately by the assembly acceptance report.
 
 See `verification/bell50_audit.json` and `verification/bell50_metrics.json` for
 current evidence. `verification/acceptance.json` and `verification/RESULTS.md`
@@ -141,6 +161,26 @@ retain the earlier two-episode history, whose reset setting was 10.
 This verifies the public click_bell pipeline on the existing L20 environments.
 A fresh CUDA 12.8 install, RTX 5090, all ten tasks using this packaged SDPA runtime,
 and the organizer's held-out scenes have not been validated here.
+
+## Assembly checkpoint addition — 2026-10-11
+
+`item_assembly_160k_ft10k` is exported from run
+`xr1_single_item_assembly_160k_ft10k_20261009`, step 10000, initialized from the
+shared step-160000 checkpoint. It retains its exact training normalization and
+model configuration; normalization equals the shared checkpoint. Only model
+tensors are exported, with source/export digests and exact tensor equality checks
+in `verification/assembly_export.json`. This record does not establish a new
+assembly success rate. Packaged runtime acceptance is reported separately in
+`verification/assembly_acceptance.json` and `verification/assembly_metrics.json`;
+the previous 50/50 bell result must not be attributed to this checkpoint.
+
+The updated package completed **1/1 successful assembly episode** on the existing
+L20 environments: 176 action steps, seven inference calls, H30/k29/p0 and SDPA.
+All 351 pinned official source/config/asset files matched; official metrics,
+finite action outputs, the three-view video and inference-process cleanup passed
+the audit. The first attempt succeeded in the task but lost metrics during native
+close; it was rejected as acceptance. The reported passed run uses the documented
+teardown-order wrapper. This is not a fresh-install, RTX 5090 or 50-episode test.
 
 ## Submit
 
