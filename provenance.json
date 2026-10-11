@@ -24,7 +24,8 @@
   ],
   "policy_contract": "H30 k29 prefix0 joint_absolute; policy seed20260908 per episode",
   "checkpoint_selection": {
-    "shared_160k": "nine tasks",
-    "item_assembly_160k_ft10k": "item_assembly only; user-selected on 2026-10-11"
+    "shared_160k": "eight tasks",
+    "item_assembly_160k_ft10k": "item_assembly only; user-selected on 2026-10-11",
+    "water_pouring_160k_ft5k": "water_pouring only; user-selected 50/50 checkpoint on 2026-10-11"
   }
 }

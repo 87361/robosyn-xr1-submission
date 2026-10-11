@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-11T13:56:52.590047+08:00",
+  "config": {
+    "policy": "xr1",
+    "task": "water_pouring",
+    "setting": "random",
+    "checkpoint_path": null,
+    "dp_num_inference_steps": null,
+    "episode_count": 10,
+    "timeout_action_steps": 500,
+    "seed": 0,
+    "fixed_episode_seed": null,
+    "candidate_rng_offset": 42
+  },
+  "inference_timing_scope": "raw observation preprocessing and transfer through executable action; env.step excluded",
+  "platform": {
+    "operating_system": "Linux-5.15.0-72-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8563C",
+    "accelerators": [
+      "NVIDIA L20"
+    ],
+    "cuda_visible_devices": null,
+    "python_version": "3.11.14",
+    "torch_version": "2.7.1+cu126",
+    "torch_cuda_version": "12.6"
+  },
+  "summary": {
+    "episode_count": 10,
+    "success_count": 10,
+    "success_rate": 1.0,
+    "average_action_steps": 185.1,
+    "average_action_steps_ratio": 0.3702,
+    "inference_call_count": 69,
+    "average_inference_calls_per_episode": 6.9,
+    "average_inference_time_seconds": 0.34853728423299996,
+    "average_inference_time_per_episode_seconds": 2.4049072612076996
+  },
+  "episodes": [
+    {
+      "episode_index": 0,
+      "candidate_index": 2,
+      "episode_attempt_index": 2,
+      "seed": 1982038771,
+      "success": true,
+      "action_steps": 190,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 1,
+      "candidate_index": 3,
+      "episode_attempt_index": 0,
+      "seed": 87950109,
+      "success": true,
+      "action_steps": 187,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 2,
+      "candidate_index": 4,
+      "episode_attempt_index": 0,
+      "seed": 1204863635,
+      "success": true,
+      "action_steps": 186,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 3,
+      "candidate_index": 7,
+      "episode_attempt_index": 2,
+      "seed": 947610023,
+      "success": true,
+      "action_steps": 189,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 4,
+      "candidate_index": 9,
+      "episode_attempt_index": 1,
+      "seed": 352272321,
+      "success": true,
+      "action_steps": 185,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 5,
+      "candidate_index": 14,
+      "episode_attempt_index": 4,
+      "seed": 93837855,
+      "success": true,
+      "action_steps": 181,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 6,
+      "candidate_index": 16,
+      "episode_attempt_index": 1,
+      "seed": 1780959476,
+      "success": true,
+      "action_steps": 173,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 7,
+      "candidate_index": 20,
+      "episode_attempt_index": 3,
+      "seed": 1177824715,
+      "success": true,
+      "action_steps": 185,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 8,
+      "candidate_index": 23,
+      "episode_attempt_index": 2,
+      "seed": 930076700,
+      "success": true,
+      "action_steps": 189,
+      "expert_plan_steps": 207
+    },
+    {
+      "episode_index": 9,
+      "candidate_index": 28,
+      "episode_attempt_index": 4,
+      "seed": 505240629,
+      "success": true,
+      "action_steps": 186,
+      "expert_plan_steps": 207
+    }
+  ],
+  "feasibility_filter": {
+    "enabled": true,
+    "max_candidate_seed_attempts_per_episode": 100,
+    "candidate_seed_attempt_count": 29,
+    "accepted_episode_count": 10,
+    "skipped_seed_count": 19,
+    "skipped_seeds": [
+      {
+        "candidate_index": 0,
+        "episode_index": 0,
+        "episode_attempt_index": 0,
+        "seed": 1284876248,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 1,
+        "episode_index": 0,
+        "episode_attempt_index": 1,
+        "seed": 1292401841,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 5,
+        "episode_index": 3,
+        "episode_attempt_index": 0,
+        "seed": 768281747,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 6,
+        "episode_index": 3,
+        "episode_attempt_index": 1,
+        "seed": 507984782,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 8,
+        "episode_index": 4,
+        "episode_attempt_index": 0,
+        "seed": 600956192,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 10,
+        "episode_index": 5,
+        "episode_attempt_index": 0,
+        "seed": 615697673,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 11,
+        "episode_index": 5,
+        "episode_attempt_index": 1,
+        "seed": 160516793,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 12,
+        "episode_index": 5,
+        "episode_attempt_index": 2,
+        "seed": 1909838463,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 13,
+        "episode_index": 5,
+        "episode_attempt_index": 3,
+        "seed": 1110745632,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 15,
+        "episode_index": 6,
+        "episode_attempt_index": 0,
+        "seed": 454869706,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 17,
+        "episode_index": 7,
+        "episode_attempt_index": 0,
+        "seed": 2034098327,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 18,
+        "episode_index": 7,
+        "episode_attempt_index": 1,
+        "seed": 1136257699,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 19,
+        "episode_index": 7,
+        "episode_attempt_index": 2,
+        "seed": 800291326,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 21,
+        "episode_index": 8,
+        "episode_attempt_index": 0,
+        "seed": 1017555826,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 22,
+        "episode_index": 8,
+        "episode_attempt_index": 1,
+        "seed": 1959150775,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 24,
+        "episode_index": 9,
+        "episode_attempt_index": 0,
+        "seed": 293921570,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 25,
+        "episode_index": 9,
+        "episode_attempt_index": 1,
+        "seed": 580757632,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 26,
+        "episode_index": 9,
+        "episode_attempt_index": 2,
+        "seed": 80701568,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      },
+      {
+        "candidate_index": 27,
+        "episode_index": 9,
+        "episode_attempt_index": 3,
+        "seed": 1392175012,
+        "reason": "expert_action_generation_failed",
+        "expert_plan_steps": 0
+      }
+    ]
+  }
+}

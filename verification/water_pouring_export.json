@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "task": "water_pouring",
+  "artifact": "water_pouring_160k_ft5k",
+  "source_run": "xr1_single_water_pouring_160k_ft5k_20261009",
+  "checkpoint_step": 5000,
+  "base_checkpoint_step": 160000,
+  "source_checkpoint_sha256": "3fa4c9cb8ec04b41ecaf802124889ba3727931bd15ddcc7335c61414843ab283",
+  "selection_record_sha256": "c218f95914222bbf873387c8cea5f8098063bd44b86b9be5746c56322cb05796",
+  "source_config_sha256": "96c1d91ce736ccb496d970a4cd4f76d8d444d234301cc77ce6eb2153c7611c71",
+  "tensor_count": 1135,
+  "all_tensors_finite": true,
+  "tensor_keys_shapes_dtypes_match_shared": true,
+  "exported_tensors_exactly_equal_source": true,
+  "normalization_equal_to_shared": true,
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "training_data": {
+    "kind": "official pre-collected Sim release",
+    "task": "water_pouring",
+    "episodes": 1000
+  },
+  "model_sha256": "74b381f87c64f5e19770bd6ae1a72a2188d80d65b25271360936e8f7f2bcf878",
+  "config_sha256": "153a11aeee29a407f78f6bf11ab42260931d79432e509f2ac349b3fa15a82a96",
+  "runtime_inference_verified": false,
+  "end_to_end_verified": false
+}

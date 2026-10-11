@@ -7,12 +7,13 @@ tags:
 - vision-language-action
 ---
 
-# XR1 RoboSynChallenge Sim10: shared 160k + assembly 10k fine-tune
+# XR1 RoboSynChallenge Sim10: shared 160k + assembly 10k + water 5k
 
 The shared step-160000 checkpoint was trained from Xiaomi-Robotics-1 on the
-official Sim release (1,000 episodes per task). Nine tasks retain this checkpoint.
+official Sim release (1,000 episodes per task). Eight tasks retain this checkpoint.
 Assembly uses a separate checkpoint fine-tuned for 10,000 additional steps on
-1,000 generated assembly expert trajectories. Both checkpoints include their
+1,000 generated assembly expert trajectories. Water pouring uses 5,000 further steps on the official
+1,000-episode water dataset. All three checkpoints include their
 exact normalization statistics and share the bundled offline processor.
 
 Use the paired code repository `87361/robosyn-xr1-submission` and its pinned commit.
@@ -24,13 +25,17 @@ The code README documents installation and evaluation commands.
 - `shared_160k/config.yaml`: normalization statistics and model parameters.
 - `item_assembly_160k_ft10k/model.pt`: assembly fine-tune tensors only.
 - `item_assembly_160k_ft10k/config.yaml`: exact assembly training statistics and model parameters.
+- `water_pouring_160k_ft5k/model.pt`: selected water fine-tune tensors only.
+- `water_pouring_160k_ft5k/config.yaml`: exact water training statistics and model parameters.
 - `processor/`: tokenizer, chat template, image processor and Qwen model config.
 - `manifest.json`: file sizes, SHA256 digests, source-checkpoint digest and processor revision.
 
-Nine tasks map to `shared_160k`: click_bell, handle_basket, water_pouring,
+Eight tasks map to `shared_160k`: click_bell, handle_basket,
 table_rearrangement, items_handover, drawer_open_place, mixer_operating,
 manipulate_pipette, sample_loading. Only `item_assembly` maps to
 `item_assembly_160k_ft10k`, from run `xr1_single_item_assembly_160k_ft10k_20261009`.
+`water_pouring` maps to `water_pouring_160k_ft5k`, from run
+`xr1_single_water_pouring_160k_ft5k_20261009`, step 5000.
 
 The model takes three RGB images, robot joint/gripper state and task text. It
 predicts 30 absolute joint actions. The submitted adapter executes up to 29 before
@@ -47,6 +52,16 @@ The bell result is not an evaluation of the assembly fine-tune. Its export
 checks and any component inference checks are documented separately in the code
 repository's `verification/` directory; no new assembly success rate is claimed
 by packaging the checkpoint.
+
+The selected water checkpoint achieved **50/50 public-scene successes** in the
+previous recorded evaluation (H30/k29/p0, `eval_reset_sync_steps=10`). This is historical checkpoint evidence,
+not a 50-episode evaluation of this release, which uses the official reset default 0. That runner included recording and
+native-runtime compatibility patches; their hashes and the five shard metrics
+are preserved in the paired code repository under `verification/water50/`.
+Packaged-runtime acceptance at reset 0 passed one episode: 176 steps, seven
+model calls on the existing L20 environment. See `verification/water_pouring_acceptance.json`.
+An initial native initialization failure and the unchanged successful retry are
+documented in the code README; its root cause remains unresolved.
 
 ## Attribution
 

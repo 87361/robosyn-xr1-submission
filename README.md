@@ -1,11 +1,13 @@
 # XR1 RoboSynChallenge submission
 
 This repository contains a standalone RoboSynChallenge policy adapter, an isolated
-inference runtime, and launch/validation tools. Nine tasks use the shared XR1 H30
+inference runtime, and launch/validation tools. Eight tasks use the shared XR1 H30
 checkpoint at step 160000. `item_assembly` uses the user-selected checkpoint after
 10,000 further training steps on 1,000 additional generated assembly expert
-trajectories. `task_mapping.json` is the authoritative mapping. Existing bell
-acceptance evidence applies to the unchanged shared checkpoint, not to assembly.
+trajectories. `water_pouring` uses the shared 160k checkpoint fine-tuned for
+5,000 steps on the official 1,000-episode water dataset. `task_mapping.json` is
+the authoritative mapping. Existing bell acceptance evidence applies to the
+unchanged shared checkpoint.
 
 Code: https://github.com/87361/robosyn-xr1-submission
 
@@ -46,6 +48,8 @@ Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
      shared_160k/config.yaml
      item_assembly_160k_ft10k/model.pt
      item_assembly_160k_ft10k/config.yaml
+     water_pouring_160k_ft5k/model.pt
+     water_pouring_160k_ft5k/config.yaml
      processor/...
    ```
 
@@ -110,7 +114,7 @@ two-episode command above is an integration acceptance run, not an official scor
 |---|---|---:|
 | click_bell | shared_160k | 29 |
 | handle_basket | shared_160k | 29 |
-| water_pouring | shared_160k | 29 |
+| water_pouring | water_pouring_160k_ft5k | 29 |
 | table_rearrangement | shared_160k | 29 |
 | items_handover | shared_160k | 29 |
 | drawer_open_place | shared_160k | 29 |
@@ -181,6 +185,29 @@ finite action outputs, the three-view video and inference-process cleanup passed
 the audit. The first attempt succeeded in the task but lost metrics during native
 close; it was rejected as acceptance. The reported passed run uses the documented
 teardown-order wrapper. This is not a fresh-install, RTX 5090 or 50-episode test.
+
+## Water checkpoint addition — 2026-10-11
+
+`water_pouring_160k_ft5k` comes from run
+`xr1_single_water_pouring_160k_ft5k_20261009`, step 5000, initialized from shared
+160k and fine-tuned on the official 1,000-episode water dataset. Exact tensor
+export checks are in `verification/water_pouring_export.json`.
+
+The selected checkpoint's historical five-shard run achieved **50/50 success**,
+average 183 steps, H30/k29/p0. It used **reset synchronization 10**, plus the
+recording/native compatibility changes preserved in `verification/water50/`.
+The final submission uses the **official reset default 0**; the historical 50/50
+must not be presented as a same-configuration 50-episode test of this release.
+
+This package passed **1/1 water episode at reset 0**: 176 steps and seven model
+calls on the existing L20 environments. All 351 pinned official files, finite
+actions, three-view video, official metrics and process cleanup passed
+`verification/water_pouring_acceptance.json`. The first attempt aborted during
+DexSim/OptiX initialization before any policy action; its log is retained as
+`verification/water_initial_native_failure.txt`. An unchanged retry with a fresh
+private cache passed; the native initialization failure's root cause remains
+unresolved. No simulator-thread override was added. This is not fresh-install,
+RTX 5090 or all-ten-task acceptance.
 
 ## Submit
 

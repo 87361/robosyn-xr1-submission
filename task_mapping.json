@@ -1,5 +1,5 @@
 {
-  "selection": "user-selected item_assembly 160k + 10k checkpoint; other nine tasks retain shared 160k",
+  "selection": "user-selected assembly 160k + 10k and water_pouring 160k + 5k; other eight tasks retain shared 160k",
   "horizon": 30,
   "execute_steps": 29,
   "prefix_steps": 0,
@@ -13,8 +13,9 @@
       "checkpoint_step": 160000
     },
     "water_pouring": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "water_pouring_160k_ft5k",
+      "checkpoint_step": 5000,
+      "base_checkpoint_step": 160000
     },
     "table_rearrangement": {
       "artifact": "shared_160k",
