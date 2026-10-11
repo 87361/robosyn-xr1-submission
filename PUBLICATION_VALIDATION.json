@@ -17,8 +17,18 @@
       "execute_steps": 20,
       "episodes": 1
     },
+    "table_rearrangement": {
+      "model_sha256": "c42c47000ffe4e5ed3a0d72002047d250b3ca01397c4ae704e0f56837d074356",
+      "execute_steps": 29,
+      "episodes": 1
+    },
+    "drawer_open_place": {
+      "model_sha256": "496efcf5ba5e203027a149952037bfd0c3a61ee0fd25434e6bf23818e601e35b",
+      "execute_steps": 29,
+      "episodes": 1
+    },
     "click_bell": {
-      "model_sha256": "0d1dbcd9016aba639f9054907903a956bf2c32931b28c213a6901ec34b9fc156",
+      "model_sha256": "3463dd8da507667b42389c7bb07828180cdc7cbbc57e57589953737318bea7af",
       "execute_steps": 29,
       "episodes": 1
     }
@@ -28,6 +38,9 @@
   "water_model_sha256": "74b381f87c64f5e19770bd6ae1a72a2188d80d65b25271360936e8f7f2bcf878",
   "historical_water_packaged_runtime_episodes": 1,
   "publication_changes": [
+    "click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only",
+    "table selects shared160k+5k; drawer selects shared160k+10k",
+    "previously accepted task mapping checked per task against retained exact historical mapping",
     "handle_basket selects 140k/k29; items_handover selects 180k/k20",
     "direct adapter and launcher share task_mapping execution contracts",
     "reset default 10 -> 0, identical to the audited 50-episode override",

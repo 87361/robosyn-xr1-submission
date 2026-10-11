@@ -1,14 +1,13 @@
 # XR1 RoboSynChallenge submission
 
 This repository contains a standalone RoboSynChallenge policy adapter, an isolated
-inference runtime, and launch/validation tools. Six tasks use the shared XR1 H30
+inference runtime, and launch/validation tools. Three unconfirmed tasks use the shared XR1 H30
 checkpoint at step 160000. `item_assembly` uses the user-selected checkpoint after
 10,000 further training steps on 1,000 additional generated assembly expert
 trajectories. `water_pouring` uses the shared 160k checkpoint fine-tuned for
 5,000 steps on the official 1,000-episode water dataset. `task_mapping.json` is
 the authoritative mapping: `handle_basket` selects H30 140k/k29 and
-`items_handover` selects H30 180k/k20. Existing bell acceptance evidence applies to the
-unchanged shared checkpoint.
+`items_handover` selects H30 180k/k20. The confirmed bell checkpoint is shared160k+3k; existing shared-bell acceptance is historical only. Table rearrangement selects shared160k+5k and drawer placement selects shared160k+10k. The three unconfirmed tasks (mixer, pipette, sample loading) retain shared160k fallback weights; their screenshot candidate scores do not describe these fallback weights.
 
 Code: https://github.com/87361/robosyn-xr1-submission
 
@@ -55,10 +54,13 @@ Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
      handle_basket_140k/config.yaml
      items_handover_180k/model.pt
      items_handover_180k/config.yaml
+     table_rearrangement_160k_ft5k/{model.pt,config.yaml}
+     drawer_open_place_160k_ft10k/{model.pt,config.yaml}
+     click_bell_160k_ft3k/{model.pt,config.yaml}
      processor/...
    ```
 
-   The five model files occupy about 52.69 GB in total. Each evaluation loads
+   The eight model files occupy about 85.70 GB in total. Each evaluation loads
    only the checkpoint selected for that task.
 
    The export includes model tensors, exact training normalization statistics,
@@ -120,12 +122,12 @@ two-episode command above is an integration acceptance run, not an official scor
 
 | Task | Artifact | Execute steps |
 |---|---|---:|
-| click_bell | shared_160k | 29 |
+| click_bell | click_bell_160k_ft3k | 29 |
 | handle_basket | handle_basket_140k | 29 |
 | water_pouring | water_pouring_160k_ft5k | 29 |
-| table_rearrangement | shared_160k | 29 |
+| table_rearrangement | table_rearrangement_160k_ft5k | 29 |
 | items_handover | items_handover_180k | 20 |
-| drawer_open_place | shared_160k | 29 |
+| drawer_open_place | drawer_open_place_160k_ft10k | 29 |
 | mixer_operating | shared_160k | 29 |
 | item_assembly | item_assembly_160k_ft10k | 29 |
 | manipulate_pipette | shared_160k | 29 |
@@ -141,7 +143,7 @@ two-episode command above is an integration acceptance run, not an official scor
   tasks and the two raw-gripper tasks retain their distinct data contracts.
 - Each episode clears client history and starts a fresh policy RNG stream at seed
   20260908. The policy does not read environment seed IDs, object poses, depth or
-  camera intrinsics. Task identity selects only the declared gripper convention.
+  camera intrinsics. Task identity selects the declared checkpoint, execute steps and gripper convention.
 - Reported inference time includes RGB preprocessing, transport, model computation
   and action encoding. It excludes simulator stepping. The model and simulator run
   on the same selected GPU; CPU physics is selected by the supplied adapter config.
@@ -150,7 +152,7 @@ two-episode command above is an integration acceptance run, not an official scor
 - The package supports a caller-provided official evaluator and forwards hidden
   test overrides. No fixed public episode manifest is included.
 
-## Acceptance result — 2026-10-09
+## Historical shared-checkpoint acceptance — 2026-10-09
 
 The packaged SDPA runtime completed **50/50 successful click_bell episodes** on
 NVIDIA L20: average 48.92 action steps (range 45–51), two model calls per episode.
@@ -162,13 +164,14 @@ The official evaluator/config/assets were pinned to commit
 `8818c82df5fa2522809b8105e7018950dcc9a9a8`; use that revision for reproduction.
 The run explicitly used `eval_reset_sync_steps=0`. This publication makes **0 the
 adapter default**, replacing the historical two-episode acceptance default of 10.
-Model inference code and the shared bell weights are unchanged; the build verifies that the published
+Model inference code and the retained shared fallback weights are unchanged; the build verifies that the published
 configuration equals the effective configuration used in the 50-episode run.
 The new teardown-order wrapper was not part of that historical bell run and is
-validated separately by the assembly acceptance report.
+validated separately by the assembly acceptance report. This shared-bell result
+does not establish a score for the newly selected bell+3k checkpoint.
 
 See `verification/bell50_audit.json` and `verification/bell50_metrics.json` for
-current evidence. `verification/acceptance.json` and `verification/RESULTS.md`
+historical shared-checkpoint evidence. `verification/acceptance.json` and `verification/RESULTS.md`
 retain the earlier two-episode history, whose reset setting was 10.
 
 This verifies the public click_bell pipeline on the existing L20 environments.
@@ -245,6 +248,43 @@ A shared-checkpoint bell regression also passed **1/1**, 47 steps / two calls
 (actual blocks 29 + 18). Current acceptance is recorded separately for all three
 runs. Historical assembly/water reports retain the
 older adapter hashes; they are not new runs of this adapter revision.
+
+## Seven confirmed task selections — 2026-10-11
+
+Table rearrangement adds the shared160k+5k checkpoint and drawer placement adds
+shared160k+10k, each trained on its official 1,000-episode task dataset. Existing
+selected weights are retained byte-for-byte. Bell now selects shared160k+3k;
+assembly remains the explicitly selected shared160k+10k. The old shared artifact
+remains solely as the fallback for the three unconfirmed tasks.
+
+The selected table and drawer checkpoints have historical results of 50/50 and
+48/50; the newly selected bell+3k also has historical 50/50. Retained runner hashes prove those runs used reset synchronization 10,
+plus recording and native-thread compatibility changes. The submission uses
+reset 0 and the SDK's default thread mode. The historical scores are selection
+evidence, not completed 50-episode evaluations of this release.
+`verification/selected_history/` preserves the selection records, shard contracts,
+metrics, runtime patches and exact historical launch script. Export and current
+packaged-runtime acceptance reports are kept separately. Build-time checks bind
+new task acceptance to the current mapping and exact runtime bytes; previous
+unchanged tasks retain their original reports and exact prior mapping evidence.
+
+The three added checkpoints passed one real episode each through the packaged
+runtime at official reset 0 on the existing L20 environment:
+
+| Checkpoint | Successes / episodes | Action steps / official limit | Model calls |
+|---|---:|---:|---:|
+| table160k+5k | 1/1 | 145/361 | 5 |
+| drawer160k+10k | 1/1 | 406/900 | 14 |
+| bell160k+3k | 1/1 | 47/361 | 2 |
+
+Each passed official-file identity, candidate RNG, finite action/chunk checks,
+video, metrics and process cleanup. See the task-specific acceptance and metrics
+files in `verification/`. These are integration checks, not new 50-episode results.
+The initial table staging attempt failed before policy execution because a copy
+filter omitted the packaged model source; complete source-hash preflight and
+module-origin checks were added before the successful run. No inference code,
+weights or scoring settings changed during that repair. Shared-GPU memory was
+checked before the drawer run; no other workloads were terminated.
 
 ## Submit
 

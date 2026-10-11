@@ -1,12 +1,13 @@
 {
-  "selection": "user-selected basket H30 140k/k29, handover H30 180k/k20, assembly 160k+10k/k29 and water 160k+5k/k29; six tasks retain shared 160k/k29",
+  "selection": "Seven user-confirmed tasks: bell160k+3k, basket140k, water160k+5k, table160k+5k, handover180k, drawer160k+10k, assembly160k+10k. Three unconfirmed tasks retain shared160k fallback.",
   "horizon": 30,
   "execute_steps": 29,
   "prefix_steps": 0,
   "tasks": {
     "click_bell": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "click_bell_160k_ft3k",
+      "checkpoint_step": 3000,
+      "base_checkpoint_step": 160000
     },
     "handle_basket": {
       "artifact": "handle_basket_140k",
@@ -19,8 +20,9 @@
       "base_checkpoint_step": 160000
     },
     "table_rearrangement": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "table_rearrangement_160k_ft5k",
+      "checkpoint_step": 5000,
+      "base_checkpoint_step": 160000
     },
     "items_handover": {
       "artifact": "items_handover_180k",
@@ -28,8 +30,9 @@
       "execute_steps": 20
     },
     "drawer_open_place": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "drawer_open_place_160k_ft10k",
+      "checkpoint_step": 10000,
+      "base_checkpoint_step": 160000
     },
     "mixer_operating": {
       "artifact": "shared_160k",

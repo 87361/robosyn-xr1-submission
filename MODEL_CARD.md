@@ -10,11 +10,11 @@ tags:
 # XR1 RoboSynChallenge Sim10: selected task checkpoints
 
 The shared step-160000 checkpoint was trained from Xiaomi-Robotics-1 on the
-official Sim release (1,000 episodes per task). Six tasks retain this checkpoint.
+official Sim release (1,000 episodes per task). Three unconfirmed tasks retain this checkpoint.
 Assembly uses a separate checkpoint fine-tuned for 10,000 additional steps on
 1,000 generated assembly expert trajectories. Water pouring uses 5,000 further steps on the official
 1,000-episode water dataset. Basket selects the original H30 140k checkpoint, and handover selects H30 180k.
-All five checkpoints include their
+Table uses shared160k+5k and drawer shared160k+10k, each fine-tuned on its official 1,000-episode task dataset. Bell selects the shared160k+3k fine-tune on the official 1,000-episode bell dataset. All eight checkpoints include their
 exact normalization statistics and share the bundled offline processor.
 
 Use the paired code repository `87361/robosyn-xr1-submission` and its pinned commit.
@@ -30,11 +30,13 @@ The code README documents installation and evaluation commands.
 - `water_pouring_160k_ft5k/config.yaml`: exact water training statistics and model parameters.
 - `handle_basket_140k/{model.pt,config.yaml}`: original H30 140k for basket.
 - `items_handover_180k/{model.pt,config.yaml}`: original H30 180k for handover.
+- `table_rearrangement_160k_ft5k/{model.pt,config.yaml}`: selected table fine-tune.
+- `drawer_open_place_160k_ft10k/{model.pt,config.yaml}`: selected drawer fine-tune.
+- `click_bell_160k_ft3k/{model.pt,config.yaml}`: selected bell fine-tune.
 - `processor/`: tokenizer, chat template, image processor and Qwen model config.
 - `manifest.json`: file sizes, SHA256 digests, source-checkpoint digest and processor revision.
 
-Six tasks map to `shared_160k`: click_bell,
-table_rearrangement, drawer_open_place, mixer_operating,
+Three tasks map to `shared_160k`: mixer_operating,
 manipulate_pipette, sample_loading. Only `item_assembly` maps to
 `item_assembly_160k_ft10k`, from run `xr1_single_item_assembly_160k_ft10k_20261009`.
 `water_pouring` maps to `water_pouring_160k_ft5k`, from run
@@ -77,6 +79,19 @@ basket 332 steps / 12 calls, handover 318 steps / 16 calls. Actual trace blocks
 verified k29 and k20 respectively, including early success termination.
 The final adapter selects k from `task_mapping.json` at both launch and direct
 policy construction and rejects conflicting execution settings.
+
+The selected table/drawer checkpoints achieved historical 50/50 and 48/50 at
+reset=10 with recording/native compatibility changes. Current submission reset=0
+acceptance is recorded separately; those historical scores are not new official
+pipeline results. The three unconfirmed mixer/pipette/sample-loading tasks use
+shared160k fallback weights. Candidate scores from other checkpoints do not
+apply to those fallbacks. Bell now selects shared160k+3k (historical reset10 50/50); previous shared-bell reset0 50/50 is not a score for this new checkpoint.
+
+The new packaged-runtime integration checks at official reset 0 passed one
+real episode each: table 145/361 steps (5 calls), drawer 406/900 (14 calls),
+bell+3k 47/361 (2 calls). Official source identity, candidate RNG, actual k29
+blocks, finite actions, metrics/video and cleanup passed. These are existing-L20
+single-episode checks, not new 50-episode scores or fresh-install verification.
 
 ## Attribution
 

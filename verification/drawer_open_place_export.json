@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "task": "drawer_open_place",
+  "artifact": "drawer_open_place_160k_ft10k",
+  "source_run": "xr1_single_drawer_open_place_160k_ft10k_20261009",
+  "checkpoint_step": 10000,
+  "base_checkpoint_step": 160000,
+  "source_checkpoint_sha256": "6dcbe0240185b51a1ca4089bce96afdcf555abbd36104e6b2ce5bee898783e57",
+  "selection_record_sha256": "42567a5dc0e81f28cd1311160a984dd1634c2096ef027ef5bddf636239172bd4",
+  "source_config_sha256": "e761c800cef9be6ef73325843b231484a07bdb9c2b5722c56e7f44bb3e0aff74",
+  "tensor_count": 1135,
+  "all_tensors_finite": true,
+  "tensor_keys_shapes_dtypes_match_shared": true,
+  "exported_tensors_exactly_equal_source": true,
+  "normalization_equal_to_shared": true,
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "training_data": {
+    "kind": "official pre-collected Sim release",
+    "task": "drawer_open_place",
+    "episodes": 1000
+  },
+  "model_sha256": "496efcf5ba5e203027a149952037bfd0c3a61ee0fd25434e6bf23818e601e35b",
+  "config_sha256": "153a11aeee29a407f78f6bf11ab42260931d79432e509f2ac349b3fa15a82a96",
+  "runtime_inference_verified": false,
+  "end_to_end_verified": false
+}

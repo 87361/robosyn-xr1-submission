@@ -1,0 +1,52 @@
+{
+  "selection": "user-selected basket H30 140k/k29, handover H30 180k/k20, assembly 160k+10k/k29 and water 160k+5k/k29; six tasks retain shared 160k/k29",
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "tasks": {
+    "click_bell": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "handle_basket": {
+      "artifact": "handle_basket_140k",
+      "checkpoint_step": 140000,
+      "execute_steps": 29
+    },
+    "water_pouring": {
+      "artifact": "water_pouring_160k_ft5k",
+      "checkpoint_step": 5000,
+      "base_checkpoint_step": 160000
+    },
+    "table_rearrangement": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "items_handover": {
+      "artifact": "items_handover_180k",
+      "checkpoint_step": 180000,
+      "execute_steps": 20
+    },
+    "drawer_open_place": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "mixer_operating": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "item_assembly": {
+      "artifact": "item_assembly_160k_ft10k",
+      "checkpoint_step": 10000,
+      "base_checkpoint_step": 160000
+    },
+    "manipulate_pipette": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    },
+    "sample_loading": {
+      "artifact": "shared_160k",
+      "checkpoint_step": 160000
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "task": "table_rearrangement",
+  "episodes": 50,
+  "successes": 50,
+  "checkpoint_sha256": "43ebd423db59164ec6060b6ea7e5948e336a586718ddd11e1d0408be4f43a62a",
+  "historical_reset_sync_steps": 10,
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "boundary": "Historical recording runner with native-thread and recording patches; not current submission official-reset0 evaluation",
+  "source_files_sha256": {
+    "plan.json": "14d02699dec66f715ce3d646e8f1d5f961ba26dc664e9936fce45c58fee9236c",
+    "EVAL_COMPLETE.json": "1c4acdaa7b76bcf2f2823c2597d4675c3329a00b8c286303058821fd82f3391b",
+    "run_one.sh": "3734afbfa85d18b3be66aa5e9a23fd11e059a1665fa4634bf7d82f8b2974b556",
+    "metrics.json": "02761313a95fd79826485ba9316eba7229469eda98f88aec957e2940eafe1648",
+    "shard_004/evaluation_contract.json": "d09cc05cc8cd848d6cb29f5790031265f7eb36e65989075caaee338e0129aa78",
+    "shard_004/metrics.json": "e0c49abf60ad3921919f382e7ba76d44f51f93521a46bdd934ef31a50c986db5",
+    "shard_004/runtime_patch.json": "a4d9b1c65b688ad88314752d81d966f660164d8d812be5ba7cc834b67b8f1961",
+    "shard_002/evaluation_contract.json": "3355a348d6406796e18147ca848ffd368554b63bb6b40ae55572d8fdbc6a3c1b",
+    "shard_002/metrics.json": "89ab062b19ee11a6fa9dfd556b9b7584f34d7dcaff0849ca1e71d8b65d693013",
+    "shard_002/runtime_patch.json": "746c28448d44e3f96dddc6579bbe0d51dcd77797c6f6d6027d45ee64e45dd726",
+    "shard_003/evaluation_contract.json": "ebe1526dde8b88a42816d04477155bbb3a367fad2e6174b6ea32369cd723319c",
+    "shard_003/metrics.json": "5c636967560e922d4707f22ffb661c0578495cafb70ddf57c688d4d2e0750407",
+    "shard_003/runtime_patch.json": "23179b0f1756d5069cfb5748e5059cf10351f32e42924e1b5016c6704f9212e6",
+    "shard_001/evaluation_contract.json": "71a3e453a94530d14a94e2c07a93b966c16af4297c025955e3c2c689da136850",
+    "shard_001/metrics.json": "1e1192b646f7249b8e2a5b494026d0da3bbf1a3d16e1c962ede2d495a8b46f44",
+    "shard_001/runtime_patch.json": "ffb25d85e2b13440160fe8dd1a6c1b5f28d1b5b904d7f4ed640a0cc12ef3d204",
+    "shard_000/evaluation_contract.json": "efc513600b92c9f3f9fb5eed378ae5e891479f4950f715a77443827c9f295450",
+    "shard_000/metrics.json": "5d753c12810c6b8fb3d56fe3d903a4fde0babfd157eb33b1efd3cf4a96606e7f",
+    "shard_000/runtime_patch.json": "7122274866c70197f5c7aeb624df8fa3621f624a819576a3042c73c6447a218b"
+  }
+}

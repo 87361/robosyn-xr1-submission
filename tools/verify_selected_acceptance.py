@@ -27,6 +27,21 @@ def main():
     artifact = entry['artifact']
     k = entry.get('execute_steps', mapping['execute_steps'])
     assert len(m['episodes']) == 1
+    assert m['config']['episode_count'] == 1 and m['config']['seed'] == 0
+    assert m['config']['fixed_episode_seed'] is None and m['config']['setting'] == 'random'
+    task_config = json.loads((a.challenge_root/'configs'/task/'random/gym_config.json').read_text())
+    assert m['config']['timeout_action_steps'] == task_config['max_episode_steps']
+    filt = m['feasibility_filter']
+    assert filt['enabled'] and filt['accepted_episode_count'] == 1
+    candidates = sorted(m['episodes'] + filt['skipped_seeds'], key=lambda row: row['candidate_index'])
+    assert len(candidates) == filt['candidate_seed_attempt_count'] == 1 + filt['skipped_seed_count']
+    rng = np.random.RandomState(0)
+    for i, row in enumerate(candidates):
+        assert row['candidate_index'] == i and row['seed'] == int(rng.randint(0, 2**31-1))
+    assert c['policy_seed'] == 20260908
+    assert '--fixed_episode_seed' not in c['eval_command'] and '--eval_reset_sync_steps' not in c['eval_command']
+    assert c['simulator_runtime']['patch'] == 'isolated simulator cache path only; no HOME override'
+    assert c['simulator_runtime']['sim_manager_original_sha256'] == '195ab1a2bb0ef188ccd675ef56c2ff73c921520c1f41a00271c8fed8553ac395'
     assert m["summary"]["success_count"] == 1
     assert c["artifact"].endswith("/" + artifact)
     assert (c["horizon"], c["execute_steps"], c["prefix_steps"]) == (30,k,0)
@@ -89,6 +104,8 @@ def main():
         "evaluator_lifecycle":lifecycle,
         "model_versions":{n:importlib.metadata.version(n) for n in ("torch","numpy","transformers")},
         "gpu":subprocess.check_output(["nvidia-smi","--query-gpu=name,driver_version","--format=csv,noheader"],text=True).strip(),
+        "candidate_seed_sequence_verified":True, "candidate_seed_attempt_count":len(candidates),
+        "official_action_step_limit":m['config']['timeout_action_steps'],
         "attention_backend":"sdpa", "execute_steps":k, "actual_steps_per_chunk":step_counts, "eval_reset_sync_steps":0, "prefix_steps":0,
         "finite_action_chunks":len(chunks), "inference_listener_cleaned_up":True,
         "video":probe, "boundaries":["one episode on existing L20 environments",

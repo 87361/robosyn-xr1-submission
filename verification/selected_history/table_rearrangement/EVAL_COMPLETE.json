@@ -1,0 +1,807 @@
+{
+  "task": "table_rearrangement",
+  "successes": 50,
+  "episodes": 50,
+  "seeds": [
+    209652396,
+    398764591,
+    924231285,
+    1478610112,
+    441365315,
+    1537364731,
+    192771779,
+    1491434855,
+    1819583497,
+    530702035,
+    626610453,
+    1650906866,
+    1879422756,
+    1277901399,
+    1682652230,
+    243580376,
+    1991416408,
+    1171049868,
+    1646868794,
+    2051556033,
+    1252949478,
+    1340754471,
+    124102743,
+    2061486254,
+    292249176,
+    1686997841,
+    1827923621,
+    1443447321,
+    374217481,
+    86837363,
+    1581585360,
+    1428591347,
+    1963466437,
+    1194674174,
+    602801999,
+    1589190063,
+    2055650130,
+    2034131043,
+    1284876248,
+    87950109,
+    1204863635,
+    507984782,
+    947610023,
+    600956192,
+    352272321,
+    615697673,
+    160516793,
+    1909838463,
+    1110745632,
+    93837855
+  ],
+  "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement",
+  "passed": true,
+  "recording": {
+    "passed": true,
+    "episodes": 50,
+    "recordings": [
+      {
+        "seed": 209652396,
+        "steps": 150,
+        "observations": 151,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_000_seed_209652396.h5"
+      },
+      {
+        "seed": 398764591,
+        "steps": 135,
+        "observations": 136,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_001_seed_398764591.h5"
+      },
+      {
+        "seed": 924231285,
+        "steps": 105,
+        "observations": 106,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_002_seed_924231285.h5"
+      },
+      {
+        "seed": 1478610112,
+        "steps": 112,
+        "observations": 113,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_003_seed_1478610112.h5"
+      },
+      {
+        "seed": 441365315,
+        "steps": 135,
+        "observations": 136,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_004_seed_441365315.h5"
+      },
+      {
+        "seed": 1537364731,
+        "steps": 143,
+        "observations": 144,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_005_seed_1537364731.h5"
+      },
+      {
+        "seed": 192771779,
+        "steps": 165,
+        "observations": 166,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_006_seed_192771779.h5"
+      },
+      {
+        "seed": 1491434855,
+        "steps": 141,
+        "observations": 142,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_007_seed_1491434855.h5"
+      },
+      {
+        "seed": 1819583497,
+        "steps": 145,
+        "observations": 146,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_008_seed_1819583497.h5"
+      },
+      {
+        "seed": 530702035,
+        "steps": 134,
+        "observations": 135,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_009_seed_530702035.h5"
+      },
+      {
+        "seed": 626610453,
+        "steps": 140,
+        "observations": 141,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_000_seed_626610453.h5"
+      },
+      {
+        "seed": 1650906866,
+        "steps": 108,
+        "observations": 109,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_001_seed_1650906866.h5"
+      },
+      {
+        "seed": 1879422756,
+        "steps": 132,
+        "observations": 133,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_002_seed_1879422756.h5"
+      },
+      {
+        "seed": 1277901399,
+        "steps": 149,
+        "observations": 150,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_003_seed_1277901399.h5"
+      },
+      {
+        "seed": 1682652230,
+        "steps": 132,
+        "observations": 133,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_004_seed_1682652230.h5"
+      },
+      {
+        "seed": 243580376,
+        "steps": 143,
+        "observations": 144,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_005_seed_243580376.h5"
+      },
+      {
+        "seed": 1991416408,
+        "steps": 1,
+        "observations": 2,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_006_seed_1991416408.h5"
+      },
+      {
+        "seed": 1171049868,
+        "steps": 137,
+        "observations": 138,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_007_seed_1171049868.h5"
+      },
+      {
+        "seed": 1646868794,
+        "steps": 143,
+        "observations": 144,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_008_seed_1646868794.h5"
+      },
+      {
+        "seed": 2051556033,
+        "steps": 139,
+        "observations": 140,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_009_seed_2051556033.h5"
+      },
+      {
+        "seed": 1252949478,
+        "steps": 141,
+        "observations": 142,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_000_seed_1252949478.h5"
+      },
+      {
+        "seed": 1340754471,
+        "steps": 139,
+        "observations": 140,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_001_seed_1340754471.h5"
+      },
+      {
+        "seed": 124102743,
+        "steps": 136,
+        "observations": 137,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_002_seed_124102743.h5"
+      },
+      {
+        "seed": 2061486254,
+        "steps": 143,
+        "observations": 144,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_003_seed_2061486254.h5"
+      },
+      {
+        "seed": 292249176,
+        "steps": 1,
+        "observations": 2,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_004_seed_292249176.h5"
+      },
+      {
+        "seed": 1686997841,
+        "steps": 136,
+        "observations": 137,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_005_seed_1686997841.h5"
+      },
+      {
+        "seed": 1827923621,
+        "steps": 135,
+        "observations": 136,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_006_seed_1827923621.h5"
+      },
+      {
+        "seed": 1443447321,
+        "steps": 166,
+        "observations": 167,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_007_seed_1443447321.h5"
+      },
+      {
+        "seed": 374217481,
+        "steps": 141,
+        "observations": 142,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_008_seed_374217481.h5"
+      },
+      {
+        "seed": 86837363,
+        "steps": 1,
+        "observations": 2,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_009_seed_86837363.h5"
+      },
+      {
+        "seed": 1581585360,
+        "steps": 141,
+        "observations": 142,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_000_seed_1581585360.h5"
+      },
+      {
+        "seed": 1428591347,
+        "steps": 162,
+        "observations": 163,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_001_seed_1428591347.h5"
+      },
+      {
+        "seed": 1963466437,
+        "steps": 160,
+        "observations": 161,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_002_seed_1963466437.h5"
+      },
+      {
+        "seed": 1194674174,
+        "steps": 159,
+        "observations": 160,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_003_seed_1194674174.h5"
+      },
+      {
+        "seed": 602801999,
+        "steps": 170,
+        "observations": 171,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_004_seed_602801999.h5"
+      },
+      {
+        "seed": 1589190063,
+        "steps": 164,
+        "observations": 165,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_005_seed_1589190063.h5"
+      },
+      {
+        "seed": 2055650130,
+        "steps": 141,
+        "observations": 142,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_006_seed_2055650130.h5"
+      },
+      {
+        "seed": 2034131043,
+        "steps": 171,
+        "observations": 172,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_007_seed_2034131043.h5"
+      },
+      {
+        "seed": 1284876248,
+        "steps": 134,
+        "observations": 135,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_008_seed_1284876248.h5"
+      },
+      {
+        "seed": 87950109,
+        "steps": 135,
+        "observations": 136,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_009_seed_87950109.h5"
+      },
+      {
+        "seed": 1204863635,
+        "steps": 142,
+        "observations": 143,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_000_seed_1204863635.h5"
+      },
+      {
+        "seed": 507984782,
+        "steps": 141,
+        "observations": 142,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_001_seed_507984782.h5"
+      },
+      {
+        "seed": 947610023,
+        "steps": 135,
+        "observations": 136,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_002_seed_947610023.h5"
+      },
+      {
+        "seed": 600956192,
+        "steps": 142,
+        "observations": 143,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_003_seed_600956192.h5"
+      },
+      {
+        "seed": 352272321,
+        "steps": 142,
+        "observations": 143,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_004_seed_352272321.h5"
+      },
+      {
+        "seed": 615697673,
+        "steps": 167,
+        "observations": 168,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_005_seed_615697673.h5"
+      },
+      {
+        "seed": 160516793,
+        "steps": 132,
+        "observations": 133,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_006_seed_160516793.h5"
+      },
+      {
+        "seed": 1909838463,
+        "steps": 143,
+        "observations": 144,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_007_seed_1909838463.h5"
+      },
+      {
+        "seed": 1110745632,
+        "steps": 139,
+        "observations": 140,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_008_seed_1110745632.h5"
+      },
+      {
+        "seed": 93837855,
+        "steps": 165,
+        "observations": 166,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_009_seed_93837855.h5"
+      }
+    ],
+    "schema_version": 2,
+    "scope": "each source chunk passed full recording validation"
+  },
+  "chunks": [
+    {
+      "task": "table_rearrangement",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        209652396,
+        398764591,
+        924231285,
+        1478610112,
+        441365315,
+        1537364731,
+        192771779,
+        1491434855,
+        1819583497,
+        530702035
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 209652396,
+            "steps": 150,
+            "observations": 151,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_000_seed_209652396.h5"
+          },
+          {
+            "seed": 398764591,
+            "steps": 135,
+            "observations": 136,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_001_seed_398764591.h5"
+          },
+          {
+            "seed": 924231285,
+            "steps": 105,
+            "observations": 106,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_002_seed_924231285.h5"
+          },
+          {
+            "seed": 1478610112,
+            "steps": 112,
+            "observations": 113,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_003_seed_1478610112.h5"
+          },
+          {
+            "seed": 441365315,
+            "steps": 135,
+            "observations": 136,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_004_seed_441365315.h5"
+          },
+          {
+            "seed": 1537364731,
+            "steps": 143,
+            "observations": 144,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_005_seed_1537364731.h5"
+          },
+          {
+            "seed": 192771779,
+            "steps": 165,
+            "observations": 166,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_006_seed_192771779.h5"
+          },
+          {
+            "seed": 1491434855,
+            "steps": 141,
+            "observations": 142,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_007_seed_1491434855.h5"
+          },
+          {
+            "seed": 1819583497,
+            "steps": 145,
+            "observations": 146,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_008_seed_1819583497.h5"
+          },
+          {
+            "seed": 530702035,
+            "steps": 134,
+            "observations": 135,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_000/recordings/episode_009_seed_530702035.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "table_rearrangement",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        626610453,
+        1650906866,
+        1879422756,
+        1277901399,
+        1682652230,
+        243580376,
+        1991416408,
+        1171049868,
+        1646868794,
+        2051556033
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 626610453,
+            "steps": 140,
+            "observations": 141,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_000_seed_626610453.h5"
+          },
+          {
+            "seed": 1650906866,
+            "steps": 108,
+            "observations": 109,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_001_seed_1650906866.h5"
+          },
+          {
+            "seed": 1879422756,
+            "steps": 132,
+            "observations": 133,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_002_seed_1879422756.h5"
+          },
+          {
+            "seed": 1277901399,
+            "steps": 149,
+            "observations": 150,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_003_seed_1277901399.h5"
+          },
+          {
+            "seed": 1682652230,
+            "steps": 132,
+            "observations": 133,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_004_seed_1682652230.h5"
+          },
+          {
+            "seed": 243580376,
+            "steps": 143,
+            "observations": 144,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_005_seed_243580376.h5"
+          },
+          {
+            "seed": 1991416408,
+            "steps": 1,
+            "observations": 2,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_006_seed_1991416408.h5"
+          },
+          {
+            "seed": 1171049868,
+            "steps": 137,
+            "observations": 138,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_007_seed_1171049868.h5"
+          },
+          {
+            "seed": 1646868794,
+            "steps": 143,
+            "observations": 144,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_008_seed_1646868794.h5"
+          },
+          {
+            "seed": 2051556033,
+            "steps": 139,
+            "observations": 140,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_001/recordings/episode_009_seed_2051556033.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "table_rearrangement",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        1252949478,
+        1340754471,
+        124102743,
+        2061486254,
+        292249176,
+        1686997841,
+        1827923621,
+        1443447321,
+        374217481,
+        86837363
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 1252949478,
+            "steps": 141,
+            "observations": 142,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_000_seed_1252949478.h5"
+          },
+          {
+            "seed": 1340754471,
+            "steps": 139,
+            "observations": 140,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_001_seed_1340754471.h5"
+          },
+          {
+            "seed": 124102743,
+            "steps": 136,
+            "observations": 137,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_002_seed_124102743.h5"
+          },
+          {
+            "seed": 2061486254,
+            "steps": 143,
+            "observations": 144,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_003_seed_2061486254.h5"
+          },
+          {
+            "seed": 292249176,
+            "steps": 1,
+            "observations": 2,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_004_seed_292249176.h5"
+          },
+          {
+            "seed": 1686997841,
+            "steps": 136,
+            "observations": 137,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_005_seed_1686997841.h5"
+          },
+          {
+            "seed": 1827923621,
+            "steps": 135,
+            "observations": 136,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_006_seed_1827923621.h5"
+          },
+          {
+            "seed": 1443447321,
+            "steps": 166,
+            "observations": 167,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_007_seed_1443447321.h5"
+          },
+          {
+            "seed": 374217481,
+            "steps": 141,
+            "observations": 142,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_008_seed_374217481.h5"
+          },
+          {
+            "seed": 86837363,
+            "steps": 1,
+            "observations": 2,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_002/recordings/episode_009_seed_86837363.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "table_rearrangement",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        1581585360,
+        1428591347,
+        1963466437,
+        1194674174,
+        602801999,
+        1589190063,
+        2055650130,
+        2034131043,
+        1284876248,
+        87950109
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 1581585360,
+            "steps": 141,
+            "observations": 142,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_000_seed_1581585360.h5"
+          },
+          {
+            "seed": 1428591347,
+            "steps": 162,
+            "observations": 163,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_001_seed_1428591347.h5"
+          },
+          {
+            "seed": 1963466437,
+            "steps": 160,
+            "observations": 161,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_002_seed_1963466437.h5"
+          },
+          {
+            "seed": 1194674174,
+            "steps": 159,
+            "observations": 160,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_003_seed_1194674174.h5"
+          },
+          {
+            "seed": 602801999,
+            "steps": 170,
+            "observations": 171,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_004_seed_602801999.h5"
+          },
+          {
+            "seed": 1589190063,
+            "steps": 164,
+            "observations": 165,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_005_seed_1589190063.h5"
+          },
+          {
+            "seed": 2055650130,
+            "steps": 141,
+            "observations": 142,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_006_seed_2055650130.h5"
+          },
+          {
+            "seed": 2034131043,
+            "steps": 171,
+            "observations": 172,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_007_seed_2034131043.h5"
+          },
+          {
+            "seed": 1284876248,
+            "steps": 134,
+            "observations": 135,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_008_seed_1284876248.h5"
+          },
+          {
+            "seed": 87950109,
+            "steps": 135,
+            "observations": 136,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_003/recordings/episode_009_seed_87950109.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "table_rearrangement",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        1204863635,
+        507984782,
+        947610023,
+        600956192,
+        352272321,
+        615697673,
+        160516793,
+        1909838463,
+        1110745632,
+        93837855
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 1204863635,
+            "steps": 142,
+            "observations": 143,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_000_seed_1204863635.h5"
+          },
+          {
+            "seed": 507984782,
+            "steps": 141,
+            "observations": 142,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_001_seed_507984782.h5"
+          },
+          {
+            "seed": 947610023,
+            "steps": 135,
+            "observations": 136,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_002_seed_947610023.h5"
+          },
+          {
+            "seed": 600956192,
+            "steps": 142,
+            "observations": 143,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_003_seed_600956192.h5"
+          },
+          {
+            "seed": 352272321,
+            "steps": 142,
+            "observations": 143,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_004_seed_352272321.h5"
+          },
+          {
+            "seed": 615697673,
+            "steps": 167,
+            "observations": 168,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_005_seed_615697673.h5"
+          },
+          {
+            "seed": 160516793,
+            "steps": 132,
+            "observations": 133,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_006_seed_160516793.h5"
+          },
+          {
+            "seed": 1909838463,
+            "steps": 143,
+            "observations": 144,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_007_seed_1909838463.h5"
+          },
+          {
+            "seed": 1110745632,
+            "steps": 139,
+            "observations": 140,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_008_seed_1110745632.h5"
+          },
+          {
+            "seed": 93837855,
+            "steps": 165,
+            "observations": 166,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/table_rearrangement/results/tasks/table_rearrangement/shard_004/recordings/episode_009_seed_93837855.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    }
+  ],
+  "checkpoint": "/mnt/pfs/public/models/xr1/runs/project_xr1-robosynchallenge/xr1_single_table_rearrangement_160k_ft5k_20261009/epoch=0-step=5000.ckpt/checkpoint/mp_rank_00_model_states.pt",
+  "checkpoint_step": 5000,
+  "checkpoint_sha256": "43ebd423db59164ec6060b6ea7e5948e336a586718ddd11e1d0408be4f43a62a"
+}

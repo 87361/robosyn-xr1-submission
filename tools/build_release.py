@@ -43,7 +43,7 @@ if set(mapping['tasks']) != expected_tasks:
 if (mapping['horizon'], mapping['execute_steps'], mapping['prefix_steps']) != (30, 29, 0):
     raise RuntimeError('Unexpected inference contract change')
 for task, entry in mapping['tasks'].items():
-    expected = {'item_assembly': 'item_assembly_160k_ft10k', 'water_pouring': 'water_pouring_160k_ft5k', 'handle_basket': 'handle_basket_140k', 'items_handover': 'items_handover_180k'}.get(task, 'shared_160k')
+    expected = {'item_assembly': 'item_assembly_160k_ft10k', 'water_pouring': 'water_pouring_160k_ft5k', 'handle_basket': 'handle_basket_140k', 'items_handover': 'items_handover_180k', 'table_rearrangement': 'table_rearrangement_160k_ft5k', 'drawer_open_place': 'drawer_open_place_160k_ft10k', 'click_bell': 'click_bell_160k_ft3k'}.get(task, 'shared_160k')
     expected_k = 20 if task == 'items_handover' else 29
     if entry.get('execute_steps', mapping['execute_steps']) != expected_k:
         raise RuntimeError(f'Unexpected execute steps for {task}')
@@ -99,7 +99,7 @@ policy_before_selection = policy_before_selection.replace(
 if hashlib.sha256(policy_before_selection.encode()).hexdigest() != accepted['source_code_sha256'][policy_name]:
     raise RuntimeError('Unexpected adapter changes beyond task-specific execute-step selection')
 selected_acceptance = {}
-for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover', 'items_handover'), ('click_bell', 'shared_regression')]:
+for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover', 'items_handover')]:
     report = json.loads((root / f'verification/{report_name}_acceptance.json').read_text())
     if not report['passed'] or report['task'] != task or report['eval_reset_sync_steps'] != 0:
         raise RuntimeError(f'Missing current official-reset acceptance: {task}')
@@ -108,6 +108,14 @@ for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover',
     if hashlib.sha256((root / f'verification/{report_name}_metrics.json').read_bytes()).hexdigest() != report['metrics_sha256']:
         raise RuntimeError(f'Accepted metrics changed: {task}')
     for name, digest in report['runtime_source_sha256'].items():
+        if name == 'task_mapping.json' and manifest.get(name) != digest:
+            prior_path = root / 'verification/prior_task_mapping.json'
+            if hashlib.sha256(prior_path.read_bytes()).hexdigest() != digest:
+                raise RuntimeError('Historical mapping bytes do not match acceptance')
+            prior = json.loads(prior_path.read_text())
+            if prior['tasks'][task] != mapping['tasks'][task] or any(prior[key] != mapping[key] for key in ('horizon', 'execute_steps', 'prefix_steps')):
+                raise RuntimeError(f'Historical task selection no longer applies: {task}')
+            continue  # Exact runtime bytes and this task's effective contract remain unchanged.
         if manifest.get(name) != digest:
             raise RuntimeError(f'Current accepted runtime changed: {name}')
     if task == 'click_bell':
@@ -131,6 +139,39 @@ for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover',
         if exported['source_checkpoint_sha256'] != historical_contract['asset']['sha256']:
             raise RuntimeError(f'Selected checkpoint changed: {task}')
     selected_acceptance[task] = {'model_sha256': report['model_sha256'], 'execute_steps': report['execute_steps'], 'episodes': report['episodes']}
+for task in ('table_rearrangement', 'drawer_open_place', 'click_bell'):
+    exported = json.loads((root / f'verification/{task}_export.json').read_text())
+    report = json.loads((root / f'verification/{task}_acceptance.json').read_text())
+    history = root / 'verification/selected_history' / task
+    record = json.loads((history / 'EVAL_COMPLETE.json').read_text())
+    history_audit = json.loads((history / 'audit.json').read_text())
+    if not history_audit['passed'] or history_audit['checkpoint_sha256'] != exported['source_checkpoint_sha256']:
+        raise RuntimeError(f'Historical selection audit differs: {task}')
+    for filename, digest in history_audit['source_files_sha256'].items():
+        if hashlib.sha256((history / filename).read_bytes()).hexdigest() != digest:
+            raise RuntimeError(f'Historical evidence changed: {task}: {filename}')
+    if not exported['passed'] or not exported['exported_tensors_exactly_equal_source']:
+        raise RuntimeError(f'Unverified export: {task}')
+    if hashlib.sha256((history / 'EVAL_COMPLETE.json').read_bytes()).hexdigest() != exported['selection_record_sha256'] or record['checkpoint_sha256'] != exported['source_checkpoint_sha256']:
+        raise RuntimeError(f'Selected checkpoint evidence changed: {task}')
+    if not report['passed'] or report['task'] != task or (report['execute_steps'], report['prefix_steps'], report['eval_reset_sync_steps']) != (29, 0, 0):
+        raise RuntimeError(f'Missing current acceptance: {task}')
+    if any(report[key] != exported[key] for key in ('model_sha256', 'config_sha256')):
+        raise RuntimeError(f'Accepted artifact differs: {task}')
+    if hashlib.sha256((root / f'verification/{task}_metrics.json').read_bytes()).hexdigest() != report['metrics_sha256']:
+        raise RuntimeError(f'Accepted metrics changed: {task}')
+    for name, digest in report['runtime_source_sha256'].items():
+        if name == 'task_mapping.json' and manifest.get(name) != digest and task != 'click_bell':
+            prior_path = root / 'verification/pre_bell_task_mapping.json'
+            if hashlib.sha256(prior_path.read_bytes()).hexdigest() != digest:
+                raise RuntimeError(f'Accepted intermediate mapping differs: {task}')
+            prior = json.loads(prior_path.read_text())
+            if prior['tasks'][task] != mapping['tasks'][task] or any(prior[key] != mapping[key] for key in ('horizon', 'execute_steps', 'prefix_steps')):
+                raise RuntimeError(f'Accepted effective contract changed: {task}')
+            continue
+        if manifest.get(name) != digest:
+            raise RuntimeError(f'Current runtime differs from acceptance: {task}: {name}')
+    selected_acceptance[task] = {'model_sha256': report['model_sha256'], 'execute_steps': 29, 'episodes': report['episodes']}
 validation = {'passed': True, 'historical_release_zip_sha256': audit['release_zip_sha256'],
     'bell50_metrics_sha256': audit['metrics_sha256'],
     'model_runtime_unchanged': True, 'policy_uses_task_specific_k': True, 'shared_checkpoint_unchanged': True,
@@ -138,7 +179,7 @@ validation = {'passed': True, 'historical_release_zip_sha256': audit['release_zi
     'historical_assembly_packaged_runtime_episodes': assembly_acceptance['episodes'],
     'water_model_sha256': water_pouring['model_sha256'],
     'historical_water_packaged_runtime_episodes': water_pouring_acceptance['episodes'],
-    'publication_changes': ['handle_basket selects 140k/k29; items_handover selects 180k/k20',
+    'publication_changes': ['click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only', 'table selects shared160k+5k; drawer selects shared160k+10k', 'previously accepted task mapping checked per task against retained exact historical mapping', 'handle_basket selects 140k/k29; items_handover selects 180k/k20',
                             'direct adapter and launcher share task_mapping execution contracts',
                             'reset default 10 -> 0, identical to the audited 50-episode override',
                             'item_assembly alone uses the user-selected shared160k + 10k fine-tune',

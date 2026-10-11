@@ -1,0 +1,807 @@
+{
+  "task": "click_bell",
+  "successes": 50,
+  "episodes": 50,
+  "seeds": [
+    209652396,
+    398764591,
+    924231285,
+    1537364731,
+    1491434855,
+    1819583497,
+    530702035,
+    626610453,
+    1650906866,
+    1277901399,
+    1682652230,
+    1991416408,
+    1646868794,
+    2051556033,
+    1340754471,
+    2061486254,
+    292249176,
+    1686997841,
+    1443447321,
+    1449105480,
+    374217481,
+    636393364,
+    1581585360,
+    1194674174,
+    602801999,
+    1589190063,
+    1589512640,
+    2055650130,
+    1284876248,
+    1292401841,
+    87950109,
+    1204863635,
+    507984782,
+    947610023,
+    600956192,
+    352272321,
+    615697673,
+    1110745632,
+    2034098327,
+    1136257699,
+    800291326,
+    1177824715,
+    1017555826,
+    293921570,
+    580757632,
+    80701568,
+    481447462,
+    954863080,
+    502227700,
+    1659957521
+  ],
+  "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell",
+  "passed": true,
+  "recording": {
+    "passed": true,
+    "episodes": 50,
+    "recordings": [
+      {
+        "seed": 209652396,
+        "steps": 47,
+        "observations": 48,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_000_seed_209652396.h5"
+      },
+      {
+        "seed": 398764591,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_001_seed_398764591.h5"
+      },
+      {
+        "seed": 924231285,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_002_seed_924231285.h5"
+      },
+      {
+        "seed": 1537364731,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_003_seed_1537364731.h5"
+      },
+      {
+        "seed": 1491434855,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_004_seed_1491434855.h5"
+      },
+      {
+        "seed": 1819583497,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_005_seed_1819583497.h5"
+      },
+      {
+        "seed": 530702035,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_006_seed_530702035.h5"
+      },
+      {
+        "seed": 626610453,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_007_seed_626610453.h5"
+      },
+      {
+        "seed": 1650906866,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_008_seed_1650906866.h5"
+      },
+      {
+        "seed": 1277901399,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_009_seed_1277901399.h5"
+      },
+      {
+        "seed": 1682652230,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_000_seed_1682652230.h5"
+      },
+      {
+        "seed": 1991416408,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_001_seed_1991416408.h5"
+      },
+      {
+        "seed": 1646868794,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_002_seed_1646868794.h5"
+      },
+      {
+        "seed": 2051556033,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_003_seed_2051556033.h5"
+      },
+      {
+        "seed": 1340754471,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_004_seed_1340754471.h5"
+      },
+      {
+        "seed": 2061486254,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_005_seed_2061486254.h5"
+      },
+      {
+        "seed": 292249176,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_006_seed_292249176.h5"
+      },
+      {
+        "seed": 1686997841,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_007_seed_1686997841.h5"
+      },
+      {
+        "seed": 1443447321,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_008_seed_1443447321.h5"
+      },
+      {
+        "seed": 1449105480,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_009_seed_1449105480.h5"
+      },
+      {
+        "seed": 374217481,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_000_seed_374217481.h5"
+      },
+      {
+        "seed": 636393364,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_001_seed_636393364.h5"
+      },
+      {
+        "seed": 1581585360,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_002_seed_1581585360.h5"
+      },
+      {
+        "seed": 1194674174,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_003_seed_1194674174.h5"
+      },
+      {
+        "seed": 602801999,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_004_seed_602801999.h5"
+      },
+      {
+        "seed": 1589190063,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_005_seed_1589190063.h5"
+      },
+      {
+        "seed": 1589512640,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_006_seed_1589512640.h5"
+      },
+      {
+        "seed": 2055650130,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_007_seed_2055650130.h5"
+      },
+      {
+        "seed": 1284876248,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_008_seed_1284876248.h5"
+      },
+      {
+        "seed": 1292401841,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_009_seed_1292401841.h5"
+      },
+      {
+        "seed": 87950109,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_000_seed_87950109.h5"
+      },
+      {
+        "seed": 1204863635,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_001_seed_1204863635.h5"
+      },
+      {
+        "seed": 507984782,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_002_seed_507984782.h5"
+      },
+      {
+        "seed": 947610023,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_003_seed_947610023.h5"
+      },
+      {
+        "seed": 600956192,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_004_seed_600956192.h5"
+      },
+      {
+        "seed": 352272321,
+        "steps": 51,
+        "observations": 52,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_005_seed_352272321.h5"
+      },
+      {
+        "seed": 615697673,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_006_seed_615697673.h5"
+      },
+      {
+        "seed": 1110745632,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_007_seed_1110745632.h5"
+      },
+      {
+        "seed": 2034098327,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_008_seed_2034098327.h5"
+      },
+      {
+        "seed": 1136257699,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_009_seed_1136257699.h5"
+      },
+      {
+        "seed": 800291326,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_000_seed_800291326.h5"
+      },
+      {
+        "seed": 1177824715,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_001_seed_1177824715.h5"
+      },
+      {
+        "seed": 1017555826,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_002_seed_1017555826.h5"
+      },
+      {
+        "seed": 293921570,
+        "steps": 48,
+        "observations": 49,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_003_seed_293921570.h5"
+      },
+      {
+        "seed": 580757632,
+        "steps": 46,
+        "observations": 47,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_004_seed_580757632.h5"
+      },
+      {
+        "seed": 80701568,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_005_seed_80701568.h5"
+      },
+      {
+        "seed": 481447462,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_006_seed_481447462.h5"
+      },
+      {
+        "seed": 954863080,
+        "steps": 49,
+        "observations": 50,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_007_seed_954863080.h5"
+      },
+      {
+        "seed": 502227700,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_008_seed_502227700.h5"
+      },
+      {
+        "seed": 1659957521,
+        "steps": 50,
+        "observations": 51,
+        "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_009_seed_1659957521.h5"
+      }
+    ],
+    "schema_version": 2,
+    "scope": "each source chunk passed full recording validation"
+  },
+  "chunks": [
+    {
+      "task": "click_bell",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        209652396,
+        398764591,
+        924231285,
+        1537364731,
+        1491434855,
+        1819583497,
+        530702035,
+        626610453,
+        1650906866,
+        1277901399
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 209652396,
+            "steps": 47,
+            "observations": 48,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_000_seed_209652396.h5"
+          },
+          {
+            "seed": 398764591,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_001_seed_398764591.h5"
+          },
+          {
+            "seed": 924231285,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_002_seed_924231285.h5"
+          },
+          {
+            "seed": 1537364731,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_003_seed_1537364731.h5"
+          },
+          {
+            "seed": 1491434855,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_004_seed_1491434855.h5"
+          },
+          {
+            "seed": 1819583497,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_005_seed_1819583497.h5"
+          },
+          {
+            "seed": 530702035,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_006_seed_530702035.h5"
+          },
+          {
+            "seed": 626610453,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_007_seed_626610453.h5"
+          },
+          {
+            "seed": 1650906866,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_008_seed_1650906866.h5"
+          },
+          {
+            "seed": 1277901399,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_000/recordings/episode_009_seed_1277901399.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "click_bell",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        1682652230,
+        1991416408,
+        1646868794,
+        2051556033,
+        1340754471,
+        2061486254,
+        292249176,
+        1686997841,
+        1443447321,
+        1449105480
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 1682652230,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_000_seed_1682652230.h5"
+          },
+          {
+            "seed": 1991416408,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_001_seed_1991416408.h5"
+          },
+          {
+            "seed": 1646868794,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_002_seed_1646868794.h5"
+          },
+          {
+            "seed": 2051556033,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_003_seed_2051556033.h5"
+          },
+          {
+            "seed": 1340754471,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_004_seed_1340754471.h5"
+          },
+          {
+            "seed": 2061486254,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_005_seed_2061486254.h5"
+          },
+          {
+            "seed": 292249176,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_006_seed_292249176.h5"
+          },
+          {
+            "seed": 1686997841,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_007_seed_1686997841.h5"
+          },
+          {
+            "seed": 1443447321,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_008_seed_1443447321.h5"
+          },
+          {
+            "seed": 1449105480,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_001/recordings/episode_009_seed_1449105480.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "click_bell",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        374217481,
+        636393364,
+        1581585360,
+        1194674174,
+        602801999,
+        1589190063,
+        1589512640,
+        2055650130,
+        1284876248,
+        1292401841
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 374217481,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_000_seed_374217481.h5"
+          },
+          {
+            "seed": 636393364,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_001_seed_636393364.h5"
+          },
+          {
+            "seed": 1581585360,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_002_seed_1581585360.h5"
+          },
+          {
+            "seed": 1194674174,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_003_seed_1194674174.h5"
+          },
+          {
+            "seed": 602801999,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_004_seed_602801999.h5"
+          },
+          {
+            "seed": 1589190063,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_005_seed_1589190063.h5"
+          },
+          {
+            "seed": 1589512640,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_006_seed_1589512640.h5"
+          },
+          {
+            "seed": 2055650130,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_007_seed_2055650130.h5"
+          },
+          {
+            "seed": 1284876248,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_008_seed_1284876248.h5"
+          },
+          {
+            "seed": 1292401841,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_002/recordings/episode_009_seed_1292401841.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "click_bell",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        87950109,
+        1204863635,
+        507984782,
+        947610023,
+        600956192,
+        352272321,
+        615697673,
+        1110745632,
+        2034098327,
+        1136257699
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 87950109,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_000_seed_87950109.h5"
+          },
+          {
+            "seed": 1204863635,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_001_seed_1204863635.h5"
+          },
+          {
+            "seed": 507984782,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_002_seed_507984782.h5"
+          },
+          {
+            "seed": 947610023,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_003_seed_947610023.h5"
+          },
+          {
+            "seed": 600956192,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_004_seed_600956192.h5"
+          },
+          {
+            "seed": 352272321,
+            "steps": 51,
+            "observations": 52,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_005_seed_352272321.h5"
+          },
+          {
+            "seed": 615697673,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_006_seed_615697673.h5"
+          },
+          {
+            "seed": 1110745632,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_007_seed_1110745632.h5"
+          },
+          {
+            "seed": 2034098327,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_008_seed_2034098327.h5"
+          },
+          {
+            "seed": 1136257699,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_003/recordings/episode_009_seed_1136257699.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    },
+    {
+      "task": "click_bell",
+      "successes": 10,
+      "episodes": 10,
+      "seeds": [
+        800291326,
+        1177824715,
+        1017555826,
+        293921570,
+        580757632,
+        80701568,
+        481447462,
+        954863080,
+        502227700,
+        1659957521
+      ],
+      "root": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004",
+      "passed": true,
+      "recording": {
+        "passed": true,
+        "episodes": 10,
+        "recordings": [
+          {
+            "seed": 800291326,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_000_seed_800291326.h5"
+          },
+          {
+            "seed": 1177824715,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_001_seed_1177824715.h5"
+          },
+          {
+            "seed": 1017555826,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_002_seed_1017555826.h5"
+          },
+          {
+            "seed": 293921570,
+            "steps": 48,
+            "observations": 49,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_003_seed_293921570.h5"
+          },
+          {
+            "seed": 580757632,
+            "steps": 46,
+            "observations": 47,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_004_seed_580757632.h5"
+          },
+          {
+            "seed": 80701568,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_005_seed_80701568.h5"
+          },
+          {
+            "seed": 481447462,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_006_seed_481447462.h5"
+          },
+          {
+            "seed": 954863080,
+            "steps": 49,
+            "observations": 50,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_007_seed_954863080.h5"
+          },
+          {
+            "seed": 502227700,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_008_seed_502227700.h5"
+          },
+          {
+            "seed": 1659957521,
+            "steps": 50,
+            "observations": 51,
+            "path": "/mnt/pfs/public/models/xr1/evals/resume_single_tasks_n50_20261011/click_bell/results/tasks/click_bell/shard_004/recordings/episode_009_seed_1659957521.h5"
+          }
+        ],
+        "schema_version": 2,
+        "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+      }
+    }
+  ],
+  "checkpoint": "/mnt/pfs/public/models/xr1/runs/project_xr1-robosynchallenge/xr1_single_click_bell_160k_ft3k_20261009/epoch=0-step=3000.ckpt/checkpoint/mp_rank_00_model_states.pt",
+  "checkpoint_step": 3000,
+  "checkpoint_sha256": "f9cbb4affbae5a3695e64b63c2df07e7fb49a8319290e007671afe52cdb2f471"
+}
