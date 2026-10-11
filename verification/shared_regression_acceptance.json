@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "task": "click_bell",
+  "episodes": 1,
+  "successes": 1,
+  "model_sha256": "0d1dbcd9016aba639f9054907903a956bf2c32931b28c213a6901ec34b9fc156",
+  "config_sha256": "40c849d17e75e2e00b62b1251ff98f3e98eadc4f6cb577fb5e04765304009a8b",
+  "summary": {
+    "episode_count": 1,
+    "success_count": 1,
+    "success_rate": 1.0,
+    "average_action_steps": 47.0,
+    "average_action_steps_ratio": 0.13019390581717452,
+    "inference_call_count": 2,
+    "average_inference_calls_per_episode": 2.0,
+    "average_inference_time_seconds": 1.3648081747815013,
+    "average_inference_time_per_episode_seconds": 2.7296163495630026
+  },
+  "metrics_sha256": "2eeb35275ba81f430f77725733ac41dd72946b4b778499333531b2cc59b484e1",
+  "evaluator_sha256": "09e727d416aedec843b481246adc810f528470080f8db3a4efc4937e6c156c45",
+  "official_files_verified": 351,
+  "runtime_source_sha256": {
+    "runtime/server.py": "9720fb9ed9eeb4fc7152ea6c55948f238990bccffcf27d38df41166d56fc3f3c",
+    "runtime/mibot/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/tools/infer_npz.py": "cd4d21372ae4182bc181907a23277ffe1a7bc5cdd2d1c4d1f02bbe25ffad6fe6",
+    "runtime/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/vendor/baseline_server.py": "f9a83ca4ba0b4c22c80588755d2c50acc8e919d1b4ef116d3596212b288dbe97",
+    "runtime/mibot/models/__init__.py": "325f05dcd4a883f5624d66a0f82e599e8934ffab7697703d22f8ab3e3c015830",
+    "runtime/mibot/server/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/utils/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/utils/io.py": "d425c401cc0632e97f7dd1d7c1db7e6eab91e863622444d23d647a1ee1311042",
+    "runtime/mibot/utils/model_utils.py": "abbbca1df157ad337ce96a92944fe39032e728bac9544a23de948ac5a3a738d3",
+    "runtime/mibot/models/VLA/XR1.py": "740054a67c6e12df220e0e93ccf956ce6ba43dc50ddcf093fb4cdb598fe2bdc6",
+    "runtime/mibot/models/VLA/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/models/VLM/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/models/VLM/qwen3vl.py": "e440a69c3c79b84e7c3133787786de4d30045e379ace72487fb438928ef41fb5",
+    "runtime/mibot/server/runtime/__init__.py": "06842f92f268d5552854377e69b9694968c576197addb8a43d6949c9cc176faf",
+    "runtime/mibot/server/runtime/client.py": "70bfad2788163dc84a02e1ec26da288dfdbbd457d98689983bdf51f81b7269a6",
+    "policy/xr1_submission/__init__.py": "3d0819b0a7ed8a2089109045d0c8d525d8af6e6ff97b97e4af61c94a13df9a8c",
+    "policy/xr1_submission/action.py": "1d0f633757121c8615795bf3a96a9df05173f8f1a9ac5c799f036f7a1b3fc06a",
+    "policy/xr1_submission/deploy_policy.py": "d514d77f47dc08f098cca83df94a29b6b9da762439055e3c061679e7ebf15de1",
+    "policy/xr1_submission/deploy_policy.yml": "7ebc2201d1a11761eb2e0a94be6b1ba3d78d3d09150c95c1318f6aea50de8ae1",
+    "policy/xr1_submission/eval.sh": "6992d299ea1917b91b8016470ecd8986b12f162fa233d0ae7e9a6eae710af802",
+    "policy/xr1_submission/robot_bridge.py": "aadab124c91d8d0b06ea6bed5fae014ff7b10976a84e5f5f2b59185ff9a3646d",
+    "policy/xr1_submission/task_contract.py": "a0c823692d12df95702c2f4365cb1f5ba030bd37a8c371d848ab64a34294f389",
+    "tools/launch.py": "74c38120b1efa6687ecf116449485008277a1ee6ccbca33731e34e14d19d1ee7",
+    "tools/run_official_evaluator.py": "8991ff0124e5511233312eb59de2e99c05a5e56e9615442aa0c54d12c1da7c15",
+    "tools/sim_runtime.py": "54db52f771cba7c8e65609b98851c3c9712e51282fb7e89eae61d618975c5f69",
+    "task_mapping.json": "a192890bea70d0ebbe9b39ac1436b8c4f845e33b23b5ba2de38777cac0815b69"
+  },
+  "evaluator_lifecycle": {
+    "official_evaluator_returned": true,
+    "official_metrics_verified_before_teardown": true,
+    "deferred_close_count": 1,
+    "native_teardown": "started"
+  },
+  "model_versions": {
+    "torch": "2.8.0+cu126",
+    "numpy": "2.1.3",
+    "transformers": "4.57.1"
+  },
+  "gpu": "NVIDIA L20, 535.261.03",
+  "attention_backend": "sdpa",
+  "execute_steps": 29,
+  "actual_steps_per_chunk": [
+    29,
+    18
+  ],
+  "eval_reset_sync_steps": 0,
+  "prefix_steps": 0,
+  "finite_action_chunks": 2,
+  "inference_listener_cleaned_up": true,
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 480,
+        "nb_frames": "48"
+      }
+    ],
+    "format": {
+      "duration": "4.800000"
+    }
+  },
+  "boundaries": [
+    "one episode on existing L20 environments",
+    "not fresh CUDA12.8/RTX5090 installation acceptance",
+    "not a new 50-episode evaluation"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "task": "items_handover",
+  "artifact": "items_handover_180k",
+  "checkpoint_step": 180000,
+  "source_run": "baidu_a800_sim10_joint_raw_b64_a1_formal_20260907_2305",
+  "source_checkpoint_sha256": "a1a407f2004dbe3e36ab50e2b14472313abcf33f82842299bde75ce2bb86a7d1",
+  "source_config_sha256": "cec988c1c851c8ab946025375e55dccd341ce8bde19a73e7ff86443b1871044a",
+  "selection_contract_sha256": "009ad140398abc684a3cd8e70493148e688af167e155420b0eae9b3bb256dce0",
+  "tensor_count": 1135,
+  "all_tensors_finite": true,
+  "tensor_keys_shapes_dtypes_match_shared": true,
+  "exported_tensors_exactly_equal_source": true,
+  "normalization_equal_to_shared": true,
+  "horizon": 30,
+  "execute_steps": 20,
+  "prefix_steps": 0,
+  "training_data": "official ten-task Sim release, 1000 episodes per task",
+  "model_sha256": "13094f348fd905474ad34709a45e8f3d29ba9c3074533f28e0a08c73ac07089c",
+  "config_sha256": "40c849d17e75e2e00b62b1251ff98f3e98eadc4f6cb577fb5e04765304009a8b"
+}

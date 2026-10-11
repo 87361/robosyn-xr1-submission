@@ -1,0 +1,16 @@
+{
+  "validated": true,
+  "task": "handle_basket",
+  "case": "xr1_h30_140000_handle_basket_k29",
+  "target": 50,
+  "episodes": 50,
+  "successes": 50,
+  "failures": 0,
+  "observed_success_rate": 1.0,
+  "early_stopped": false,
+  "failure_budget_exceeded": false,
+  "max_possible_successes_at_target": 50,
+  "comparison_to_screenshot": "higher",
+  "metrics_sha256": "a7dd4a1d31ea86c1a7e6b96bbabcdf0ff441d3ed4edfabc56c9fc01e8bf5fb37",
+  "normal_evaluator_return": true
+}

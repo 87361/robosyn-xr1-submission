@@ -12,6 +12,7 @@ import numpy as np
 
 from .action import _direct_joint_action
 from .robot_bridge import extract_observation, as_numpy
+from .task_contract import load_contract
 
 
 def scalar(value):
@@ -23,9 +24,7 @@ class Policy:
         self.host = str(args.get('xr1_host', '127.0.0.1'))
         self.port = int(args['xr1_port'])
         self.task = str(args['task_name'])
-        self.k = int(args.get('xr1_execute_steps', 29))
-        if self.k != 29:
-            raise ValueError('This release is validated for execute_steps=29 only')
+        self.k = load_contract(self.task, args.get('xr1_execute_steps'))['execute_steps']
         self.seed = int(args.get('xr1_policy_seed', 20260908))
         self.session = uuid.uuid4().hex
         self.episode = -1

@@ -19,7 +19,7 @@ accepted = json.loads((root / 'verification/acceptance.json').read_text())
 if not accepted['passed']:
     raise RuntimeError('No successful end-to-end acceptance report')
 for name, digest in accepted['source_code_sha256'].items():
-    if name in {'tools/build_release.py', 'tools/launch.py', 'policy/xr1_submission/deploy_policy.yml'}:
+    if name in {'tools/build_release.py', 'tools/launch.py', 'policy/xr1_submission/deploy_policy.yml', 'policy/xr1_submission/deploy_policy.py'}:
         continue
     if manifest.get(name) != digest:
         raise RuntimeError(f'Accepted source missing or changed: {name}')
@@ -33,7 +33,7 @@ name = 'policy/xr1_submission/deploy_policy.yml'
 published = yaml.safe_load((root / name).read_text())
 if published['eval_reset_sync_steps'] != audit['evaluation']['eval_reset_sync_steps'] or published['eval_reset_sync_steps'] != 0:
     raise RuntimeError('Publication must use official reset default 0')
-historical = (root / name).read_text().replace('eval_reset_sync_steps: 0', 'eval_reset_sync_steps: 10')
+historical = (root / name).read_text().replace('eval_reset_sync_steps: 0', 'eval_reset_sync_steps: 10').replace('xr1_execute_steps: null', 'xr1_execute_steps: 29')
 if hashlib.sha256(historical.encode()).hexdigest() != preflight['release_files_sha256'][name]:
     raise RuntimeError('Unexpected configuration change beyond the verified reset override')
 mapping = json.loads((root / 'task_mapping.json').read_text())
@@ -43,7 +43,10 @@ if set(mapping['tasks']) != expected_tasks:
 if (mapping['horizon'], mapping['execute_steps'], mapping['prefix_steps']) != (30, 29, 0):
     raise RuntimeError('Unexpected inference contract change')
 for task, entry in mapping['tasks'].items():
-    expected = {'item_assembly': 'item_assembly_160k_ft10k', 'water_pouring': 'water_pouring_160k_ft5k'}.get(task, 'shared_160k')
+    expected = {'item_assembly': 'item_assembly_160k_ft10k', 'water_pouring': 'water_pouring_160k_ft5k', 'handle_basket': 'handle_basket_140k', 'items_handover': 'items_handover_180k'}.get(task, 'shared_160k')
+    expected_k = 20 if task == 'items_handover' else 29
+    if entry.get('execute_steps', mapping['execute_steps']) != expected_k:
+        raise RuntimeError(f'Unexpected execute steps for {task}')
     if entry['artifact'] != expected:
         raise RuntimeError(f'Unexpected checkpoint mapping for {task}')
 assembly = json.loads((root / 'verification/assembly_export.json').read_text())
@@ -57,6 +60,8 @@ if assembly_acceptance['config_sha256'] != assembly['config_sha256']:
 if hashlib.sha256((root / 'verification/assembly_metrics.json').read_bytes()).hexdigest() != assembly_acceptance['metrics_sha256']:
     raise RuntimeError('Assembly acceptance metrics were changed')
 for name, digest in assembly_acceptance['runtime_source_sha256'].items():
+    if name in {'tools/launch.py', 'policy/xr1_submission/deploy_policy.py', 'policy/xr1_submission/deploy_policy.yml'}:
+        continue  # Superseded below by current k29/k20 end-to-end acceptance.
     if manifest.get(name) != digest:
         raise RuntimeError(f'Assembly accepted runtime changed: {name}')
 water_pouring = json.loads((root / 'verification/water_pouring_export.json').read_text())
@@ -70,6 +75,8 @@ if water_pouring_acceptance['config_sha256'] != water_pouring['config_sha256']:
 if hashlib.sha256((root / 'verification/water_pouring_metrics.json').read_bytes()).hexdigest() != water_pouring_acceptance['metrics_sha256']:
     raise RuntimeError('Water acceptance metrics were changed')
 for name, digest in water_pouring_acceptance['runtime_source_sha256'].items():
+    if name in {'tools/launch.py', 'policy/xr1_submission/deploy_policy.py', 'policy/xr1_submission/deploy_policy.yml'}:
+        continue  # Superseded below by current k29/k20 end-to-end acceptance.
     if manifest.get(name) != digest:
         raise RuntimeError(f'Water accepted runtime changed: {name}')
 water50_root = root / 'verification/water50'
@@ -81,14 +88,59 @@ if water50['checkpoint_sha256'] != water_pouring['source_checkpoint_sha256']:
 for name, digest in water50['source_files_sha256'].items():
     if hashlib.sha256((water50_root / name).read_bytes()).hexdigest() != digest:
         raise RuntimeError(f'Historical water evidence changed: {name}')
+# The adapter's action/observation/RNG logic must remain exactly as accepted.
+policy_name = 'policy/xr1_submission/deploy_policy.py'
+policy_before_selection = (root / policy_name).read_text().replace('from .task_contract import load_contract\n', '')
+policy_before_selection = policy_before_selection.replace(
+    "        self.k = load_contract(self.task, args.get('xr1_execute_steps'))['execute_steps']",
+    "        self.k = int(args.get('xr1_execute_steps', 29))\n"
+    "        if self.k != 29:\n"
+    "            raise ValueError('This release is validated for execute_steps=29 only')")
+if hashlib.sha256(policy_before_selection.encode()).hexdigest() != accepted['source_code_sha256'][policy_name]:
+    raise RuntimeError('Unexpected adapter changes beyond task-specific execute-step selection')
+selected_acceptance = {}
+for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover', 'items_handover'), ('click_bell', 'shared_regression')]:
+    report = json.loads((root / f'verification/{report_name}_acceptance.json').read_text())
+    if not report['passed'] or report['task'] != task or report['eval_reset_sync_steps'] != 0:
+        raise RuntimeError(f'Missing current official-reset acceptance: {task}')
+    if report['execute_steps'] != (20 if task == 'items_handover' else 29):
+        raise RuntimeError(f'Wrong accepted execution steps: {task}')
+    if hashlib.sha256((root / f'verification/{report_name}_metrics.json').read_bytes()).hexdigest() != report['metrics_sha256']:
+        raise RuntimeError(f'Accepted metrics changed: {task}')
+    for name, digest in report['runtime_source_sha256'].items():
+        if manifest.get(name) != digest:
+            raise RuntimeError(f'Current accepted runtime changed: {name}')
+    if task == 'click_bell':
+        baseline_files = json.loads((root / 'verification/artifact_manifest.json').read_text())['files']
+        for key, filename in [('model_sha256', 'model.pt'), ('config_sha256', 'config.yaml')]:
+            if report[key] != baseline_files['shared_160k/' + filename]['sha256']:
+                raise RuntimeError('Shared regression used a different checkpoint/config')
+    if task != 'click_bell':
+        exported = json.loads((root / f'verification/{task}_export.json').read_text())
+        if not exported['passed'] or not exported['exported_tensors_exactly_equal_source']:
+            raise RuntimeError(f'Unverified selected export: {task}')
+        if any(report[key] != exported[key] for key in ('model_sha256', 'config_sha256')):
+            raise RuntimeError(f'Accepted model/config changed: {task}')
+        historical_root = root / 'verification/selected_history' / task
+        historical_result = json.loads((historical_root / 'result.json').read_text())
+        historical_contract = json.loads((historical_root / 'contract.json').read_text())
+        if hashlib.sha256((historical_root / 'metrics.json').read_bytes()).hexdigest() != historical_result['metrics_sha256']:
+            raise RuntimeError(f'Selection metrics changed: {task}')
+        if hashlib.sha256((historical_root / 'contract.json').read_bytes()).hexdigest() != exported['selection_contract_sha256']:
+            raise RuntimeError(f'Selection contract changed: {task}')
+        if exported['source_checkpoint_sha256'] != historical_contract['asset']['sha256']:
+            raise RuntimeError(f'Selected checkpoint changed: {task}')
+    selected_acceptance[task] = {'model_sha256': report['model_sha256'], 'execute_steps': report['execute_steps'], 'episodes': report['episodes']}
 validation = {'passed': True, 'historical_release_zip_sha256': audit['release_zip_sha256'],
     'bell50_metrics_sha256': audit['metrics_sha256'],
-    'policy_and_model_runtime_unchanged': True, 'shared_checkpoint_unchanged': True,
-    'effective_config_equivalent': True, 'assembly_model_sha256': assembly['model_sha256'],
-    'assembly_packaged_runtime_episodes': assembly_acceptance['episodes'],
+    'model_runtime_unchanged': True, 'policy_uses_task_specific_k': True, 'shared_checkpoint_unchanged': True,
+    'official_reset_sync_steps': 0, 'current_acceptance': selected_acceptance, 'assembly_model_sha256': assembly['model_sha256'],
+    'historical_assembly_packaged_runtime_episodes': assembly_acceptance['episodes'],
     'water_model_sha256': water_pouring['model_sha256'],
-    'water_packaged_runtime_episodes': water_pouring_acceptance['episodes'],
-    'publication_changes': ['reset default 10 -> 0, identical to the audited 50-episode override',
+    'historical_water_packaged_runtime_episodes': water_pouring_acceptance['episodes'],
+    'publication_changes': ['handle_basket selects 140k/k29; items_handover selects 180k/k20',
+                            'direct adapter and launcher share task_mapping execution contracts',
+                            'reset default 10 -> 0, identical to the audited 50-episode override',
                             'item_assembly alone uses the user-selected shared160k + 10k fine-tune',
                             'water_pouring alone uses the user-selected shared160k + 5k fine-tune',
                             'checkpoint-specific export and packaged-runtime acceptance',

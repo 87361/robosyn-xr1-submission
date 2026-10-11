@@ -2,14 +2,34 @@
   "passed": true,
   "historical_release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
   "bell50_metrics_sha256": "33fc673a0d898cfb2eb4f9cf9c0a35559fd7f15f70809e3b005f4fde092aad3e",
-  "policy_and_model_runtime_unchanged": true,
+  "model_runtime_unchanged": true,
+  "policy_uses_task_specific_k": true,
   "shared_checkpoint_unchanged": true,
-  "effective_config_equivalent": true,
+  "official_reset_sync_steps": 0,
+  "current_acceptance": {
+    "handle_basket": {
+      "model_sha256": "5bde2bd404d2596c944cd62367a3b105b78bc44d7c16bd25c3352f42ab81aaf9",
+      "execute_steps": 29,
+      "episodes": 1
+    },
+    "items_handover": {
+      "model_sha256": "13094f348fd905474ad34709a45e8f3d29ba9c3074533f28e0a08c73ac07089c",
+      "execute_steps": 20,
+      "episodes": 1
+    },
+    "click_bell": {
+      "model_sha256": "0d1dbcd9016aba639f9054907903a956bf2c32931b28c213a6901ec34b9fc156",
+      "execute_steps": 29,
+      "episodes": 1
+    }
+  },
   "assembly_model_sha256": "d5d84df65184c345a8782a5e5a23c32bfe6ba4f5226947659ac5284f34256d63",
-  "assembly_packaged_runtime_episodes": 1,
+  "historical_assembly_packaged_runtime_episodes": 1,
   "water_model_sha256": "74b381f87c64f5e19770bd6ae1a72a2188d80d65b25271360936e8f7f2bcf878",
-  "water_packaged_runtime_episodes": 1,
+  "historical_water_packaged_runtime_episodes": 1,
   "publication_changes": [
+    "handle_basket selects 140k/k29; items_handover selects 180k/k20",
+    "direct adapter and launcher share task_mapping execution contracts",
     "reset default 10 -> 0, identical to the audited 50-episode override",
     "item_assembly alone uses the user-selected shared160k + 10k fine-tune",
     "water_pouring alone uses the user-selected shared160k + 5k fine-tune",

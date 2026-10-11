@@ -20,12 +20,15 @@
     "selectable SDPA or FlashAttention2",
     "bounded episode RNG cache; best-effort logs",
     "temporary short-path simulator copy with a hash-recorded cache-path-only patch; task/evaluator sources unchanged",
-    "launcher wrapper defers final native env.close until the unchanged official evaluator writes metrics; preserves failure exit codes"
+    "launcher wrapper defers final native env.close until the unchanged official evaluator writes metrics; preserves failure exit codes",
+    "launcher and direct policy entry point share task_mapping execute-step selection; handover k20, all others k29"
   ],
-  "policy_contract": "H30 k29 prefix0 joint_absolute; policy seed20260908 per episode",
+  "policy_contract": "H30; k20 items_handover, k29 others; prefix0 joint_absolute; policy seed20260908 per episode",
   "checkpoint_selection": {
-    "shared_160k": "eight tasks",
+    "shared_160k": "six tasks",
     "item_assembly_160k_ft10k": "item_assembly only; user-selected on 2026-10-11",
-    "water_pouring_160k_ft5k": "water_pouring only; user-selected 50/50 checkpoint on 2026-10-11"
+    "water_pouring_160k_ft5k": "water_pouring only; user-selected 50/50 checkpoint on 2026-10-11",
+    "handle_basket_140k": "handle_basket only; user-selected H30 140k/k29",
+    "items_handover_180k": "items_handover only; user-selected H30 180k/k20"
   }
 }

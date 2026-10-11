@@ -12,6 +12,8 @@ import time
 from sim_runtime import prepare as prepare_sim_runtime
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'policy/xr1_submission'))
+from task_contract import load_contract
 TASKS = 'click_bell handle_basket water_pouring table_rearrangement items_handover drawer_open_place mixer_operating item_assembly manipulate_pipette sample_loading'.split()
 
 
@@ -67,12 +69,15 @@ def main():
         extra = extra[1:]
     if args.episodes < 1:
         p.error('episodes must be positive')
+    if any(value.split('=', 1)[0] == '--xr1_execute_steps' for value in extra):
+        p.error('Execute steps are selected by task_mapping.json, not evaluator overrides')
+    contract = load_contract(args.task)
     challenge = args.challenge_root.resolve()
     models = args.model_dir.resolve()
     mapping = json.loads((ROOT / 'task_mapping.json').read_text())
     if set(mapping['tasks']) != set(TASKS):
         raise ValueError('Submission must map all ten tasks')
-    artifact = models / mapping['tasks'][args.task]['artifact']
+    artifact = models / contract['artifact']
     manifest = json.loads((models / 'manifest.json').read_text())
     # Resolve every mapped checkpoint and hash all required inference assets before GPU startup.
     required = set()
@@ -102,6 +107,7 @@ def main():
         dest.symlink_to(source, target_is_directory=True)
     if args.preflight_only:
         print(json.dumps({'passed': True, 'task': args.task, 'artifact': str(artifact),
+                          'execute_steps': contract['execute_steps'],
                           'all_tasks_mapped': True, 'manifest_verified': True}))
         return
     output = args.output.resolve()
@@ -132,6 +138,7 @@ def main():
     eval_command = [args.sim_python, '-u', str(ROOT / 'tools/run_official_evaluator.py'), str(evaluator), '--config',
         str(source / 'deploy_policy.yml'), '--overrides', '--task_name', args.task,
         '--setting', args.setting, '--seed', str(args.seed), '--max_episodes', str(args.episodes),
+        '--xr1_execute_steps', str(contract['execute_steps']),
         '--xr1_port', str(args.port), '--xr1_trace_root', str(output / 'traces'),
         '--eval_result_dir', str(output / 'raw'), '--eval_video_log', str(args.video),
         '--eval_video_obs_keys', "['cam_high','cam_left_wrist','cam_right_wrist']", *extra]
@@ -141,7 +148,9 @@ def main():
         'eval_command': eval_command, 'evaluator_lifecycle': 'defer native close until official metrics are written',
         'evaluator_wrapper_sha256': sha(ROOT / 'tools/run_official_evaluator.py'),
         'attention_backend': args.attention_backend,
-        'horizon': 30, 'execute_steps': 29, 'prefix_steps': 0, 'policy_seed': 20260908}
+        'task_mapping_sha256': sha(ROOT / 'task_mapping.json'),
+        'horizon': contract['horizon'], 'execute_steps': contract['execute_steps'],
+        'prefix_steps': contract['prefix_steps'], 'policy_seed': 20260908}
     (output / 'launch_contract.json').write_text(json.dumps(record, indent=2) + '\n')
     server = evaluator_process = None
     status = 1

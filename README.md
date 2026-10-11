@@ -1,12 +1,13 @@
 # XR1 RoboSynChallenge submission
 
 This repository contains a standalone RoboSynChallenge policy adapter, an isolated
-inference runtime, and launch/validation tools. Eight tasks use the shared XR1 H30
+inference runtime, and launch/validation tools. Six tasks use the shared XR1 H30
 checkpoint at step 160000. `item_assembly` uses the user-selected checkpoint after
 10,000 further training steps on 1,000 additional generated assembly expert
 trajectories. `water_pouring` uses the shared 160k checkpoint fine-tuned for
 5,000 steps on the official 1,000-episode water dataset. `task_mapping.json` is
-the authoritative mapping. Existing bell acceptance evidence applies to the
+the authoritative mapping: `handle_basket` selects H30 140k/k29 and
+`items_handover` selects H30 180k/k20. Existing bell acceptance evidence applies to the
 unchanged shared checkpoint.
 
 Code: https://github.com/87361/robosyn-xr1-submission
@@ -50,8 +51,15 @@ Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
      item_assembly_160k_ft10k/config.yaml
      water_pouring_160k_ft5k/model.pt
      water_pouring_160k_ft5k/config.yaml
+     handle_basket_140k/model.pt
+     handle_basket_140k/config.yaml
+     items_handover_180k/model.pt
+     items_handover_180k/config.yaml
      processor/...
    ```
+
+   The five model files occupy about 52.69 GB in total. Each evaluation loads
+   only the checkpoint selected for that task.
 
    The export includes model tensors, exact training normalization statistics,
    tokenizer and processor/model configuration. Inference uses local files only
@@ -113,10 +121,10 @@ two-episode command above is an integration acceptance run, not an official scor
 | Task | Artifact | Execute steps |
 |---|---|---:|
 | click_bell | shared_160k | 29 |
-| handle_basket | shared_160k | 29 |
+| handle_basket | handle_basket_140k | 29 |
 | water_pouring | water_pouring_160k_ft5k | 29 |
 | table_rearrangement | shared_160k | 29 |
-| items_handover | shared_160k | 29 |
+| items_handover | items_handover_180k | 20 |
 | drawer_open_place | shared_160k | 29 |
 | mixer_operating | shared_160k | 29 |
 | item_assembly | item_assembly_160k_ft10k | 29 |
@@ -127,7 +135,8 @@ two-episode command above is an integration acceptance run, not an official scor
 
 - Inputs: three RGB views (`cam_high`, `cam_left_wrist`, `cam_right_wrist`), 14D
   robot joint/gripper state, and the task instruction supplied by the evaluator.
-- Output: horizon 30, 14D absolute joint targets; execute up to 29 actions, stopping
+- Output: horizon 30, 14D absolute joint targets; execute up to 20 actions for handover
+  and 29 for other tasks, stopping
   on success or termination. Prefix length is zero. The eight normalized-gripper
   tasks and the two raw-gripper tasks retain their distinct data contracts.
 - Each episode clears client history and starts a fresh policy RNG stream at seed
@@ -153,7 +162,7 @@ The official evaluator/config/assets were pinned to commit
 `8818c82df5fa2522809b8105e7018950dcc9a9a8`; use that revision for reproduction.
 The run explicitly used `eval_reset_sync_steps=0`. This publication makes **0 the
 adapter default**, replacing the historical two-episode acceptance default of 10.
-Policy/model inference code and the shared bell weights are unchanged; the build verifies that the published
+Model inference code and the shared bell weights are unchanged; the build verifies that the published
 configuration equals the effective configuration used in the 50-episode run.
 The new teardown-order wrapper was not part of that historical bell run and is
 validated separately by the assembly acceptance report.
@@ -208,6 +217,34 @@ DexSim/OptiX initialization before any policy action; its log is retained as
 private cache passed; the native initialization failure's root cause remains
 unresolved. No simulator-thread override was added. This is not fresh-install,
 RTX 5090 or all-ten-task acceptance.
+
+## Basket and handover selection — 2026-10-11
+
+`handle_basket_140k` and `items_handover_180k` are original H30 checkpoints from
+the same ten-task training run as shared 160k. Their exact source/export digests,
+normalization and tensor equality checks are in the corresponding
+`verification/*_export.json` files. Historical candidate evaluations on L4
+completed **50/50 basket** and **49/50 handover**; the metrics, checkpoint audits
+and runtime patches are preserved under `verification/selected_history/`.
+Those runs used a separate evaluation runner, including failure-budget stopping
+(which did not truncate either selected run), and are not 50-episode tests of
+this standalone release.
+
+`task_mapping.json` now selects both weights and execute steps. Handover executes
+**20** of each 30 predicted actions; all other tasks execute **29**. Prefix remains
+zero. The direct `get_model` entry point and launcher read the same mapping;
+`xr1_execute_steps: null` means select from the mapping, and conflicting explicit
+values fail. The launcher records and forwards the selected k. Observations,
+action conversion, RNG resets and success/termination handling are unchanged.
+Tests cover actual k20/k29 replanning boundaries and early success termination.
+At official reset 0, the packaged runtime passed **1/1 basket** (332 steps,
+12 model calls; 11 blocks of 29 steps plus 13) and **1/1 handover** (318 steps,
+16 model calls; 15 blocks of 20 steps plus 18). Each passed the 351-file official
+identity check, finite action/video/metrics validation and process cleanup.
+A shared-checkpoint bell regression also passed **1/1**, 47 steps / two calls
+(actual blocks 29 + 18). Current acceptance is recorded separately for all three
+runs. Historical assembly/water reports retain the
+older adapter hashes; they are not new runs of this adapter revision.
 
 ## Submit
 

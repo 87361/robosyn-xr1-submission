@@ -1,0 +1,33 @@
+[
+  {
+    "file": "/tmp/rh50_8tvzph02/e/embodichain/lab/sim/sim_manager.py",
+    "original_sha256": "195ab1a2bb0ef188ccd675ef56c2ff73c921520c1f41a00271c8fed8553ac395",
+    "patched_sha256": "7af602a4a63c3e0e4a5aac4b860a95922a4925520f68cf48945b198283f3d8df",
+    "change": "previously verified private cache and native thread mode"
+  },
+  {
+    "file": "/tmp/rh50_8tvzph02/c/scripts/eval_policy.py",
+    "original_sha256": "09e727d416aedec843b481246adc810f528470080f8db3a4efc4937e6c156c45",
+    "patched_sha256": "198296be28b95cf864e9627d6253cc3216890fffc65ba58b6883f661d89806bd",
+    "change": "persist each episode and stop only when failures > screenshot budget",
+    "allowed_failures": 3
+  },
+  {
+    "file": "/tmp/rh50_8tvzph02/policy_source/server.py",
+    "original_sha256": "421b5796449a65d7ef3819ea734fda2810b1862116aa47ed6bf5353ad528f11c",
+    "patched_sha256": "421b5796449a65d7ef3819ea734fda2810b1862116aa47ed6bf5353ad528f11c",
+    "change": "declare trained horizon 30"
+  },
+  {
+    "file": "/tmp/rh50_8tvzph02/policy_source/deploy_policy.py",
+    "original_sha256": "e44051a9aa1c7fae38d00b3f63d7acc9cb512dd5072f4a4fe5b6ee8fea601871",
+    "patched_sha256": "e44051a9aa1c7fae38d00b3f63d7acc9cb512dd5072f4a4fe5b6ee8fea601871",
+    "change": "declare trained horizon 30"
+  },
+  {
+    "file": "/tmp/rh50_8tvzph02/policy_source/deploy_policy.py",
+    "original_sha256": "e44051a9aa1c7fae38d00b3f63d7acc9cb512dd5072f4a4fe5b6ee8fea601871",
+    "patched_sha256": "e44051a9aa1c7fae38d00b3f63d7acc9cb512dd5072f4a4fe5b6ee8fea601871",
+    "change": "declare trained horizon 30"
+  }
+]

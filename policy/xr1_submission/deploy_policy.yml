@@ -18,5 +18,5 @@ eval_video_log: false
 eval_video_obs_key: cam_high
 xr1_host: 127.0.0.1
 xr1_port: 23609
-xr1_execute_steps: 29
+xr1_execute_steps: null
 xr1_policy_seed: 20260908

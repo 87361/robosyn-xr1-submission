@@ -1,5 +1,5 @@
 {
-  "selection": "user-selected assembly 160k + 10k and water_pouring 160k + 5k; other eight tasks retain shared 160k",
+  "selection": "user-selected basket H30 140k/k29, handover H30 180k/k20, assembly 160k+10k/k29 and water 160k+5k/k29; six tasks retain shared 160k/k29",
   "horizon": 30,
   "execute_steps": 29,
   "prefix_steps": 0,
@@ -9,8 +9,9 @@
       "checkpoint_step": 160000
     },
     "handle_basket": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "handle_basket_140k",
+      "checkpoint_step": 140000,
+      "execute_steps": 29
     },
     "water_pouring": {
       "artifact": "water_pouring_160k_ft5k",
@@ -22,8 +23,9 @@
       "checkpoint_step": 160000
     },
     "items_handover": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "items_handover_180k",
+      "checkpoint_step": 180000,
+      "execute_steps": 20
     },
     "drawer_open_place": {
       "artifact": "shared_160k",
