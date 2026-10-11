@@ -2,11 +2,88 @@
   "passed": true,
   "historical_release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
   "bell50_metrics_sha256": "33fc673a0d898cfb2eb4f9cf9c0a35559fd7f15f70809e3b005f4fde092aad3e",
-  "model_runtime_unchanged": true,
+  "model_runtime_unchanged": false,
+  "runtime_diagnostics": {
+    "baseline_github_revision": "3935166d34285543e2c4af236e31710821dd939a",
+    "current_runtime_acceptance": {
+      "handle_basket": {
+        "episodes": 1,
+        "successes": 1,
+        "gpu_peak_MiB": 13665,
+        "metrics_sha256": "89e46feef02833ef2d53483007620eacf0fa53d12f4f59c2170d088f2f196ea9"
+      },
+      "sample_loading": {
+        "episodes": 1,
+        "successes": 1,
+        "gpu_peak_MiB": 13405,
+        "metrics_sha256": "29857496449e447ad5d581028851837d91c0a8388ab9715772bf5d4fefe57734"
+      },
+      "mixer_operating": {
+        "episodes": 1,
+        "successes": 1,
+        "gpu_peak_MiB": 13432,
+        "metrics_sha256": "e35fc44689e26ab45e15e9bae5ad99397918a794eadabc26883305b52be056af"
+      }
+    },
+    "historical_selected_official_n50": [
+      {
+        "task": "click_bell",
+        "successes": 50,
+        "episodes": 50,
+        "github_revision": "3935166d34285543e2c4af236e31710821dd939a",
+        "hf_revision": "d001dcf7f2a4b3fae9419a38f95d2954afc38cb4"
+      },
+      {
+        "task": "handle_basket",
+        "successes": 47,
+        "episodes": 50,
+        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
+        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
+      },
+      {
+        "task": "water_pouring",
+        "successes": 50,
+        "episodes": 50,
+        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
+        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
+      },
+      {
+        "task": "table_rearrangement",
+        "successes": 50,
+        "episodes": 50,
+        "github_revision": "3935166d34285543e2c4af236e31710821dd939a",
+        "hf_revision": "d001dcf7f2a4b3fae9419a38f95d2954afc38cb4"
+      },
+      {
+        "task": "items_handover",
+        "successes": 48,
+        "episodes": 50,
+        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
+        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
+      },
+      {
+        "task": "drawer_open_place",
+        "successes": 45,
+        "episodes": 50,
+        "github_revision": "3935166d34285543e2c4af236e31710821dd939a",
+        "hf_revision": "d001dcf7f2a4b3fae9419a38f95d2954afc38cb4"
+      },
+      {
+        "task": "item_assembly",
+        "successes": 50,
+        "episodes": 50,
+        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
+        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
+      }
+    ],
+    "native_initialization_crash_fixed": false,
+    "fresh_install_verified": false,
+    "replay_scope": "Seven real basket inputs; intermediate diagnostic server source retained with evidence"
+  },
   "policy_uses_task_specific_k": true,
   "shared_checkpoint_unchanged": true,
   "official_reset_sync_steps": 0,
-  "current_acceptance": {
+  "historical_selected_checkpoint_acceptance": {
     "handle_basket": {
       "model_sha256": "5bde2bd404d2596c944cd62367a3b105b78bc44d7c16bd25c3352f42ab81aaf9",
       "execute_steps": 29,
@@ -38,6 +115,7 @@
   "water_model_sha256": "74b381f87c64f5e19770bd6ae1a72a2188d80d65b25271360936e8f7f2bcf878",
   "historical_water_packaged_runtime_episodes": 1,
   "publication_changes": [
+    "diagnostic runtime updates verified by three real official episodes; historical evidence preserved",
     "click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only",
     "table selects shared160k+5k; drawer selects shared160k+10k",
     "previously accepted task mapping checked per task against retained exact historical mapping",

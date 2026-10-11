@@ -1,0 +1,2 @@
+{"python": "/drobotics-ailab/lingyue.yang/conda_envs/robosynchallenge/bin/python", "cuda_visible_devices": null, "/dev/nvidiactl": "open_ok", "/dev/nvidia-uvm": "open_ok", "cuInit": 0, "torch": "2.10.0+cu128", "torch_cuda": "12.8", "passed": true, "device": "NVIDIA L4"}
+{"python": "/drobotics-ailab/lingyue.yang/conda_envs/xr1-eval-runtime-py312/bin/python", "cuda_visible_devices": null, "/dev/nvidiactl": "open_ok", "/dev/nvidia-uvm": "open_ok", "cuInit": 0, "torch": "2.8.0+cu126", "torch_cuda": "12.6", "passed": true, "device": "NVIDIA L4"}

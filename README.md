@@ -13,6 +13,38 @@ Code: https://github.com/87361/robosyn-xr1-submission
 
 Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
 
+## Runtime diagnostics update — 2026-10-12
+
+The launcher now checks real CUDA execution separately in the simulator and model
+Python environments before model loading. It clears inherited Python package paths
+for these checks and defaults `OMP_NUM_THREADS` to 4, while honoring an explicit
+caller setting. The confirmed worker evaluations also used 4 threads.
+
+Failed runs retain their private simulator runtime and original exit code.
+`cleanup.json` records process cleanup, `sim_process.json` identifies the simulator
+process and versions, and `native_fault.log` captures native faults even when the
+official expert checker suppresses stderr. Request logs hash the three actual RGB
+inputs, state, instruction and output actions. Set `XR1_CAPTURE_FIRST_INPUT=1` only
+when a saved first input is needed for diagnostics. Optional diagnostic writes
+are best effort. These changes do not alter inference, reset timing, task selection
+or the official expert filter.
+During slow model startup, periodic `Timeout (0:02:00)!` stack dumps are diagnostic
+snapshots; they do not stop loading. The actual launcher readiness deadline remains
+900 seconds unless the caller explicitly changes `--startup-timeout`.
+
+The earlier mixer initialization signal 11 is **not resolved**. Three independent
+fresh-cache component runs passed on L4, but that does not establish a native-engine
+fix. The original failed attempt is retained. The build requires separate real
+episode evidence for this runtime update and preserves all historical acceptance
+records; see `verification/runtime_diagnostics_20261012/` for its scope and results.
+Fresh installation and RTX 5090 validation remain pending.
+
+The selected checkpoints also completed separate 50-episode public-setting runs
+before this diagnostic update: bell 50/50, basket 47/50, water 50/50, table 50/50,
+handover 48/50, drawer 45/50 and assembly 50/50. The total is **340/350 (97.14%)
+across seven tasks**; it is not a ten-task score. Exact per-run code/HF revisions,
+metrics and audits are retained in `verification/selected_official_n50/`.
+
 ## Install
 
 1. Install the organizers' RoboSynChallenge and EmbodiChain simulator environment
@@ -36,7 +68,7 @@ Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
 3. Download the complete model repository into a local directory:
 
    ```bash
-   hf download 87361Yly/robosyn-xr1-sim10 --local-dir /absolute/path/to/models
+   hf download 87361Yly/robosyn-xr1-sim10 --revision d001dcf7f2a4b3fae9419a38f95d2954afc38cb4 --local-dir /absolute/path/to/models
    ```
 
    Its layout is:
@@ -113,8 +145,8 @@ The single cache-path compatibility edit is hash-recorded in `launch_contract.js
 EmbodiChain v0.2.4/DexSim 0.4.3 is the acceptance combination. A separately validated
 organizer environment may use `--no-isolate-simulator`; this disables the compatibility
 copy and must not be used to work around a failed environment check. Native DexSim
-assertions cause immediate failure with the log preserved. Runtime copies are
-removed only after the evaluator and inference child processes have stopped.
+assertions cause immediate failure with the log preserved. Successful runtime copies
+are removed after child processes have stopped; failed copies are retained for diagnosis.
 
 For each of the ten tasks below, substitute the task name and use a distinct output
 directory. Use the organizer's prescribed episode count and seed/settings; the
@@ -164,7 +196,7 @@ The official evaluator/config/assets were pinned to commit
 `8818c82df5fa2522809b8105e7018950dcc9a9a8`; use that revision for reproduction.
 The run explicitly used `eval_reset_sync_steps=0`. This publication makes **0 the
 adapter default**, replacing the historical two-episode acceptance default of 10.
-Model inference code and the retained shared fallback weights are unchanged; the build verifies that the published
+Model generation logic and the retained shared fallback weights are unchanged; the build verifies that the published
 configuration equals the effective configuration used in the 50-episode run.
 The new teardown-order wrapper was not part of that historical bell run and is
 validated separately by the assembly acceptance report. This shared-bell result

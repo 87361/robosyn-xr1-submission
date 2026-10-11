@@ -1,0 +1,6 @@
+{
+  "state": "failed",
+  "cause": "new GPU preflight inherited model Python 3.12 site-packages into simulator Python 3.11",
+  "phase": "preflight before weights/environment/policy episodes",
+  "correction": "clear ambient PYTHONPATH before each runtime check; wrapper may add its own paths"
+}

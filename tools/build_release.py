@@ -15,13 +15,21 @@ selected = sorted(p for p in root.rglob('*') if p.is_file()
 dist = root / 'dist'
 dist.mkdir(exist_ok=True)
 manifest = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in selected}
+from verify_runtime_diagnostics import verify, CHANGED_RUNTIME
+baseline_manifest, diagnostics = verify(root, manifest)
+
+def accepted_digest(name):
+    # Historical results attest to historical bytes. Current runtime is checked
+    # independently above against three completed real official episodes.
+    return baseline_manifest.get(name) if name in CHANGED_RUNTIME else manifest.get(name)
+
 accepted = json.loads((root / 'verification/acceptance.json').read_text())
 if not accepted['passed']:
     raise RuntimeError('No successful end-to-end acceptance report')
 for name, digest in accepted['source_code_sha256'].items():
     if name in {'tools/build_release.py', 'tools/launch.py', 'policy/xr1_submission/deploy_policy.yml', 'policy/xr1_submission/deploy_policy.py'}:
         continue
-    if manifest.get(name) != digest:
+    if accepted_digest(name) != digest:
         raise RuntimeError(f'Accepted source missing or changed: {name}')
 audit = json.loads((root / 'verification/bell50_audit.json').read_text())
 preflight = json.loads((root / 'verification/bell50_preflight.json').read_text())
@@ -62,7 +70,7 @@ if hashlib.sha256((root / 'verification/assembly_metrics.json').read_bytes()).he
 for name, digest in assembly_acceptance['runtime_source_sha256'].items():
     if name in {'tools/launch.py', 'policy/xr1_submission/deploy_policy.py', 'policy/xr1_submission/deploy_policy.yml'}:
         continue  # Superseded below by current k29/k20 end-to-end acceptance.
-    if manifest.get(name) != digest:
+    if accepted_digest(name) != digest:
         raise RuntimeError(f'Assembly accepted runtime changed: {name}')
 water_pouring = json.loads((root / 'verification/water_pouring_export.json').read_text())
 water_pouring_acceptance = json.loads((root / 'verification/water_pouring_acceptance.json').read_text())
@@ -77,7 +85,7 @@ if hashlib.sha256((root / 'verification/water_pouring_metrics.json').read_bytes(
 for name, digest in water_pouring_acceptance['runtime_source_sha256'].items():
     if name in {'tools/launch.py', 'policy/xr1_submission/deploy_policy.py', 'policy/xr1_submission/deploy_policy.yml'}:
         continue  # Superseded below by current k29/k20 end-to-end acceptance.
-    if manifest.get(name) != digest:
+    if accepted_digest(name) != digest:
         raise RuntimeError(f'Water accepted runtime changed: {name}')
 water50_root = root / 'verification/water50'
 water50 = json.loads((water50_root / 'audit.json').read_text())
@@ -108,7 +116,7 @@ for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover',
     if hashlib.sha256((root / f'verification/{report_name}_metrics.json').read_bytes()).hexdigest() != report['metrics_sha256']:
         raise RuntimeError(f'Accepted metrics changed: {task}')
     for name, digest in report['runtime_source_sha256'].items():
-        if name == 'task_mapping.json' and manifest.get(name) != digest:
+        if name == 'task_mapping.json' and accepted_digest(name) != digest:
             prior_path = root / 'verification/prior_task_mapping.json'
             if hashlib.sha256(prior_path.read_bytes()).hexdigest() != digest:
                 raise RuntimeError('Historical mapping bytes do not match acceptance')
@@ -116,7 +124,7 @@ for task, report_name in [('handle_basket', 'handle_basket'), ('items_handover',
             if prior['tasks'][task] != mapping['tasks'][task] or any(prior[key] != mapping[key] for key in ('horizon', 'execute_steps', 'prefix_steps')):
                 raise RuntimeError(f'Historical task selection no longer applies: {task}')
             continue  # Exact runtime bytes and this task's effective contract remain unchanged.
-        if manifest.get(name) != digest:
+        if accepted_digest(name) != digest:
             raise RuntimeError(f'Current accepted runtime changed: {name}')
     if task == 'click_bell':
         baseline_files = json.loads((root / 'verification/artifact_manifest.json').read_text())['files']
@@ -161,7 +169,7 @@ for task in ('table_rearrangement', 'drawer_open_place', 'click_bell'):
     if hashlib.sha256((root / f'verification/{task}_metrics.json').read_bytes()).hexdigest() != report['metrics_sha256']:
         raise RuntimeError(f'Accepted metrics changed: {task}')
     for name, digest in report['runtime_source_sha256'].items():
-        if name == 'task_mapping.json' and manifest.get(name) != digest and task != 'click_bell':
+        if name == 'task_mapping.json' and accepted_digest(name) != digest and task != 'click_bell':
             prior_path = root / 'verification/pre_bell_task_mapping.json'
             if hashlib.sha256(prior_path.read_bytes()).hexdigest() != digest:
                 raise RuntimeError(f'Accepted intermediate mapping differs: {task}')
@@ -169,17 +177,17 @@ for task in ('table_rearrangement', 'drawer_open_place', 'click_bell'):
             if prior['tasks'][task] != mapping['tasks'][task] or any(prior[key] != mapping[key] for key in ('horizon', 'execute_steps', 'prefix_steps')):
                 raise RuntimeError(f'Accepted effective contract changed: {task}')
             continue
-        if manifest.get(name) != digest:
+        if accepted_digest(name) != digest:
             raise RuntimeError(f'Current runtime differs from acceptance: {task}: {name}')
     selected_acceptance[task] = {'model_sha256': report['model_sha256'], 'execute_steps': 29, 'episodes': report['episodes']}
 validation = {'passed': True, 'historical_release_zip_sha256': audit['release_zip_sha256'],
     'bell50_metrics_sha256': audit['metrics_sha256'],
-    'model_runtime_unchanged': True, 'policy_uses_task_specific_k': True, 'shared_checkpoint_unchanged': True,
-    'official_reset_sync_steps': 0, 'current_acceptance': selected_acceptance, 'assembly_model_sha256': assembly['model_sha256'],
+    'model_runtime_unchanged': False, 'runtime_diagnostics': diagnostics, 'policy_uses_task_specific_k': True, 'shared_checkpoint_unchanged': True,
+    'official_reset_sync_steps': 0, 'historical_selected_checkpoint_acceptance': selected_acceptance, 'assembly_model_sha256': assembly['model_sha256'],
     'historical_assembly_packaged_runtime_episodes': assembly_acceptance['episodes'],
     'water_model_sha256': water_pouring['model_sha256'],
     'historical_water_packaged_runtime_episodes': water_pouring_acceptance['episodes'],
-    'publication_changes': ['click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only', 'table selects shared160k+5k; drawer selects shared160k+10k', 'previously accepted task mapping checked per task against retained exact historical mapping', 'handle_basket selects 140k/k29; items_handover selects 180k/k20',
+    'publication_changes': ['diagnostic runtime updates verified by three real official episodes; historical evidence preserved', 'click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only', 'table selects shared160k+5k; drawer selects shared160k+10k', 'previously accepted task mapping checked per task against retained exact historical mapping', 'handle_basket selects 140k/k29; items_handover selects 180k/k20',
                             'direct adapter and launcher share task_mapping execution contracts',
                             'reset default 10 -> 0, identical to the audited 50-episode override',
                             'item_assembly alone uses the user-selected shared160k + 10k fine-tune',

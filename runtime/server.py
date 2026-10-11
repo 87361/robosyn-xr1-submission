@@ -1,6 +1,8 @@
 """Isolated XR1 server: per-episode RNG streams and native prefix inpainting."""
 from __future__ import annotations
 import argparse
+import faulthandler
+import hashlib
 from io import BytesIO
 import os
 from collections import OrderedDict
@@ -14,6 +16,13 @@ import time
 
 import numpy as np
 import torch
+
+
+def diagnostic_log(message):
+    try:
+        print(message, flush=True)
+    except Exception:
+        pass
 
 
 def prepare_cached(processor, images, instruction, state, q01, q99, horizon, device):
@@ -43,10 +52,16 @@ def main():
     parser.add_argument('--port', type=int, required=True)
     parser.add_argument('--log-root', type=Path, required=True)
     args = parser.parse_args()
+    diagnostic_log('XR1_STARTUP ' + json.dumps({'pid': os.getpid(), 'torch': torch.__version__,
+        'torch_cpu_threads': torch.get_num_threads(), 'OMP_NUM_THREADS': os.environ.get('OMP_NUM_THREADS')}))
+    try:
+        faulthandler.dump_traceback_later(120, repeat=True)
+    except Exception:
+        pass
     os.environ["XR1_PROCESSOR_PATH"] = str(args.processor.resolve())
     os.environ["XR1_ATTENTION_BACKEND"] = args.attention_backend
     sys.path[:0] = [str(args.xr1_root), str(args.xr1_root/'tools')]
-    from infer_npz import load_config, load_model
+    from infer_npz import IMAGE_KEYS, load_config, load_model
     from vendor.baseline_server import recv_npz, send_npz, decode_request
     from mibot.utils.io import (ACTION_EPS, compose_joint_action, compose_state,
                                recover_joint_action, build_action_mask_for_representation)
@@ -57,7 +72,12 @@ def main():
     args.log_root.mkdir(parents=True, exist_ok=True)
     processor = AutoProcessor.from_pretrained(args.processor, local_files_only=True)
     processor.tokenizer.padding_side = 'right'
+    diagnostic_log('XR1_LOADING_MODEL')
     model = load_model(args.checkpoint, params, 'cuda:0')
+    try:
+        faulthandler.cancel_dump_traceback_later()
+    except Exception:
+        pass
     mean_t, std_t = (torch.from_numpy(x).to('cuda:0') for x in (mean, std))
     lock = threading.Lock()
     contexts = OrderedDict()
@@ -128,10 +148,19 @@ def main():
                             'policy_seed':np.asarray(seed),'prefix_length':np.asarray(p)}
                         context.update(index=index,rng=rng_state(),response=response)
                         try:
+                            input_hashes = {key: hashlib.sha256(np.ascontiguousarray(request[key]).tobytes()).hexdigest()
+                                for key in (*IMAGE_KEYS, 'state', 'instruction')
+                                if key in request}
+                            if index == 0 and os.environ.get('XR1_CAPTURE_FIRST_INPUT') == '1':
+                                # Local RGB/proprioception only; optional diagnostic, never privileged state.
+                                capture_id = hashlib.sha256(episode_id.encode()).hexdigest()[:16]
+                                np.savez_compressed(args.log_root / f'first_input_{capture_id}.npz', **request)
                             if log is not None: log.write(json.dumps({'episode_id':episode_id,'chunk_index':index,'policy_seed':seed,
                                 'prefix_length':p,'native_prefix_max_error':prefix_error,
-                                'prefix_rounding_error':rounding_error,'generation_seconds':inference_seconds})+'\n')
-                        except OSError as exc: print(f'REQUEST_LOG_WARNING: {exc}',flush=True)
+                                'prefix_rounding_error':rounding_error,'generation_seconds':inference_seconds,
+                                'input_sha256':input_hashes,
+                                'action_sha256':hashlib.sha256(response['target_joint_action'].tobytes()).hexdigest()})+'\n')
+                        except Exception as exc: diagnostic_log(f'REQUEST_LOG_WARNING: {exc}')
                         send_npz(self.request,response)
                     except Exception as exc:
                         import traceback

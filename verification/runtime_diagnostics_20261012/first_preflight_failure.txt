@@ -1,0 +1,9 @@
+{"python": "/drobotics-ailab/lingyue.yang/conda_envs/robosynchallenge/bin/python", "cuda_visible_devices": "0", "/dev/nvidiactl": "open_ok", "/dev/nvidia-uvm": "open_ok", "cuInit": 0, "passed": false, "error": "Failed to load PyTorch C extensions:\n    It appears that PyTorch has loaded the `torch/_C` folder\n    of the PyTorch repository rather than the C extensions which\n    are expected in the `torch._C` namespace. This can occur when\n    using the `install` workflow. e.g.\n        $ python setup.py install && python -c \"import torch\"\n\n    This error can generally be solved using the `develop` workflow\n        $ python setup.py develop && python -c \"import torch\"  # This should succeed\n    or by running Python from a different directory."}
+Traceback (most recent call last):
+  File "/drobotics-ailab/lingyue.yang/submission_diagnostics_20261012/package/tools/launch.py", line 259, in <module>
+    main()
+  File "/drobotics-ailab/lingyue.yang/submission_diagnostics_20261012/package/tools/launch.py", line 145, in main
+    subprocess.run([exe, str(ROOT / 'tools/gpu_preflight.py')], env=gpu_env,
+  File "/drobotics-ailab/lingyue.yang/conda_envs/xr1-eval-runtime-py312/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/drobotics-ailab/lingyue.yang/conda_envs/robosynchallenge/bin/python', '/drobotics-ailab/lingyue.yang/submission_diagnostics_20261012/package/tools/gpu_preflight.py']' returned non-zero exit status 1.

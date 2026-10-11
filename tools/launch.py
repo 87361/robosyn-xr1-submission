@@ -25,6 +25,51 @@ def sha(path):
     return h.hexdigest()
 
 
+def finish(output, processes, runtime, status):
+    """Keep the primary result even if a child exits concurrently or cleanup fails."""
+    errors = []
+    for proc in processes:
+        if proc is None:
+            continue
+        try:
+            if proc.poll() is None:
+                try:
+                    os.killpg(proc.pid, signal.SIGTERM)
+                except ProcessLookupError:
+                    pass
+                try:
+                    proc.wait(timeout=15)
+                except subprocess.TimeoutExpired:
+                    try:
+                        os.killpg(proc.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    proc.wait(timeout=15)
+        except Exception as exc:
+            errors.append(f'process {proc.pid}: {exc}')
+    retained = str(runtime) if runtime is not None and status != 0 else None
+    if runtime is not None and status == 0:
+        try:
+            shutil.rmtree(runtime)
+        except Exception as exc:
+            retained = str(runtime)
+            errors.append(f'runtime cleanup: {exc}')
+    for name, content in {
+        'exit.code': str(status) + '\n',
+        'cleanup.json': json.dumps({'primary_exit_code': status,
+            'retained_runtime': retained, 'warnings': errors}, indent=2) + '\n',
+    }.items():
+        try:
+            (output / name).write_text(content)
+        except Exception as exc:
+            errors.append(f'{name}: {exc}')
+    for error in errors:
+        try:
+            print(f'CLEANUP_WARNING: {error}', file=sys.stderr, flush=True)
+        except Exception:
+            pass
+
+
 def check_task_assets(challenge, task, setting):
     path = challenge / 'configs' / task / setting / 'gym_config.json'
     config = json.loads(path.read_text())
@@ -85,12 +130,6 @@ def main():
         required.update([entry['artifact'] + '/model.pt', entry['artifact'] + '/config.yaml'])
     if not required.issubset(manifest['files']):
         raise ValueError('Model manifest does not cover all task artifacts')
-    for name, record in manifest['files'].items():
-        path = models / name
-        if not path.resolve().is_relative_to(models):
-            raise ValueError('Unsafe artifact path')
-        if path.stat().st_size != record['bytes'] or sha(path) != record['sha256']:
-            raise ValueError(f'Artifact checksum mismatch: {name}')
     for exe in [args.sim_python, args.model_python]:
         if not shutil.which(exe):
             raise FileNotFoundError(exe)
@@ -98,6 +137,23 @@ def main():
     if not evaluator.is_file():
         raise FileNotFoundError(evaluator)
     assets = check_task_assets(challenge, args.task, args.setting)
+    if not args.preflight_only:
+        gpu_env = os.environ.copy()
+        # The launcher may itself run through the model wrapper (Python 3.12).
+        # Do not expose its site-packages to simulator Python (Python 3.11).
+        # A requested wrapper can add its own runtime paths after this reset.
+        gpu_env['PYTHONPATH'] = ''
+        gpu_env.setdefault('OMP_NUM_THREADS', '4')
+        gpu_env.update(CUDA_VISIBLE_DEVICES=args.gpu, PYTHONNOUSERSITE='1', PYTHONFAULTHANDLER='1')
+        for exe in dict.fromkeys([args.sim_python, args.model_python]):
+            subprocess.run([exe, str(ROOT / 'tools/gpu_preflight.py')], env=gpu_env,
+                           timeout=120, check=True)
+    for name, record in manifest['files'].items():
+        path = models / name
+        if not path.resolve().is_relative_to(models):
+            raise ValueError('Unsafe artifact path')
+        if path.stat().st_size != record['bytes'] or sha(path) != record['sha256']:
+            raise ValueError(f'Artifact checksum mismatch: {name}')
     dest = challenge / 'policy/xr1_submission'
     source = ROOT / 'policy/xr1_submission'
     if dest.exists() or dest.is_symlink():
@@ -113,8 +169,10 @@ def main():
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     env = os.environ.copy()
+    # Match the accepted workers; honor an explicit organizer setting.
+    env.setdefault('OMP_NUM_THREADS', '4')
     env.update(CUDA_VISIBLE_DEVICES=args.gpu, PYTHONUNBUFFERED='1', PYTHONNOUSERSITE='1',
-               HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1')
+               HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1', PYTHONFAULTHANDLER='1')
     runtime = None
     runtime_record = {'isolated': False}
     if not args.no_isolate_simulator:
@@ -148,6 +206,7 @@ def main():
         'eval_command': eval_command, 'evaluator_lifecycle': 'defer native close until official metrics are written',
         'evaluator_wrapper_sha256': sha(ROOT / 'tools/run_official_evaluator.py'),
         'attention_backend': args.attention_backend,
+        'omp_num_threads': env.get('OMP_NUM_THREADS'),
         'task_mapping_sha256': sha(ROOT / 'task_mapping.json'),
         'horizon': contract['horizon'], 'execute_steps': contract['execute_steps'],
         'prefix_steps': contract['prefix_steps'], 'policy_seed': 20260908}
@@ -197,17 +256,7 @@ def main():
         status = status if status else 1
         raise
     finally:
-        for proc in (evaluator_process, server):
-            if proc and proc.poll() is None:
-                os.killpg(proc.pid, signal.SIGTERM)
-                try:
-                    proc.wait(timeout=15)
-                except subprocess.TimeoutExpired:
-                    os.killpg(proc.pid, signal.SIGKILL)
-                    proc.wait()
-        (output / 'exit.code').write_text(str(status) + '\n')
-        if runtime is not None:
-            shutil.rmtree(runtime)
+        finish(output, (evaluator_process, server), runtime, status)
 
 
 if __name__ == '__main__':
