@@ -1,5 +1,5 @@
 {
-  "selection": "Seven user-confirmed tasks: bell160k+3k, basket140k, water160k+5k, table160k+5k, handover180k, drawer160k+10k, assembly160k+10k. Three unconfirmed tasks retain shared160k fallback.",
+  "selection": "All ten tasks user-confirmed. Latest mixer terminal-press +4k (initialized from single-task +10k); original pipette +20k and sample-loading +20k; other seven unchanged.",
   "horizon": 30,
   "execute_steps": 29,
   "prefix_steps": 0,
@@ -35,8 +35,10 @@
       "base_checkpoint_step": 160000
     },
     "mixer_operating": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "mixer_operating_terminal_press_ft4k",
+      "checkpoint_step": 4000,
+      "base_checkpoint_step": 10000,
+      "shared_initialization_step": 160000
     },
     "item_assembly": {
       "artifact": "item_assembly_160k_ft10k",
@@ -44,12 +46,14 @@
       "base_checkpoint_step": 160000
     },
     "manipulate_pipette": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "manipulate_pipette_160k_ft20k",
+      "checkpoint_step": 20000,
+      "base_checkpoint_step": 160000
     },
     "sample_loading": {
-      "artifact": "shared_160k",
-      "checkpoint_step": 160000
+      "artifact": "sample_loading_160k_ft20k",
+      "checkpoint_step": 20000,
+      "base_checkpoint_step": 160000
     }
   }
 }

@@ -7,10 +7,14 @@ CHANGED_RUNTIME = {
     'runtime/server.py', 'tools/launch.py', 'tools/run_official_evaluator.py',
     'tools/gpu_preflight.py',
 }
-BUILD_TOOLS = {'tools/build_release.py', 'tools/verify_runtime_diagnostics.py'}
+BUILD_TOOLS = {'tools/build_release.py', 'tools/verify_runtime_diagnostics.py', 'tools/verify_original3.py'}
 
 
 def verify(root, manifest):
+    # This evidence describes the exact previous mapping, before original3 selection.
+    manifest = dict(manifest)
+    prior = root / 'verification/pre_original3_task_mapping.json'
+    manifest['task_mapping.json'] = hashlib.sha256(prior.read_bytes()).hexdigest()
     folder = root / 'verification/runtime_diagnostics_20261012'
     proof = json.loads((folder / 'proof.json').read_text())
     if proof['baseline_github_revision'] != '3935166d34285543e2c4af236e31710821dd939a':
@@ -43,7 +47,7 @@ def verify(root, manifest):
         if name.startswith(('runtime/', 'policy/', 'tools/')) and name not in BUILD_TOOLS and name not in manifest:
             raise RuntimeError(f'Accepted runtime file removed: {name}')
     accepted = {}
-    mapping = json.loads((root / 'task_mapping.json').read_text())
+    mapping = json.loads(prior.read_text())
     expected_artifacts = json.loads((root / 'verification/artifact_manifest.json').read_text())['files'].copy()
     for task, prefix in (('item_assembly', 'assembly'), ('water_pouring', 'water_pouring'),
                          ('handle_basket', 'handle_basket'), ('items_handover', 'items_handover'),
@@ -118,7 +122,7 @@ def verify(root, manifest):
     if len(formal_results) != 7 or {r['task'] for r in formal_results} != expected_tasks:
         raise RuntimeError('Historical formal evidence must cover the seven selected tasks')
     return baseline, {'baseline_github_revision': proof['baseline_github_revision'],
-                      'current_runtime_acceptance': accepted,
+                      'historical_runtime_diagnostic_acceptance': accepted,
                       'historical_selected_official_n50': formal_results,
                       'native_initialization_crash_fixed': False,
                       'fresh_install_verified': False,

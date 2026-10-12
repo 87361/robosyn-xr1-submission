@@ -6,21 +6,28 @@ import zipfile
 import yaml
 
 root = Path(__file__).resolve().parents[1]
+for document in ('README.md', 'SUBMISSION_TEXT.md'):
+    if 'HF_REVISION_PENDING' in (root / document).read_text():
+        raise RuntimeError('Pin the published Hugging Face revision before building the final release')
 selected = sorted(p for p in root.rglob('*') if p.is_file()
                   and not set(p.relative_to(root).parts) & {'dist', '__pycache__', '.git', '.venv'}
                   and p.relative_to(root).parts[0] not in {'models', 'outputs'}
                   and p.relative_to(root).as_posix() not in {'SOURCE_SHA256.json', 'PUBLICATION_VALIDATION.json'}
-                  and (p.suffix in {'.py', '.sh', '.yml', '.json', '.md', '.txt'}
+                  and (p.suffix in {'.py', '.sh', '.yml', '.yaml', '.json', '.md', '.txt', '.csv', '.exit'}
                        or p.name in {'LICENSE', '.gitignore'}))
 dist = root / 'dist'
 dist.mkdir(exist_ok=True)
 manifest = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in selected}
 from verify_runtime_diagnostics import verify, CHANGED_RUNTIME
 baseline_manifest, diagnostics = verify(root, manifest)
+from verify_original3 import verify as verify_original3
+original3 = verify_original3(root, manifest)
 
 def accepted_digest(name):
     # Historical results attest to historical bytes. Current runtime is checked
-    # independently above against three completed real official episodes.
+    # independently above against three completed 20-episode official-reset runs.
+    if name == 'task_mapping.json':
+        return hashlib.sha256((root / 'verification/pre_original3_task_mapping.json').read_bytes()).hexdigest()
     return baseline_manifest.get(name) if name in CHANGED_RUNTIME else manifest.get(name)
 
 accepted = json.loads((root / 'verification/acceptance.json').read_text())
@@ -51,7 +58,7 @@ if set(mapping['tasks']) != expected_tasks:
 if (mapping['horizon'], mapping['execute_steps'], mapping['prefix_steps']) != (30, 29, 0):
     raise RuntimeError('Unexpected inference contract change')
 for task, entry in mapping['tasks'].items():
-    expected = {'item_assembly': 'item_assembly_160k_ft10k', 'water_pouring': 'water_pouring_160k_ft5k', 'handle_basket': 'handle_basket_140k', 'items_handover': 'items_handover_180k', 'table_rearrangement': 'table_rearrangement_160k_ft5k', 'drawer_open_place': 'drawer_open_place_160k_ft10k', 'click_bell': 'click_bell_160k_ft3k'}.get(task, 'shared_160k')
+    expected = {'item_assembly': 'item_assembly_160k_ft10k', 'water_pouring': 'water_pouring_160k_ft5k', 'handle_basket': 'handle_basket_140k', 'items_handover': 'items_handover_180k', 'table_rearrangement': 'table_rearrangement_160k_ft5k', 'drawer_open_place': 'drawer_open_place_160k_ft10k', 'click_bell': 'click_bell_160k_ft3k', 'mixer_operating': 'mixer_operating_terminal_press_ft4k', 'manipulate_pipette': 'manipulate_pipette_160k_ft20k', 'sample_loading': 'sample_loading_160k_ft20k'}[task]
     expected_k = 20 if task == 'items_handover' else 29
     if entry.get('execute_steps', mapping['execute_steps']) != expected_k:
         raise RuntimeError(f'Unexpected execute steps for {task}')
@@ -182,12 +189,12 @@ for task in ('table_rearrangement', 'drawer_open_place', 'click_bell'):
     selected_acceptance[task] = {'model_sha256': report['model_sha256'], 'execute_steps': 29, 'episodes': report['episodes']}
 validation = {'passed': True, 'historical_release_zip_sha256': audit['release_zip_sha256'],
     'bell50_metrics_sha256': audit['metrics_sha256'],
-    'model_runtime_unchanged': False, 'runtime_diagnostics': diagnostics, 'policy_uses_task_specific_k': True, 'shared_checkpoint_unchanged': True,
+    'model_runtime_unchanged': False, 'runtime_diagnostics': diagnostics, 'selected_three_checkpoint_acceptance': original3, 'policy_uses_task_specific_k': True, 'shared_checkpoint_unchanged': True,
     'official_reset_sync_steps': 0, 'historical_selected_checkpoint_acceptance': selected_acceptance, 'assembly_model_sha256': assembly['model_sha256'],
     'historical_assembly_packaged_runtime_episodes': assembly_acceptance['episodes'],
     'water_model_sha256': water_pouring['model_sha256'],
     'historical_water_packaged_runtime_episodes': water_pouring_acceptance['episodes'],
-    'publication_changes': ['diagnostic runtime updates verified by three real official episodes; historical evidence preserved', 'click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only', 'table selects shared160k+5k; drawer selects shared160k+10k', 'previously accepted task mapping checked per task against retained exact historical mapping', 'handle_basket selects 140k/k29; items_handover selects 180k/k20',
+    'publication_changes': ['select latest mixer terminal-press +4k and original pipette/sample +20k; exact exports and new N20 acceptance', 'diagnostic runtime updates verified by three real official episodes; historical evidence preserved', 'click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only', 'table selects shared160k+5k; drawer selects shared160k+10k', 'previously accepted task mapping checked per task against retained exact historical mapping', 'handle_basket selects 140k/k29; items_handover selects 180k/k20',
                             'direct adapter and launcher share task_mapping execution contracts',
                             'reset default 10 -> 0, identical to the audited 50-episode override',
                             'item_assembly alone uses the user-selected shared160k + 10k fine-tune',

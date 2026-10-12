@@ -1,0 +1,370 @@
+{
+  "task": "sample_loading",
+  "successes": 23,
+  "episodes": 50,
+  "seeds": [
+    1340754471,
+    1284876248,
+    507984782,
+    600956192,
+    2034098327,
+    485603871,
+    903586222,
+    165035946,
+    750555509,
+    698047583,
+    412739490,
+    2026988336,
+    2012841570,
+    1466242230,
+    1929289568,
+    1636825784,
+    1345262493,
+    300497007,
+    1801664104,
+    297069961,
+    1457728290,
+    136747137,
+    988366577,
+    1908564876,
+    991518122,
+    800831951,
+    504795484,
+    56851867,
+    2069441459,
+    17386481,
+    587982200,
+    518217854,
+    420238868,
+    1296353734,
+    1644371172,
+    1295356269,
+    1898441341,
+    1962419614,
+    1272991691,
+    1755970370,
+    1971315778,
+    155797952,
+    1841663590,
+    1548531386,
+    1928798632,
+    1021374326,
+    1269312073,
+    16894724,
+    857168362,
+    897957916
+  ],
+  "root": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading",
+  "passed": true,
+  "recording": {
+    "passed": true,
+    "episodes": 50,
+    "recordings": [
+      {
+        "seed": 1340754471,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_000_seed_1340754471.h5"
+      },
+      {
+        "seed": 1284876248,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_001_seed_1284876248.h5"
+      },
+      {
+        "seed": 507984782,
+        "steps": 346,
+        "observations": 347,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_002_seed_507984782.h5"
+      },
+      {
+        "seed": 600956192,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_003_seed_600956192.h5"
+      },
+      {
+        "seed": 2034098327,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_004_seed_2034098327.h5"
+      },
+      {
+        "seed": 485603871,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_005_seed_485603871.h5"
+      },
+      {
+        "seed": 903586222,
+        "steps": 322,
+        "observations": 323,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_006_seed_903586222.h5"
+      },
+      {
+        "seed": 165035946,
+        "steps": 349,
+        "observations": 350,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_007_seed_165035946.h5"
+      },
+      {
+        "seed": 750555509,
+        "steps": 326,
+        "observations": 327,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_008_seed_750555509.h5"
+      },
+      {
+        "seed": 698047583,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_009_seed_698047583.h5"
+      },
+      {
+        "seed": 412739490,
+        "steps": 344,
+        "observations": 345,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_010_seed_412739490.h5"
+      },
+      {
+        "seed": 2026988336,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_011_seed_2026988336.h5"
+      },
+      {
+        "seed": 2012841570,
+        "steps": 375,
+        "observations": 376,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_012_seed_2012841570.h5"
+      },
+      {
+        "seed": 1466242230,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_013_seed_1466242230.h5"
+      },
+      {
+        "seed": 1929289568,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_014_seed_1929289568.h5"
+      },
+      {
+        "seed": 1636825784,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_015_seed_1636825784.h5"
+      },
+      {
+        "seed": 1345262493,
+        "steps": 325,
+        "observations": 326,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_016_seed_1345262493.h5"
+      },
+      {
+        "seed": 300497007,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_017_seed_300497007.h5"
+      },
+      {
+        "seed": 1801664104,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_018_seed_1801664104.h5"
+      },
+      {
+        "seed": 297069961,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_019_seed_297069961.h5"
+      },
+      {
+        "seed": 1457728290,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_020_seed_1457728290.h5"
+      },
+      {
+        "seed": 136747137,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_021_seed_136747137.h5"
+      },
+      {
+        "seed": 988366577,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_022_seed_988366577.h5"
+      },
+      {
+        "seed": 1908564876,
+        "steps": 346,
+        "observations": 347,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_023_seed_1908564876.h5"
+      },
+      {
+        "seed": 991518122,
+        "steps": 346,
+        "observations": 347,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_024_seed_991518122.h5"
+      },
+      {
+        "seed": 800831951,
+        "steps": 353,
+        "observations": 354,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_025_seed_800831951.h5"
+      },
+      {
+        "seed": 504795484,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_026_seed_504795484.h5"
+      },
+      {
+        "seed": 56851867,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_027_seed_56851867.h5"
+      },
+      {
+        "seed": 2069441459,
+        "steps": 344,
+        "observations": 345,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_028_seed_2069441459.h5"
+      },
+      {
+        "seed": 17386481,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_029_seed_17386481.h5"
+      },
+      {
+        "seed": 587982200,
+        "steps": 326,
+        "observations": 327,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_030_seed_587982200.h5"
+      },
+      {
+        "seed": 518217854,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_031_seed_518217854.h5"
+      },
+      {
+        "seed": 420238868,
+        "steps": 373,
+        "observations": 374,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_032_seed_420238868.h5"
+      },
+      {
+        "seed": 1296353734,
+        "steps": 343,
+        "observations": 344,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_033_seed_1296353734.h5"
+      },
+      {
+        "seed": 1644371172,
+        "steps": 379,
+        "observations": 380,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_034_seed_1644371172.h5"
+      },
+      {
+        "seed": 1295356269,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_035_seed_1295356269.h5"
+      },
+      {
+        "seed": 1898441341,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_036_seed_1898441341.h5"
+      },
+      {
+        "seed": 1962419614,
+        "steps": 324,
+        "observations": 325,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_037_seed_1962419614.h5"
+      },
+      {
+        "seed": 1272991691,
+        "steps": 340,
+        "observations": 341,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_038_seed_1272991691.h5"
+      },
+      {
+        "seed": 1755970370,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_039_seed_1755970370.h5"
+      },
+      {
+        "seed": 1971315778,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_040_seed_1971315778.h5"
+      },
+      {
+        "seed": 155797952,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_041_seed_155797952.h5"
+      },
+      {
+        "seed": 1841663590,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_042_seed_1841663590.h5"
+      },
+      {
+        "seed": 1548531386,
+        "steps": 326,
+        "observations": 327,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_043_seed_1548531386.h5"
+      },
+      {
+        "seed": 1928798632,
+        "steps": 386,
+        "observations": 387,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_044_seed_1928798632.h5"
+      },
+      {
+        "seed": 1021374326,
+        "steps": 352,
+        "observations": 353,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_045_seed_1021374326.h5"
+      },
+      {
+        "seed": 1269312073,
+        "steps": 500,
+        "observations": 501,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_046_seed_1269312073.h5"
+      },
+      {
+        "seed": 16894724,
+        "steps": 346,
+        "observations": 347,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_047_seed_16894724.h5"
+      },
+      {
+        "seed": 857168362,
+        "steps": 345,
+        "observations": 346,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_048_seed_857168362.h5"
+      },
+      {
+        "seed": 897957916,
+        "steps": 327,
+        "observations": 328,
+        "path": "/mnt/pfs/public/models/xr1/evals/single_sample_loading_ft20000_n50_20261010/results/tasks/sample_loading/recordings/episode_049_seed_897957916.h5"
+      }
+    ],
+    "schema_version": 2,
+    "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+  },
+  "checkpoint": "/mnt/pfs/public/models/xr1/runs/project_xr1-robosynchallenge/xr1_single_sample_loading_160k_ft20k_20261009/epoch=0-step=20000.ckpt/checkpoint/mp_rank_00_model_states.pt",
+  "checkpoint_step": 20000,
+  "checkpoint_sha256": "467da5b83da0bfdcf0df70564ed9d14da624819942a2b3fb82bf7648e6574131"
+}

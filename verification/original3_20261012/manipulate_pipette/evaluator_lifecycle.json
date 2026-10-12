@@ -1,0 +1,6 @@
+{
+  "official_evaluator_returned": true,
+  "official_metrics_verified_before_teardown": true,
+  "deferred_close_count": 1,
+  "native_teardown": "started"
+}

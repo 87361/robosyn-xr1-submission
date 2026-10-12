@@ -5,7 +5,7 @@
   "model_runtime_unchanged": false,
   "runtime_diagnostics": {
     "baseline_github_revision": "3935166d34285543e2c4af236e31710821dd939a",
-    "current_runtime_acceptance": {
+    "historical_runtime_diagnostic_acceptance": {
       "handle_basket": {
         "episodes": 1,
         "successes": 1,
@@ -80,6 +80,69 @@
     "fresh_install_verified": false,
     "replay_scope": "Seven real basket inputs; intermediate diagnostic server source retained with evidence"
   },
+  "selected_three_checkpoint_acceptance": {
+    "new_three": {
+      "mixer_operating": {
+        "artifact": "mixer_operating_terminal_press_ft4k",
+        "episodes": 20,
+        "successes": 20,
+        "model_sha256": "84b9df47b708cd321186b56592ecc1fdedc0d936fa499857062153d53d92baf4",
+        "gpu_peak_MiB": 13434
+      },
+      "manipulate_pipette": {
+        "artifact": "manipulate_pipette_160k_ft20k",
+        "episodes": 20,
+        "successes": 19,
+        "model_sha256": "6fd051f1ddef9977dfd7b17c7e3f86e35d598d8f995ca6a72641094d387bab56",
+        "gpu_peak_MiB": 13406
+      },
+      "sample_loading": {
+        "artifact": "sample_loading_160k_ft20k",
+        "episodes": 20,
+        "successes": 11,
+        "model_sha256": "ae30f2dda14be60225aa618cf9315882e6602ca4da175c26a0019fe602581c8e",
+        "gpu_peak_MiB": 13407
+      }
+    },
+    "retained_seven": {
+      "click_bell": {
+        "episodes": 20,
+        "successes": 20,
+        "artifact": "click_bell_160k_ft3k"
+      },
+      "handle_basket": {
+        "episodes": 20,
+        "successes": 19,
+        "artifact": "handle_basket_140k"
+      },
+      "water_pouring": {
+        "episodes": 20,
+        "successes": 20,
+        "artifact": "water_pouring_160k_ft5k"
+      },
+      "table_rearrangement": {
+        "episodes": 20,
+        "successes": 20,
+        "artifact": "table_rearrangement_160k_ft5k"
+      },
+      "items_handover": {
+        "episodes": 20,
+        "successes": 19,
+        "artifact": "items_handover_180k"
+      },
+      "drawer_open_place": {
+        "episodes": 20,
+        "successes": 16,
+        "artifact": "drawer_open_place_160k_ft10k"
+      },
+      "item_assembly": {
+        "episodes": 20,
+        "successes": 20,
+        "artifact": "item_assembly_160k_ft10k"
+      }
+    },
+    "scope": "Three new N20 runs plus seven unchanged effective-policy N20 runs; separate batches"
+  },
   "policy_uses_task_specific_k": true,
   "shared_checkpoint_unchanged": true,
   "official_reset_sync_steps": 0,
@@ -115,6 +178,7 @@
   "water_model_sha256": "74b381f87c64f5e19770bd6ae1a72a2188d80d65b25271360936e8f7f2bcf878",
   "historical_water_packaged_runtime_episodes": 1,
   "publication_changes": [
+    "select latest mixer terminal-press +4k and original pipette/sample +20k; exact exports and new N20 acceptance",
     "diagnostic runtime updates verified by three real official episodes; historical evidence preserved",
     "click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only",
     "table selects shared160k+5k; drawer selects shared160k+10k",

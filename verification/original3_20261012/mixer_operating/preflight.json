@@ -1,0 +1,28 @@
+{
+  "published_files_verified": 231,
+  "official_files_verified": 351,
+  "github_revision": "candidate_based_on_2ac161e0241edf6bb6119b48c93dc8ea888b60ed",
+  "hf_revision": "candidate_selected3_mixer4k_exact_manifest",
+  "official_revision": "8818c82df5fa2522809b8105e7018950dcc9a9a8",
+  "sdk_python_files": 378,
+  "sdk_python_aggregate_sha256": "f9f92b2bc6e2a40012112b1f1f1476212eb5c096a9c11a96545d2d9938502bdf",
+  "sim_python": "/drobotics-ailab/lingyue.yang/conda_envs/robosynchallenge/bin/python",
+  "model_wrapper_sha256": "04e44d33857457083aef84cef3dac8f1fbfb43a9139cc15f7416fa27f37957ab",
+  "source_sdk": "/d-robotics-nas-dev/users/lingyue.yang/xiaomi_robotics_1/checkpoints/xr1_peak_20261008/inputs/embodichain",
+  "sim_manager_sha256": "195ab1a2bb0ef188ccd675ef56c2ff73c921520c1f41a00271c8fed8553ac395",
+  "sim_versions": {
+    "torch": "2.10.0",
+    "numpy": "1.26.4",
+    "gymnasium": "1.3.0"
+  },
+  "model_versions": {
+    "python": "3.12.15 (main, Oct  6 2026, 23:50:18) [GCC 15.3.0]",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "numpy": "2.1.3",
+      "transformers": "4.57.1"
+    }
+  },
+  "gpu": "NVIDIA L4, 535.129.03, 23034 MiB",
+  "worker_sha256": "310241997b5e17167c59e173f841d82cec84f040e0cfdc1678041739f512fc73"
+}

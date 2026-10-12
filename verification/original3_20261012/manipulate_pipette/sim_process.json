@@ -1,0 +1,15 @@
+{
+  "pid": 9753,
+  "proc_status": "Name:\tpython\nUmask:\t0022\nState:\tR (running)\nTgid:\t9753\nNgid:\t0\nPid:\t9753\nPPid:\t4044\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t9753\nNSpid:\t9753\nNSpgid:\t9753\nNSsid:\t9753\nVmPeak:\t   23564 kB\nVmSize:\t   23564 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   17208 kB\nVmRSS:\t   17208 kB\nRssAnon:\t   11348 kB\nRssFile:\t    5860 kB\nRssShmem:\t       0 kB\nVmData:\t   14152 kB\nVmStk:\t     140 kB\nVmExe:\t    3260 kB\nVmLib:\t    1892 kB\nVmPTE:\t      84 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nThreads:\t1\nSigQ:\t9/4062010\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001006\nSigCgt:\t00000000000004e8\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSpeculation_Store_Bypass:\tthread force mitigated\nCpus_allowed:\tffffffff,ffffffff,ffffffff,ffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-191\nMems_allowed:\t00000000,00000003\nMems_allowed_list:\t0-1\nvoluntary_ctxt_switches:\t4\nnonvoluntary_ctxt_switches:\t0\n",
+  "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+  "executable": "/drobotics-ailab/lingyue.yang/conda_envs/robosynchallenge/bin/python",
+  "hostname": "t-20261012143730-r8fp8-worker-0",
+  "versions": {
+    "torch": "2.10.0",
+    "numpy": "1.26.4",
+    "gymnasium": "1.3.0",
+    "embodichain": "0.2.3",
+    "dexsim_engine": "0.4.3"
+  },
+  "faulthandler": "1"
+}

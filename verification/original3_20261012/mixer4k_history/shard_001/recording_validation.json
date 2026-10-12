@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "episodes": 10,
+  "recordings": [
+    {
+      "seed": 1879422756,
+      "steps": 262,
+      "observations": 263,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_000_seed_1879422756.h5"
+    },
+    {
+      "seed": 1277901399,
+      "steps": 263,
+      "observations": 264,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_001_seed_1277901399.h5"
+    },
+    {
+      "seed": 1682652230,
+      "steps": 261,
+      "observations": 262,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_002_seed_1682652230.h5"
+    },
+    {
+      "seed": 243580376,
+      "steps": 260,
+      "observations": 261,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_003_seed_243580376.h5"
+    },
+    {
+      "seed": 1991416408,
+      "steps": 252,
+      "observations": 253,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_004_seed_1991416408.h5"
+    },
+    {
+      "seed": 1171049868,
+      "steps": 257,
+      "observations": 258,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_005_seed_1171049868.h5"
+    },
+    {
+      "seed": 1646868794,
+      "steps": 261,
+      "observations": 262,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_006_seed_1646868794.h5"
+    },
+    {
+      "seed": 2051556033,
+      "steps": 500,
+      "observations": 501,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_007_seed_2051556033.h5"
+    },
+    {
+      "seed": 1252949478,
+      "steps": 257,
+      "observations": 258,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_008_seed_1252949478.h5"
+    },
+    {
+      "seed": 1340754471,
+      "steps": 260,
+      "observations": 261,
+      "path": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating/shard_001/recordings/episode_009_seed_1340754471.h5"
+    }
+  ],
+  "schema_version": 2,
+  "scope": "all configured cameras, joint and rigid state, scene assets, visual parameters, RNG, predictions, applied commands, terminal hook"
+}

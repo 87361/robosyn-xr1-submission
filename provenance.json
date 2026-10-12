@@ -25,10 +25,16 @@
   ],
   "policy_contract": "H30; k20 items_handover, k29 others; prefix0 joint_absolute; policy seed20260908 per episode",
   "checkpoint_selection": {
-    "shared_160k": "six tasks",
-    "item_assembly_160k_ft10k": "item_assembly only; user-selected on 2026-10-11",
-    "water_pouring_160k_ft5k": "water_pouring only; user-selected 50/50 checkpoint on 2026-10-11",
-    "handle_basket_140k": "handle_basket only; user-selected H30 140k/k29",
-    "items_handover_180k": "items_handover only; user-selected H30 180k/k20"
+    "click_bell_160k_ft3k": "click_bell",
+    "handle_basket_140k": "handle_basket",
+    "water_pouring_160k_ft5k": "water_pouring",
+    "table_rearrangement_160k_ft5k": "table_rearrangement",
+    "items_handover_180k": "items_handover",
+    "drawer_open_place_160k_ft10k": "drawer_open_place",
+    "mixer_operating_terminal_press_ft4k": "mixer_operating",
+    "item_assembly_160k_ft10k": "item_assembly",
+    "manipulate_pipette_160k_ft20k": "manipulate_pipette",
+    "sample_loading_160k_ft20k": "sample_loading",
+    "shared_160k": "historical provenance only; not selected"
   }
 }

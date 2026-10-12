@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "step": 4000,
+  "task": "mixer_operating",
+  "episodes": 50,
+  "checkpoint_name": "mp_rank_00_model_states.pt",
+  "checkpoint_sha256": "b14c94d6544c3bc4936279988852d632da654ea6ba4728a9ba6f297d8f899802",
+  "checkpoint_bytes": 11004763431,
+  "config_sha256": "f550b541e2ec21ef383ec362103319c6125b4ad45fae4931a9d1eb2e307734c0",
+  "coverage_source": "/mnt/pfs/public/models/xr1/mixer_old1000_new100_20261012/coverage_complete.json",
+  "training_source": "/mnt/pfs/public/models/xr1/runs/project_xr1-robosynchallenge/xr1-mixer-old1000-new100-ft4k-20261012/.training_complete"
+}

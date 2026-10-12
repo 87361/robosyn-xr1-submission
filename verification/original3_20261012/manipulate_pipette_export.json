@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "task": "manipulate_pipette",
+  "artifact": "manipulate_pipette_160k_ft20k",
+  "checkpoint_step": 20000,
+  "base_checkpoint_step": 160000,
+  "source_checkpoint": "/mnt/pfs/public/models/xr1/runs/project_xr1-robosynchallenge/xr1_single_manipulate_pipette_160k_ft20k_20261009/epoch=0-step=20000.ckpt/checkpoint/mp_rank_00_model_states.pt",
+  "source_checkpoint_sha256": "48d2b5472352a819df701b2c3433d3aac9e23e700f0d73050c0feeeb97e0e7a8",
+  "source_config_sha256": "4563d420feb3107e4854ca21c0f1969d8759c8eb59b7e19e8d897307e51d4b5b",
+  "tensor_count": 1135,
+  "all_tensors_finite": true,
+  "exported_tensors_exactly_equal_source": true,
+  "normalization_equal_to_shared": true,
+  "horizon": 30,
+  "execute_steps": 29,
+  "prefix_steps": 0,
+  "gripper_encoding": "normalized_1",
+  "model_sha256": "6fd051f1ddef9977dfd7b17c7e3f86e35d598d8f995ca6a72641094d387bab56",
+  "config_sha256": "153a11aeee29a407f78f6bf11ab42260931d79432e509f2ac349b3fa15a82a96",
+  "historical_selection": {
+    "episodes": 50,
+    "successes": 46,
+    "reset_sync_steps": 10,
+    "scope": "Historical selection only; not official-reset acceptance"
+  },
+  "end_to_end_verified": false,
+  "evidence_sha256": {
+    "source_config.yaml": "4563d420feb3107e4854ca21c0f1969d8759c8eb59b7e19e8d897307e51d4b5b",
+    "historical_EVAL_COMPLETE.json": "e0c98dda06c5bc5024a402d6d8ed0e2988a1718c428c797c46087a1b8b8b3eb6",
+    "source_export.json": "3ef6413f3a616eddc2899f52685f8f14985e4cd89c80bd5bcc01f27e6adbccb5"
+  }
+}

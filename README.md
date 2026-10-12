@@ -1,17 +1,51 @@
 # XR1 RoboSynChallenge submission
 
 This repository contains a standalone RoboSynChallenge policy adapter, an isolated
-inference runtime, and launch/validation tools. Three unconfirmed tasks use the shared XR1 H30
-checkpoint at step 160000. `item_assembly` uses the user-selected checkpoint after
+inference runtime, and launch/validation tools. All ten task checkpoints are user-confirmed. `item_assembly` uses the user-selected checkpoint after
 10,000 further training steps on 1,000 additional generated assembly expert
 trajectories. `water_pouring` uses the shared 160k checkpoint fine-tuned for
 5,000 steps on the official 1,000-episode water dataset. `task_mapping.json` is
 the authoritative mapping: `handle_basket` selects H30 140k/k29 and
-`items_handover` selects H30 180k/k20. The confirmed bell checkpoint is shared160k+3k; existing shared-bell acceptance is historical only. Table rearrangement selects shared160k+5k and drawer placement selects shared160k+10k. The three unconfirmed tasks (mixer, pipette, sample loading) retain shared160k fallback weights; their screenshot candidate scores do not describe these fallback weights.
+`items_handover` selects H30 180k/k20. The confirmed bell checkpoint is shared160k+3k; existing shared-bell acceptance is historical only. Table rearrangement selects shared160k+5k and drawer placement selects shared160k+10k. Mixer selects the latest terminal-press +4k (initialized from the original single-task 160k+10k); pipette and sample loading select their original single-task 160k+20k checkpoints. These replace the former shared160k fallbacks.
 
 Code: https://github.com/87361/robosyn-xr1-submission
 
 Weights: https://huggingface.co/87361Yly/robosyn-xr1-sim10
+
+## Current selected-policy acceptance — 2026-10-12
+
+All selected policies have 20 completed public-evaluator episodes at official
+reset synchronization 0. The latest mixer +4k achieved **20/20**, original pipette
++20k **19/20**, and original sample loading +20k **11/20**. The other seven results
+are retained from the exact same model/config/processor and runtime bytes in
+previous N20 batches. Combined: **184/200 (92%)** across ten tasks; this is a
+combination of batches, not one simultaneous ten-task rerun or an official
+held-out leaderboard score.
+
+| Task | Successes / episodes | Peak GPU memory (MiB) |
+| --- | --- | --- |
+| click_bell | 20/20 | 13405 |
+| handle_basket | 19/20 | 13665 |
+| water_pouring | 20/20 | 13434 |
+| table_rearrangement | 20/20 | 13464 |
+| items_handover | 19/20 | 13408 |
+| drawer_open_place | 16/20 | 13559 |
+| mixer_operating | 20/20 | 13434 |
+| item_assembly | 20/20 | 13406 |
+| manipulate_pipette | 19/20 | 13406 |
+| sample_loading | 11/20 | 13407 |
+
+The three new jobs completed with exit code 0, empty native-fault logs and no
+cleanup warnings. Their peak GPU memory was 13,434 MiB or less on L4. Simulator
+Python 3.11 used PyTorch 2.10.0/CUDA 12.8 and NumPy 1.26.4; inference Python 3.12
+used PyTorch 2.8.0/CUDA 12.6 and NumPy 2.1.3. Real CUDA kernels passed in both
+environments. This validates the existing cloud environments; a fresh install
+and RTX 5090 remain unverified. Historical native initialization failures remain
+documented and are not claimed to have a proven root-cause fix.
+
+All tasks use H30/p0; handover uses k20, others k29. Evidence and exact checksums
+are in `verification/original3_20261012/`. The older results below are historical
+records with their original checkpoints and evaluation settings.
 
 ## Runtime diagnostics update — 2026-10-12
 
@@ -68,7 +102,7 @@ metrics and audits are retained in `verification/selected_official_n50/`.
 3. Download the complete model repository into a local directory:
 
    ```bash
-   hf download 87361Yly/robosyn-xr1-sim10 --revision d001dcf7f2a4b3fae9419a38f95d2954afc38cb4 --local-dir /absolute/path/to/models
+   hf download 87361Yly/robosyn-xr1-sim10 --revision fdc1c2f53a0eeb61b02459ef4fca41c7e2aa0dc4 --local-dir /absolute/path/to/models
    ```
 
    Its layout is:
@@ -89,10 +123,13 @@ metrics and audits are retained in `verification/selected_official_n50/`.
      table_rearrangement_160k_ft5k/{model.pt,config.yaml}
      drawer_open_place_160k_ft10k/{model.pt,config.yaml}
      click_bell_160k_ft3k/{model.pt,config.yaml}
+     mixer_operating_terminal_press_ft4k/{model.pt,config.yaml}
+     manipulate_pipette_160k_ft20k/{model.pt,config.yaml}
+     sample_loading_160k_ft20k/{model.pt,config.yaml}
      processor/...
    ```
 
-   The eight model files occupy about 85.70 GB in total. Each evaluation loads
+   The eleven retained model files occupy about 118.72 GB in total (ten selected plus the historical shared checkpoint). Each evaluation loads
    only the checkpoint selected for that task.
 
    The export includes model tensors, exact training normalization statistics,
@@ -160,10 +197,10 @@ two-episode command above is an integration acceptance run, not an official scor
 | table_rearrangement | table_rearrangement_160k_ft5k | 29 |
 | items_handover | items_handover_180k | 20 |
 | drawer_open_place | drawer_open_place_160k_ft10k | 29 |
-| mixer_operating | shared_160k | 29 |
+| mixer_operating | mixer_operating_terminal_press_ft4k | 29 |
 | item_assembly | item_assembly_160k_ft10k | 29 |
-| manipulate_pipette | shared_160k | 29 |
-| sample_loading | shared_160k | 29 |
+| manipulate_pipette | manipulate_pipette_160k_ft20k | 29 |
+| sample_loading | sample_loading_160k_ft20k | 29 |
 
 ## Interface and evaluation behavior
 
@@ -196,7 +233,7 @@ The official evaluator/config/assets were pinned to commit
 `8818c82df5fa2522809b8105e7018950dcc9a9a8`; use that revision for reproduction.
 The run explicitly used `eval_reset_sync_steps=0`. This publication makes **0 the
 adapter default**, replacing the historical two-episode acceptance default of 10.
-Model generation logic and the retained shared fallback weights are unchanged; the build verifies that the published
+Model generation logic is unchanged; the build verifies that the published
 configuration equals the effective configuration used in the 50-episode run.
 The new teardown-order wrapper was not part of that historical bell run and is
 validated separately by the assembly acceptance report. This shared-bell result
@@ -206,9 +243,10 @@ See `verification/bell50_audit.json` and `verification/bell50_metrics.json` for
 historical shared-checkpoint evidence. `verification/acceptance.json` and `verification/RESULTS.md`
 retain the earlier two-episode history, whose reset setting was 10.
 
-This verifies the public click_bell pipeline on the existing L20 environments.
-A fresh CUDA 12.8 install, RTX 5090, all ten tasks using this packaged SDPA runtime,
-and the organizer's held-out scenes have not been validated here.
+This historical record verifies the public shared-checkpoint click_bell pipeline on
+the existing L20 environments. It does not cover all ten selected policies; current
+selected-policy acceptance is recorded in `verification/original3_20261012/`. A fresh
+CUDA 12.8 install, RTX 5090 and the organizer's held-out scenes remain unverified.
 
 ## Assembly checkpoint addition — 2026-10-11
 
@@ -287,7 +325,7 @@ Table rearrangement adds the shared160k+5k checkpoint and drawer placement adds
 shared160k+10k, each trained on its official 1,000-episode task dataset. Existing
 selected weights are retained byte-for-byte. Bell now selects shared160k+3k;
 assembly remains the explicitly selected shared160k+10k. The old shared artifact
-remains solely as the fallback for the three unconfirmed tasks.
+is retained for historical provenance; no current task selects it.
 
 The selected table and drawer checkpoints have historical results of 50/50 and
 48/50; the newly selected bell+3k also has historical 50/50. Retained runner hashes prove those runs used reset synchronization 10,
@@ -332,8 +370,8 @@ Repository names:
 
 The website currently states that only the latest valid submission is evaluated
 once, with deadline October 11, 2026 AoE. Verify the live FAQ before submission.
-See `SUBMISSION_TEXT.md` for copy-ready field text and `verification/bell50_audit.json`
-for the exact validation boundary. No official evaluation request is sent by publishing these repositories.
+See `SUBMISSION_TEXT.md` for copy-ready field text and `verification/README.md`
+for the current and historical validation boundaries. No official evaluation request is sent by publishing these repositories.
 
 ## Provenance
 
@@ -341,3 +379,9 @@ Model architecture and inference utilities derive from Xiaomi-Robotics-1 and ret
 its Apache-2.0 license. `provenance.json` records original file hashes and deployment
 modifications. A source archive can be generated with `python tools/build_release.py`;
 large weights and caches are not included in that archive.
+
+## Latest mixer and original pipette/sample selections — 2026-10-12
+
+The user confirmed the latest mixer terminal-press +4k, initialized from mixer160k+10k; pipette and sample loading retain their original shared160k+20k checkpoints. The original checkpoints are exported with exact tensor equality and their own training normalization. Mixer used the official 1,000 episodes plus 100 newly generated terminal-press expert episodes at a 1:1 frame-sampling ratio; pipette used additional generated expert trajectories (`expert_fulldata_20261007`), and sample loading used the original redesigned expert dataset (`expert_redesign_20261007_add800_v1`). No later observer or replay fine-tune is selected for pipette or sample loading.
+
+Historical reset10 selection scores (45/50, 46/50 and 23/50 respectively) are not scores for the official-reset submission pipeline. The previous full N20 total 169/200 used shared160k for these three tasks and does not describe this new mapping. New reset0 acceptance is recorded separately in `verification/original3_20261012/`. Fresh installation and organizer-held-out evaluation remain unverified.

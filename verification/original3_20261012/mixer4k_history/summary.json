@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "task": "mixer_operating",
+  "episodes": 50,
+  "successes": 45,
+  "success_rate": 0.9,
+  "result_root": "/d-robotics-nas-dev/users/lingyue.yang/evorl_runs/xr1_robosynchallenge/eval/mixer_ft4k_step4000_n50_20261012/job/results/tasks/mixer_operating",
+  "checkpoint_step": 4000
+}

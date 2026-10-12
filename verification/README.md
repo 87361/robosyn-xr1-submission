@@ -1,0 +1,9 @@
+# Verification records
+
+The current checkpoint mapping is `../task_mapping.json`. Latest selected-checkpoint evidence is in `original3_20261012/`: mixer terminal-press +4k, original pipette +20k and original sample loading +20k. Its `retained7_n20/` directory preserves the seven unchanged task results. The release builder requires all three new continuous 20-episode runs, exact model/config hashes, the unchanged effective policies for the other seven tasks, and official reset synchronization 0.
+
+Earlier records remain immutable historical evidence. In particular, `RESULTS.md`, `CHECKLIST.md` and `acceptance.json` describe the initial 2026-10-09 click-bell acceptance, including the publication status at that time. They are not the current ten-task release status. `runtime_diagnostics_20261012/` describes the prior mapping's runtime diagnostics. Original single-task selection runs and mixer 45/50 use reset10 and are distinct from the new package's reset0 evaluation.
+
+Completed cloud runs validate the existing L4 environments and public evaluator. They do not establish a fresh installation, RTX 5090 execution, or the organizers' held-out score. The paired code and HF publication revisions are recorded separately from competition-portal submission.
+
+Completed new N20 results: mixer 20/20, pipette 19/20, sample loading 11/20. Together with the exact seven retained task policies: 184/200. All three new jobs completed successfully, with no native-fault entries or cleanup warnings.
