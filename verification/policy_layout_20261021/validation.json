@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "episodes_completed": 2,
+  "tests_passed": 8,
+  "challenge_root_default_used": true,
+  "all_task_assets_checked": 10,
+  "model_manifest_sha256": "295d426c09d75a158c4c6a86fdcc6e8a2d85803064bff0c8ceb2436a55d4477a",
+  "tasks": {
+    "click_bell": {
+      "episodes": 1,
+      "successes": 1,
+      "inference_calls": 2,
+      "execute_steps": 29,
+      "metrics_sha256": "142fb8eccb506f42b12214dd248054952aac6f4ba6ea5bd26a641a925c618382",
+      "native_fault_bytes": 0,
+      "gpu": [
+        "NVIDIA L20"
+      ],
+      "exit_code": 0,
+      "excluded_from_runtime_copy": [
+        "/data/efs/users/lingyue.yang/submission_policy_correction_20261021_v2/organizer/xr1_outputs/click_bell"
+      ]
+    },
+    "items_handover": {
+      "episodes": 1,
+      "successes": 1,
+      "inference_calls": 17,
+      "execute_steps": 20,
+      "metrics_sha256": "dbb5e4c40d4095e546661d3eb0ac7fb863238c07e603a6cbde031f561a860435",
+      "native_fault_bytes": 0,
+      "gpu": [
+        "NVIDIA L20"
+      ],
+      "exit_code": 0,
+      "excluded_from_runtime_copy": [
+        "/data/efs/users/lingyue.yang/submission_policy_correction_20261021_v2/organizer/xr1_outputs/click_bell",
+        "/data/efs/users/lingyue.yang/submission_policy_correction_20261021_v2/organizer/xr1_outputs/items_handover"
+      ]
+    }
+  },
+  "scope": "Copied policy directory with deployment hardening; default challenge root; outputs inside the organizer checkout; existing Baidu L20 environments; two public-setting smoke episodes",
+  "formal_ten_task_rerun": false,
+  "fresh_install_verified": false
+}

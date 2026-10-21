@@ -6,6 +6,13 @@ import zipfile
 import yaml
 
 root = Path(__file__).resolve().parents[1]
+if (root / 'policy/xr1_submission/runtime').is_dir():
+    # The checks below bind historical results to the original flat layout.
+    # The official-structure package has its own source audit and ten-task acceptance.
+    from build_policy_release import build
+    build(root)
+    raise SystemExit(0)
+
 for document in ('README.md', 'SUBMISSION_TEXT.md'):
     if 'HF_REVISION_PENDING' in (root / document).read_text():
         raise RuntimeError('Pin the published Hugging Face revision before building the final release')

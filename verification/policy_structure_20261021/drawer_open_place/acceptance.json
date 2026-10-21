@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "artifact": "drawer_open_place_160k_ft10k",
+  "execute_steps": 29,
+  "success": true,
+  "action_steps": 404,
+  "actual_trace_steps": 404,
+  "inference_calls": 14,
+  "metrics_sha256": "b9bb65afda5b9b00985d6861a14d116bde852b8fa7330a52379b6622d72e4ed3",
+  "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/drawer_open_place/raw/drawer_open_place/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_23-01-12/evaluation_metrics.json",
+  "trace_sha256": {
+    "episode_000.jsonl": "1708e1eceed8ab0cf3bf95c0a2811dd3d53d250525dabef4281456d6b0fe7718"
+  },
+  "gpu": [
+    "NVIDIA L20"
+  ],
+  "exit_code": 0,
+  "native_fault_bytes": 0,
+  "server_stopped_and_gpu_released": true,
+  "port_released": true,
+  "simulation_cleanup_markers": 1,
+  "reused_existing_episode": false
+}

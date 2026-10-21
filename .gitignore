@@ -6,3 +6,4 @@ dist/
 /outputs/
 .env
 *.token
+.xr1_env/

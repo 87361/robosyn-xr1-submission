@@ -19,9 +19,9 @@
     "local-only processor/config",
     "selectable SDPA or FlashAttention2",
     "bounded episode RNG cache; best-effort logs",
-    "temporary short-path simulator copy with a hash-recorded cache-path-only patch; task/evaluator sources unchanged",
-    "launcher wrapper defers final native env.close until the unchanged official evaluator writes metrics; preserves failure exit codes",
-    "launcher and direct policy entry point share task_mapping execute-step selection; handover k20, all others k29"
+    "official-structure adapter: eval.sh runs the unchanged official scripts/eval_policy.py with EMBODICHAIN_SIM_EXIT_PROCESS=0; get_model starts the XR1 inference server in a separate Python 3.12 environment and stops it on exit",
+    "adapter selects the task checkpoint and execute steps from task_mapping.json; handover k20, all others k29",
+    "adapter exit hook stops inference workers, removes registered rigid constraints through official APIs before destroying the world, then flushes official deferred cleanup; no simulator source patch"
   ],
   "policy_contract": "H30; k20 items_handover, k29 others; prefix0 joint_absolute; policy seed20260908 per episode",
   "checkpoint_selection": {

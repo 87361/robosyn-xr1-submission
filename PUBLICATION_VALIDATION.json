@@ -1,195 +1,278 @@
 {
-  "passed": true,
-  "historical_release_zip_sha256": "409ad10baf2617452f5b50329fb64a9fb77ddfa9cac9ce8a89ef49b23ff4da52",
-  "bell50_metrics_sha256": "33fc673a0d898cfb2eb4f9cf9c0a35559fd7f15f70809e3b005f4fde092aad3e",
-  "model_runtime_unchanged": false,
-  "runtime_diagnostics": {
-    "baseline_github_revision": "3935166d34285543e2c4af236e31710821dd939a",
-    "historical_runtime_diagnostic_acceptance": {
-      "handle_basket": {
-        "episodes": 1,
-        "successes": 1,
-        "gpu_peak_MiB": 13665,
-        "metrics_sha256": "89e46feef02833ef2d53483007620eacf0fa53d12f4f59c2170d088f2f196ea9"
-      },
-      "sample_loading": {
-        "episodes": 1,
-        "successes": 1,
-        "gpu_peak_MiB": 13405,
-        "metrics_sha256": "29857496449e447ad5d581028851837d91c0a8388ab9715772bf5d4fefe57734"
-      },
-      "mixer_operating": {
-        "episodes": 1,
-        "successes": 1,
-        "gpu_peak_MiB": 13432,
-        "metrics_sha256": "e35fc44689e26ab45e15e9bae5ad99397918a794eadabc26883305b52be056af"
-      }
-    },
-    "historical_selected_official_n50": [
-      {
-        "task": "click_bell",
-        "successes": 50,
-        "episodes": 50,
-        "github_revision": "3935166d34285543e2c4af236e31710821dd939a",
-        "hf_revision": "d001dcf7f2a4b3fae9419a38f95d2954afc38cb4"
-      },
-      {
-        "task": "handle_basket",
-        "successes": 47,
-        "episodes": 50,
-        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
-        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
-      },
-      {
-        "task": "water_pouring",
-        "successes": 50,
-        "episodes": 50,
-        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
-        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
-      },
-      {
-        "task": "table_rearrangement",
-        "successes": 50,
-        "episodes": 50,
-        "github_revision": "3935166d34285543e2c4af236e31710821dd939a",
-        "hf_revision": "d001dcf7f2a4b3fae9419a38f95d2954afc38cb4"
-      },
-      {
-        "task": "items_handover",
-        "successes": 48,
-        "episodes": 50,
-        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
-        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
-      },
-      {
-        "task": "drawer_open_place",
-        "successes": 45,
-        "episodes": 50,
-        "github_revision": "3935166d34285543e2c4af236e31710821dd939a",
-        "hf_revision": "d001dcf7f2a4b3fae9419a38f95d2954afc38cb4"
-      },
-      {
-        "task": "item_assembly",
-        "successes": 50,
-        "episodes": 50,
-        "github_revision": "8e651a86a15e9c8b57687a2c12d33444f08f2e76",
-        "hf_revision": "364358e5963e4569acc0bd91d943067a226d253a"
-      }
-    ],
-    "native_initialization_crash_fixed": false,
-    "fresh_install_verified": false,
-    "replay_scope": "Seven real basket inputs; intermediate diagnostic server source retained with evidence"
-  },
-  "selected_three_checkpoint_acceptance": {
-    "new_three": {
-      "mixer_operating": {
-        "artifact": "mixer_operating_terminal_press_ft4k",
-        "episodes": 20,
-        "successes": 20,
-        "model_sha256": "84b9df47b708cd321186b56592ecc1fdedc0d936fa499857062153d53d92baf4",
-        "gpu_peak_MiB": 13434
-      },
-      "manipulate_pipette": {
-        "artifact": "manipulate_pipette_160k_ft20k",
-        "episodes": 20,
-        "successes": 19,
-        "model_sha256": "6fd051f1ddef9977dfd7b17c7e3f86e35d598d8f995ca6a72641094d387bab56",
-        "gpu_peak_MiB": 13406
-      },
-      "sample_loading": {
-        "artifact": "sample_loading_160k_ft20k",
-        "episodes": 20,
-        "successes": 11,
-        "model_sha256": "ae30f2dda14be60225aa618cf9315882e6602ca4da175c26a0019fe602581c8e",
-        "gpu_peak_MiB": 13407
-      }
-    },
-    "retained_seven": {
+  "scope": "Official-structure adapter; one public-setting episode per task",
+  "base_code_commit": "4f250fec0448bf1095cf49b0d89d10468bf6b449",
+  "hf_revision": "fdc1c2f53a0eeb61b02459ef4fca41c7e2aa0dc4",
+  "inference_runtime_unchanged": [
+    "policy/xr1_submission/__init__.py",
+    "policy/xr1_submission/action.py",
+    "policy/xr1_submission/requirements-inference.txt",
+    "policy/xr1_submission/robot_bridge.py",
+    "policy/xr1_submission/runtime/mibot/__init__.py",
+    "policy/xr1_submission/runtime/mibot/models/VLA/XR1.py",
+    "policy/xr1_submission/runtime/mibot/models/VLA/__init__.py",
+    "policy/xr1_submission/runtime/mibot/models/VLM/__init__.py",
+    "policy/xr1_submission/runtime/mibot/models/VLM/qwen3vl.py",
+    "policy/xr1_submission/runtime/mibot/models/__init__.py",
+    "policy/xr1_submission/runtime/mibot/server/__init__.py",
+    "policy/xr1_submission/runtime/mibot/server/runtime/__init__.py",
+    "policy/xr1_submission/runtime/mibot/server/runtime/client.py",
+    "policy/xr1_submission/runtime/mibot/utils/__init__.py",
+    "policy/xr1_submission/runtime/mibot/utils/io.py",
+    "policy/xr1_submission/runtime/mibot/utils/model_utils.py",
+    "policy/xr1_submission/runtime/server.py",
+    "policy/xr1_submission/runtime/tools/infer_npz.py",
+    "policy/xr1_submission/runtime/vendor/__init__.py",
+    "policy/xr1_submission/runtime/vendor/baseline_server.py",
+    "policy/xr1_submission/task_mapping.json"
+  ],
+  "validation": {
+    "passed": true,
+    "date": "2026-10-21",
+    "episodes_completed": 10,
+    "successes": 9,
+    "tests_passed": 10,
+    "official_commit": "4b6a6584c8d68d98b200b80d93df5993eeca03fb",
+    "model_manifest_sha256": "295d426c09d75a158c4c6a86fdcc6e8a2d85803064bff0c8ceb2436a55d4477a",
+    "tasks": {
       "click_bell": {
-        "episodes": 20,
-        "successes": 20,
-        "artifact": "click_bell_160k_ft3k"
+        "passed": true,
+        "artifact": "click_bell_160k_ft3k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 47,
+        "actual_trace_steps": 47,
+        "inference_calls": 2,
+        "metrics_sha256": "a3cf00af0879668e4d36ed4de1a179ae3f3717c5b5f7d68dc5a5a04f6215c743",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/click_bell/raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-33-41/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "bea7ff6b359ba8aa0b5344eb0a1e9dc15ff26020365d8b54a31a0c9fdbf2c85f"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       },
       "handle_basket": {
-        "episodes": 20,
-        "successes": 19,
-        "artifact": "handle_basket_140k"
+        "passed": true,
+        "artifact": "handle_basket_140k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 351,
+        "actual_trace_steps": 351,
+        "inference_calls": 13,
+        "metrics_sha256": "3ef5f9cad043524c6045abdae97658130a1ac0b428a198dd58642992b09672ae",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/handle_basket/raw/handle_basket/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-39-29/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "be4901028d91d55982b2c31cf64cc333588e9fcf353bd7828f77c68a0f3f16ef"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       },
       "water_pouring": {
-        "episodes": 20,
-        "successes": 20,
-        "artifact": "water_pouring_160k_ft5k"
+        "passed": true,
+        "artifact": "water_pouring_160k_ft5k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 178,
+        "actual_trace_steps": 178,
+        "inference_calls": 7,
+        "metrics_sha256": "2cd6ad1cc93bf17c62edd0fb4221d75b8a38d1b61625fdbcdd992fa98b6983c9",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/water_pouring/raw/water_pouring/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-44-44/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "ea31b794867ea37ad06f798d8b6748f3b63001f157a0591e4119e82389d7068c"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       },
       "table_rearrangement": {
-        "episodes": 20,
-        "successes": 20,
-        "artifact": "table_rearrangement_160k_ft5k"
+        "passed": true,
+        "artifact": "table_rearrangement_160k_ft5k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 163,
+        "actual_trace_steps": 163,
+        "inference_calls": 6,
+        "metrics_sha256": "bce9e11a4ed3e08ef365f82a0abe29973428eee5c1f1b08422a4fd9044af2535",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/table_rearrangement/raw/table_rearrangement/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-49-46/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "4033c55ff110008c6cc2a7baa85aca2d6520f6702449e8bc2ba4aec299f01e8a"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       },
       "items_handover": {
-        "episodes": 20,
-        "successes": 19,
-        "artifact": "items_handover_180k"
+        "passed": true,
+        "artifact": "items_handover_180k",
+        "execute_steps": 20,
+        "success": true,
+        "action_steps": 332,
+        "actual_trace_steps": 332,
+        "inference_calls": 17,
+        "metrics_sha256": "c3b696df466a9e9d09fe1a1a75a3752a1c85d48099956f87a83773bc076d9c59",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/items_handover/raw/items_handover/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-55-26/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "404548f06c6df16f8e3e948e86c84618cbfd666d901a2575c67754183ab66631"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       },
       "drawer_open_place": {
-        "episodes": 20,
-        "successes": 16,
-        "artifact": "drawer_open_place_160k_ft10k"
+        "passed": true,
+        "artifact": "drawer_open_place_160k_ft10k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 404,
+        "actual_trace_steps": 404,
+        "inference_calls": 14,
+        "metrics_sha256": "b9bb65afda5b9b00985d6861a14d116bde852b8fa7330a52379b6622d72e4ed3",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/drawer_open_place/raw/drawer_open_place/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_23-01-12/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "1708e1eceed8ab0cf3bf95c0a2811dd3d53d250525dabef4281456d6b0fe7718"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
+      },
+      "mixer_operating": {
+        "passed": true,
+        "artifact": "mixer_operating_terminal_press_ft4k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 257,
+        "actual_trace_steps": 257,
+        "inference_calls": 9,
+        "metrics_sha256": "1d73a5c6f8ce003bcc430e20b00b754a08ff29702720e695c500eb379c87b12f",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/mixer_operating/raw/mixer_operating/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_23-06-55/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "711f59264bceab1e3950ab438fea6876f830d6c40ddaed1739bfcd532992eb0f"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       },
       "item_assembly": {
-        "episodes": 20,
-        "successes": 20,
-        "artifact": "item_assembly_160k_ft10k"
+        "passed": true,
+        "artifact": "item_assembly_160k_ft10k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 172,
+        "actual_trace_steps": 172,
+        "inference_calls": 6,
+        "metrics_sha256": "219acd98336bf87fb49b2e8644cb4ae105d483026ef506507d64eb2afc035d56",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/item_assembly/raw/item_assembly/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-17-48/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "397137874133c79beb5e9b9ad17ece26bfb9497a476d0c87842469c7b1a2ae84"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
+      },
+      "manipulate_pipette": {
+        "passed": true,
+        "artifact": "manipulate_pipette_160k_ft20k",
+        "execute_steps": 29,
+        "success": true,
+        "action_steps": 290,
+        "actual_trace_steps": 290,
+        "inference_calls": 10,
+        "metrics_sha256": "d84a7c66db767067fcd5a5d655e7d887325fae362d62f615ff113740f4ef7430",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/manipulate_pipette/raw/manipulate_pipette/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-22-42/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "6cd11013c62f2aaa3171e31392b6933c3e2600c2f4673c721658df5d434b3e68"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
+      },
+      "sample_loading": {
+        "passed": true,
+        "artifact": "sample_loading_160k_ft20k",
+        "execute_steps": 29,
+        "success": false,
+        "action_steps": 500,
+        "actual_trace_steps": 500,
+        "inference_calls": 18,
+        "metrics_sha256": "9637d4a69856179724576f22569b9ef270ada0bfbf8671e500c82ca0d810afc0",
+        "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/sample_loading/raw/sample_loading/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-27-46/evaluation_metrics.json",
+        "trace_sha256": {
+          "episode_000.jsonl": "cc78d14e4af230e84ba9d8a87a38b3705c5ba993cfa69fde84f0430dd9184f25"
+        },
+        "gpu": [
+          "NVIDIA L20"
+        ],
+        "exit_code": 0,
+        "native_fault_bytes": 0,
+        "server_stopped_and_gpu_released": true,
+        "port_released": true,
+        "simulation_cleanup_markers": 1,
+        "reused_existing_episode": false
       }
     },
-    "scope": "Three new N20 runs plus seven unchanged effective-policy N20 runs; separate batches"
+    "data_root": "/data/r3d",
+    "original_data_root": "/mnt/pfs/public/data/datasets/robosynchallenge/embodichain_data",
+    "scope": "Unchanged official evaluator, only the policy directory copied in; existing Baidu L20 environments; one public-setting episode per task; reused episodes identified per task",
+    "reused_tasks": [],
+    "simulation_cleanup_required": true,
+    "formal_ten_task_rerun": false,
+    "fresh_install_verified": false
   },
-  "policy_uses_task_specific_k": true,
-  "shared_checkpoint_unchanged": true,
-  "official_reset_sync_steps": 0,
-  "historical_selected_checkpoint_acceptance": {
-    "handle_basket": {
-      "model_sha256": "5bde2bd404d2596c944cd62367a3b105b78bc44d7c16bd25c3352f42ab81aaf9",
-      "execute_steps": 29,
-      "episodes": 1
-    },
-    "items_handover": {
-      "model_sha256": "13094f348fd905474ad34709a45e8f3d29ba9c3074533f28e0a08c73ac07089c",
-      "execute_steps": 20,
-      "episodes": 1
-    },
-    "table_rearrangement": {
-      "model_sha256": "c42c47000ffe4e5ed3a0d72002047d250b3ca01397c4ae704e0f56837d074356",
-      "execute_steps": 29,
-      "episodes": 1
-    },
-    "drawer_open_place": {
-      "model_sha256": "496efcf5ba5e203027a149952037bfd0c3a61ee0fd25434e6bf23818e601e35b",
-      "execute_steps": 29,
-      "episodes": 1
-    },
-    "click_bell": {
-      "model_sha256": "3463dd8da507667b42389c7bb07828180cdc7cbbc57e57589953737318bea7af",
-      "execute_steps": 29,
-      "episodes": 1
-    }
-  },
-  "assembly_model_sha256": "d5d84df65184c345a8782a5e5a23c32bfe6ba4f5226947659ac5284f34256d63",
-  "historical_assembly_packaged_runtime_episodes": 1,
-  "water_model_sha256": "74b381f87c64f5e19770bd6ae1a72a2188d80d65b25271360936e8f7f2bcf878",
-  "historical_water_packaged_runtime_episodes": 1,
-  "publication_changes": [
-    "select latest mixer terminal-press +4k and original pipette/sample +20k; exact exports and new N20 acceptance",
-    "diagnostic runtime updates verified by three real official episodes; historical evidence preserved",
-    "click_bell selects shared160k+3k; previous shared-bell 50/50 remains historical only",
-    "table selects shared160k+5k; drawer selects shared160k+10k",
-    "previously accepted task mapping checked per task against retained exact historical mapping",
-    "handle_basket selects 140k/k29; items_handover selects 180k/k20",
-    "direct adapter and launcher share task_mapping execution contracts",
-    "reset default 10 -> 0, identical to the audited 50-episode override",
-    "item_assembly alone uses the user-selected shared160k + 10k fine-tune",
-    "water_pouring alone uses the user-selected shared160k + 5k fine-tune",
-    "checkpoint-specific export and packaged-runtime acceptance",
-    "defer final native environment close until unchanged official evaluator writes metrics",
-    "publication documentation and this build-time validation"
-  ]
+  "formal_ten_task_rerun": false,
+  "historical_public_score": "184/200; original separate N20 batches only"
 }

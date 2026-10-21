@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-21T22:26:03.412678+08:00",
+  "config": {
+    "policy": "xr1_submission",
+    "task": "manipulate_pipette",
+    "setting": "random",
+    "checkpoint_path": null,
+    "dp_num_inference_steps": null,
+    "episode_count": 1,
+    "timeout_action_steps": 1000,
+    "seed": 0,
+    "fixed_episode_seed": null
+  },
+  "inference_timing_scope": "raw observation preprocessing and transfer through executable action; env.step excluded",
+  "platform": {
+    "operating_system": "Linux-5.15.0-72-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8563C",
+    "accelerators": [
+      "NVIDIA L20"
+    ],
+    "cuda_visible_devices": null,
+    "python_version": "3.11.14",
+    "torch_version": "2.7.1+cu126",
+    "torch_cuda_version": "12.6"
+  },
+  "summary": {
+    "episode_count": 1,
+    "success_count": 1,
+    "success_rate": 1.0,
+    "average_action_steps": 290.0,
+    "average_action_steps_ratio": 0.29,
+    "inference_call_count": 10,
+    "average_inference_calls_per_episode": 10.0,
+    "average_inference_time_seconds": 0.4519030891358852,
+    "average_inference_time_per_episode_seconds": 4.519030891358852
+  },
+  "episodes": [
+    {
+      "episode_index": 0,
+      "candidate_index": 0,
+      "episode_attempt_index": 0,
+      "seed": 209652396,
+      "success": true,
+      "action_steps": 290,
+      "expert_plan_steps": 286
+    }
+  ],
+  "feasibility_filter": {
+    "enabled": true,
+    "max_candidate_seed_attempts_per_episode": 100,
+    "candidate_seed_attempt_count": 1,
+    "accepted_episode_count": 1,
+    "skipped_seed_count": 0,
+    "skipped_seeds": []
+  }
+}

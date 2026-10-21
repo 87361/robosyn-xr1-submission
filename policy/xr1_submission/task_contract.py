@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-MAPPING = Path(__file__).resolve().parents[2] / 'task_mapping.json'
+MAPPING = Path(__file__).resolve().parent / 'task_mapping.json'
 
 
 def load_contract(task, execute_steps=None):

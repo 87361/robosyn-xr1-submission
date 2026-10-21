@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "artifact": "click_bell_160k_ft3k",
+  "execute_steps": 29,
+  "success": true,
+  "action_steps": 47,
+  "actual_trace_steps": 47,
+  "inference_calls": 2,
+  "metrics_sha256": "a3cf00af0879668e4d36ed4de1a179ae3f3717c5b5f7d68dc5a5a04f6215c743",
+  "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/click_bell/raw/click_bell/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-33-41/evaluation_metrics.json",
+  "trace_sha256": {
+    "episode_000.jsonl": "bea7ff6b359ba8aa0b5344eb0a1e9dc15ff26020365d8b54a31a0c9fdbf2c85f"
+  },
+  "gpu": [
+    "NVIDIA L20"
+  ],
+  "exit_code": 0,
+  "native_fault_bytes": 0,
+  "server_stopped_and_gpu_released": true,
+  "port_released": true,
+  "simulation_cleanup_markers": 1,
+  "reused_existing_episode": false
+}

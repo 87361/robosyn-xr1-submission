@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "artifact": "water_pouring_160k_ft5k",
+  "execute_steps": 29,
+  "success": true,
+  "action_steps": 178,
+  "actual_trace_steps": 178,
+  "inference_calls": 7,
+  "metrics_sha256": "2cd6ad1cc93bf17c62edd0fb4221d75b8a38d1b61625fdbcdd992fa98b6983c9",
+  "metrics_path": "/mnt/pfs/public/models/xr1/policy_directory_correction_20261021_v5_run1/water_pouring/raw/water_pouring/xr1_submission/random/xr1_submission/xr1_sim10/2026-10-21_22-44-44/evaluation_metrics.json",
+  "trace_sha256": {
+    "episode_000.jsonl": "ea31b794867ea37ad06f798d8b6748f3b63001f157a0591e4119e82389d7068c"
+  },
+  "gpu": [
+    "NVIDIA L20"
+  ],
+  "exit_code": 0,
+  "native_fault_bytes": 0,
+  "server_stopped_and_gpu_released": true,
+  "port_released": true,
+  "simulation_cleanup_markers": 1,
+  "reused_existing_episode": false
+}
