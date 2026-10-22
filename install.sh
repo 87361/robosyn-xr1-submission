@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 # Create the separate Python 3.12 XR1 inference environment.
-# Usage: install_inference.sh [/absolute/path/to/new/env]   (default: policy/<name>/.xr1_env)
+# Usage: install.sh [/absolute/path/to/new/env]   (default: policy/<name>/.xr1_env)
 # Without a system python3.12, create one first, e.g.
-#   conda create -y -p /path/to/py312 python=3.12 && PYTHON312=/path/to/py312/bin/python install_inference.sh
+#   conda create -y -p /path/to/py312 python=3.12 && PYTHON312=/path/to/py312/bin/python install.sh
 set -Eeuo pipefail
-root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+root=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 env_dir=${1:-$root/.xr1_env}
 python_bin=${PYTHON312:-python3.12}
+if [[ $env_dir != /* ]]; then
+    env_dir=$root/$env_dir
+fi
 if ! command -v "$python_bin" >/dev/null 2>&1; then
     echo "Error: $python_bin not found; set PYTHON312 to a Python 3.12 interpreter (see the header of this script)." >&2
+    exit 1
+fi
+if ! "$python_bin" -c 'import sys; raise SystemExit(sys.version_info[:2] != (3, 12))'; then
+    echo "Error: $python_bin is not Python 3.12; set PYTHON312 to a Python 3.12 interpreter." >&2
     exit 1
 fi
 if [[ -e "$env_dir" ]]; then

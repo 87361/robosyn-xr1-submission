@@ -16,7 +16,7 @@ eval_expert_check: true
 eval_reset_sync_steps: 0
 eval_video_log: false
 eval_video_obs_key: cam_high
-xr1_model_dir: null       # complete model repository; eval.sh argument <model_dir>
+xr1_model_dir: null       # complete model repository; eval.sh defaults to policy-local models/
 xr1_python: null          # Python 3.12 inference interpreter; eval.sh sets it from XR1_PYTHON
 xr1_log_root: null        # inference server log directory; a new temporary directory by default
 xr1_startup_timeout: 900

@@ -17,9 +17,9 @@ from pathlib import Path
 
 import numpy as np
 
-from .action import _direct_joint_action
-from .robot_bridge import extract_observation, as_numpy
-from .task_contract import load_contract
+from .runtime.policy_adapter.action import _direct_joint_action
+from .runtime.policy_adapter.robot_bridge import extract_observation, as_numpy
+from .runtime.policy_adapter.task_contract import load_contract
 
 
 def scalar(value):
@@ -154,10 +154,10 @@ class InferenceServer:
         python = args.get('xr1_python') or os.environ.get('XR1_PYTHON') or POLICY_ROOT / '.xr1_env/bin/python'
         if not os.access(python, os.X_OK):
             raise FileNotFoundError(f'XR1 inference Python not found: {python}; '
-                                    'run tools/install_inference.sh or set XR1_PYTHON')
+                                    'run install.sh or set XR1_PYTHON')
         model_dir = args.get('xr1_model_dir') or os.environ.get('XR1_MODEL_DIR')
         if not model_dir:
-            raise ValueError('xr1_model_dir is required (eval.sh argument <model_dir>)')
+            raise ValueError('xr1_model_dir is required (eval.sh supplies its policy-local models/ by default)')
         checkpoint, config, processor = resolve_model_files(model_dir, artifact)
         self.log_root = Path(args.get('xr1_log_root') or tempfile.mkdtemp(prefix='xr1_server_'))
         self.log_root.mkdir(parents=True, exist_ok=True)
