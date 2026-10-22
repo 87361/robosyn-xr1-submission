@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "runtime_byte_identical_to_published": true,
-  "published_baseline": "2ac161e0241edf6bb6119b48c93dc8ea888b60ed",
-  "candidate_source_sha256": "7153e79dc7494583314ed6ca97f45654e8514a53b60a4c598d2a6c4fbdfe5391",
-  "task_mapping_sha256": "6e4c16a7d7cd9e098f7107a6aafcd78074ebd942c6f64bc54efd6177f951b6f1",
-  "model_manifest_sha256": "295d426c09d75a158c4c6a86fdcc6e8a2d85803064bff0c8ceb2436a55d4477a",
-  "scope": "Latest mixer terminal-press4k and original pipette/sample20k selections; unchanged runtime already passed all ten tasks N20. Retain all outcomes."
-}
